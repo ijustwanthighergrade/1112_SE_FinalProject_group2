@@ -3,19 +3,16 @@
 
 有問題先找找這裡，不懂可以再來問我-吳岱芸
 
-#目前下載套件，如果有人自己再下載了啥請記得寫上來
-pip install matplotlib
-pip install pandas
-pip install requests
-pip install django-filter
-pip install djangorestframework
-
 ##需要遵守的撰寫守則##
 1.每天的程式進度都要註解當天日期，還有紀錄你的開始與結束工作時間，以及今天進度的檔案名稱到EXCEL上，沒紀錄的老兄恭喜你會獲得奪命連環CALL體驗卷
 2.每創一個變數或是FUNCTION都要下註解解釋你在幹嘛，變數請不要隨便取個A B之類的，我看不懂你的程式的話你還是會獲得奪命連環CALL體驗卷
 3.每次PUSH之前都要先PULL，要PUSH上來先檢查好你的程式是不是會讓其他人掛掉，三思而後行
 4.測試程式時若會動到資料庫就不要把你的資料庫資料PUSH上來，不然你會害大家一起死 WE WILL DIE
 5.同樣是資料庫問題，假設你突然發現需要更動欄位請告知所有人你更動了哪裡
+
+##關於引入的東西##
+tempelates裡面放的是html檔
+css之類的檔案請丟到static
 
 ##如何使用架設好的環境##
 cd 到 seevne\Scripts 下activate
@@ -47,3 +44,11 @@ https://www.python-graph-gallery.com/
 https://ithelp.ithome.com.tw/articles/10210071
 2.django
 https://ithelp.ithome.com.tw/articles/10199575
+
+
+#目前下載套件，如果有人自己再下載了啥請記得寫上來
+pip install matplotlib
+pip install pandas
+pip install requests
+pip install django-filter
+pip install djangorestframework
