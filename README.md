@@ -53,6 +53,8 @@ pip install requests
 pip install django-filter  
 pip install djangorestframework  
 pip install pyecharts -U
+pip3 install plotly 
+
 
 #django使用圖表
 1.Django中引入echarts图表做数据可视化
