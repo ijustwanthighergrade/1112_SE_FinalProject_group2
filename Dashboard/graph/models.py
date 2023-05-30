@@ -164,8 +164,8 @@ class Trade (models.Model):
 
 #客戶引薦資料表
 class Referrer (models.Model):
-    Referrer_ID=models.ForeignKey(APP_Cus, related_name='referrers', related_query_name='referrer',on_delete=models.CASCADE,null=False)      
-    Bref_id=models.ForeignKey(APP_Cus, related_name='referrers', related_query_name='referrer',on_delete=models.CASCADE,null=False) 
+    Referrer_ID=models.ForeignKey(APP_Cus, related_name='Cus_id', related_query_name='Cus_id',on_delete=models.CASCADE,null=False)      
+    Bref_id=models.ForeignKey(APP_Cus, related_name='Cus_id', related_query_name='Cus_id',on_delete=models.CASCADE,null=False) 
     ref_date=models.DateTimeField('日期',null=False,default=timezone.now)
 
     class Referrer_PK:
