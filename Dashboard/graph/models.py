@@ -186,7 +186,7 @@ class feedback (models.Model):
 #公告訊息資料表表
 class An (models.Model):
     An_id=models.CharField('公告id  An+14日期+random(3)',max_length=19,null=False,primary_key=True)
-    An_text=models.TextChoices('公告內容',null=False) 
+    An_text=models.TextField('公告內容',null=False) 
     An_dateON=models.DateTimeField('日期',null=False,default=timezone.now)  
     An_dateOFF=models.IntegerField('展示狀態',max_length=1,null=True)
     def __str__(self):
