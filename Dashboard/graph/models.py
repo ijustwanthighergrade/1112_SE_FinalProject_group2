@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
 
-from django.shortcuts import render, redirect
 # Create your models here.
 
 #分店基本資料表
