@@ -178,7 +178,7 @@ class feedback (models.Model):
     feedback_id=models.CharField('回饋表id F+14日期+random(3)',max_length=18,null=False,primary_key=True)
     feedbackCu_id=models.ForeignKey(Chair,on_delete=models.CASCADE,null=False)    
     feedcus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
-    feedback_text=models.TextChoices('回饋內容',null=False) 
+    feedback_text=models.TextField('回饋內容',null=False) 
     feedback_date=models.DateTimeField('回饋日期',null=False,default=timezone.now)
     def __str__(self):
         return self.feedback_id
