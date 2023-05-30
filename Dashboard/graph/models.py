@@ -50,8 +50,8 @@ class APP_Cus (models.Model):
     
 #客戶業務資料表
 class Cus (models.Model):
-    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)
-    Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False,primary_key=True)
+    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
+    Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)
     Cus_FamilyNum=models.IntegerField('家庭成員數量',max_length=1,null=True)
     Cus_eld=models.IntegerField('長者有無',max_length=1,null=True)
     Chair_status=models.IntegerField('家中是否有按摩椅',max_length=1,null=True)
@@ -64,6 +64,10 @@ class Cus (models.Model):
     product_past=models.ForeignKey(product,on_delete=models.CASCADE,null=True)
     Cus_job=models.CharField('客戶職業',max_length=50,null=True)
 
+    class CUS_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['Cus_id', 'Sp_id'], name='CUS_Primary_key')
+        ]
 
 #儀錶板帳密資料表
 class storeboard (models.Model):
@@ -82,13 +86,18 @@ class order (models.Model):
 
 #產品販售詳細資料表
 class order (models.Model):
-    order_id=models.ForeignKey(order,on_delete=models.CASCADE,null=False,primary_key=True)
-    product_id=models.ForeignKey(product,on_delete=models.CASCADE,null=False,primary_key=True)
+    order_id=models.ForeignKey(order,on_delete=models.CASCADE,null=False)
+    product_id=models.ForeignKey(product,on_delete=models.CASCADE,null=False)
     order_time=models.DateTimeField('下單時間',null=True,default=timezone.now)
     totalprice=models.IntegerField('訂單總額',null=False)
     order_addr=models.CharField('運送地址',max_length=512,null=False)
     def __str__(self):
         return self.order_id
+    
+    class order_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['order_id', 'product_id'], name='order_Primary_key')
+        ]    
 
 #業務行銷回報資料表
 class Marketing (models.Model):
@@ -104,8 +113,14 @@ class Marketing (models.Model):
 
 #客戶連絡紀錄資料表
 class record (models.Model):
-    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)
-    Marketing_id=models.ForeignKey(Marketing,on_delete=models.CASCADE,null=False,primary_key=True)
+    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
+    Marketing_id=models.ForeignKey(Marketing,on_delete=models.CASCADE,null=False)
+
+    class record_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['Cus_id', 'Marketing_id'], name='record_Primary_key')
+        ]    
+
 
 #按摩椅基本資料表
 class Chair (models.Model):
@@ -149,29 +164,45 @@ class Trade (models.Model):
 
 #客戶引薦資料表
 class Referrer (models.Model):
-    Referrer_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)      
-    Bref_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True) 
+    Referrer_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
+    Bref_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False) 
     ref_date=models.DateTimeField('日期',null=False,default=timezone.now)
+
+    class Referrer_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['Referrer_ID', 'Bref_id'], name='Referrer_Primary_key')
+        ]  
 
 #出勤資料表
 class Ab (models.Model):
-    Ab_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)      
+    Ab_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
     Ab_ON=models.IntegerField('打卡上班',null=False) 
     Ab_OFF=models.IntegerField('打卡上班',null=False) 
-    Ab_DATE=models.DateTimeField('日期',null=False,default=timezone.now,primary_key=True)
+    Ab_DATE=models.DateTimeField('日期',null=False,default=timezone.now)
     Ab_REASON=models.TextField('請假理由',null=False)
+
     def __str__(self):
         return self.Ab_ID
+    
+    class Ab_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['Ab_ID', 'Ab_DATE'], name='Ab_Primary_key')
+        ]
 
 #店家成本資料表表
 class cost (models.Model):
-    store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=False,primary_key=True)      
+    store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=False)      
     physical_cost=models.IntegerField('實體店面營運成本',null=False) 
     rent_cost=models.IntegerField('按摩椅租地成本',null=False) 
     voucher_cost=models.IntegerField('按摩卷申請成本',null=False) 
     upper_cost=models.IntegerField('試坐按摩椅租金成本',null=False) 
     other_cost=models.IntegerField('其他支出',null=False) 
-    cost_month=models.DateTimeField('成本月份',null=False,default=timezone.now,primary_key=True)
+    cost_month=models.DateTimeField('成本月份',null=False,default=timezone.now)
+
+    class cost_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['store_id', 'cost_month'], name='cost_Primary_key')
+        ]
 
 #按摩椅意見回饋資料表表
 class feedback (models.Model):
