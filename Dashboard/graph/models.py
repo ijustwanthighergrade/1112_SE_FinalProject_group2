@@ -85,7 +85,7 @@ class order (models.Model):
     Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=True)
 
 #產品販售詳細資料表
-class order (models.Model):
+class order_detailed (models.Model):
     order_id=models.ForeignKey(order,on_delete=models.CASCADE,null=False)
     product_id=models.ForeignKey(product,on_delete=models.CASCADE,null=False)
     order_time=models.DateTimeField('下單時間',null=True,default=timezone.now)
@@ -94,9 +94,9 @@ class order (models.Model):
     def __str__(self):
         return self.order_id
     
-    class order_PK:
+    class order_detailed_PK:
         constraints = [
-            models.UniqueConstraint(fields=['order_id', 'product_id'], name='order_Primary_key')
+            models.UniqueConstraint(fields=['order_id', 'product_id'], name='order_detailed_Primary_key')
         ]    
 
 #業務行銷回報資料表
@@ -164,8 +164,8 @@ class Trade (models.Model):
 
 #客戶引薦資料表
 class Referrer (models.Model):
-    Referrer_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
-    Bref_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False) 
+    Referrer_ID=models.ForeignKey(APP_Cus, related_name='referrers', related_query_name='referrer',on_delete=models.CASCADE,null=False)      
+    Bref_id=models.ForeignKey(APP_Cus, related_name='referrers', related_query_name='referrer',on_delete=models.CASCADE,null=False) 
     ref_date=models.DateTimeField('日期',null=False,default=timezone.now)
 
     class Referrer_PK:
