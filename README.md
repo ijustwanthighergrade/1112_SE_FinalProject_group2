@@ -46,20 +46,28 @@ https://ithelp.ithome.com.tw/articles/10210071
 https://ithelp.ithome.com.tw/articles/10199575  
 
 
-#目前下載套件，如果有人自己再下載了啥請記得寫上來  
-pip install matplotlib  
+#目前下載套件，如果有人自己再下載了啥請記得寫上來    
+pip install matplotlib    
 pip install pandas  
-pip install requests  
-pip install django-filter  
-pip install djangorestframework  
-pip install pyecharts -U
-pip3 install plotly 
+pip install requests    
+pip install django-filter    
+pip install djangorestframework    
+pip install pyecharts -U  
+pip3 install plotly     
 
 
-#django使用圖表
-1.Django中引入echarts图表做数据可视化
-https://blog.csdn.net/qq_42092076/article/details/105209185
-2.python-使用pyecharts實現數據視覺化
-https://cde566.medium.com/python-%E4%BD%BF%E7%94%A8pyecharts%E5%AF%A6%E7%8F%BE%E6%95%B8%E6%93%9A%E8%A6%96%E8%A6%BA%E5%8C%96-1-4d9a0923d81
-3.echart
-https://github.com/pyecharts/pyecharts/tree/ee659c991bcff9c7279402b0c42e48c3c91d8715
+#django使用圖表  
+1.Django中引入echarts图表做数据可视化  
+https://blog.csdn.net/qq_42092076/article/details/105209185  
+2.python-使用pyecharts實現數據視覺化  
+https://cde566.medium.com/python-%E4%BD%BF%E7%94%A8pyecharts%E5%AF%A6%E7%8F%BE%E6%95%B8%E6%93%9A%E8%A6%96%E8%A6%BA%E5%8C%96-1-4d9a0923d81  
+3.echart  
+https://github.com/pyecharts/pyecharts/tree/ee659c991bcff9c7279402b0c42e48c3c91d8715  
+4.盤點 Django 展示可視化圖表的多種方式  
+https://www.readfog.com/a/1632284312670932992  
+5.Python互動式圖表函數庫初體驗  
+https://www.finlab.tw/python-bokeh1-setup-and-first-impression/  
+6.用 Python 做出 Gapminder 互動式圖表  
+https://hahow.in/contents/articles/626a094dfc2cb700071ca212  
+7.Python 互動式圖表筆記(1) ploty  
+https://hackmd.io/@SeedFood/DjPloty1  
