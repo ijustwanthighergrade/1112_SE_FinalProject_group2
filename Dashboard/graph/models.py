@@ -48,7 +48,7 @@ class APP_Cus (models.Model):
     Voucher_count=models.IntegerField('按摩卷擁有數量',null=False)
     Cus_status=models.IntegerField('帳號停用',null=False)
     Referrer_id=models.CharField('引薦人',max_length=18,null=True) 
-
+    
 #客戶業務資料表
 class Cus (models.Model):
     Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)
@@ -56,6 +56,15 @@ class Cus (models.Model):
     Cus_FamilyNum=models.IntegerField('家庭成員數量',max_length=1,null=True)
     Cus_eld=models.IntegerField('長者有無',max_length=1,null=True)
     Chair_status=models.IntegerField('家中是否有按摩椅',max_length=1,null=True)
+    Chair_floor=models.IntegerField('客戶消費預算下限',null=True)
+    Chair_ceiling=models.IntegerField('客戶消費預算上限',null=True)
+    Chair_position=models.CharField('主要按摩部位需求 (不要想歪',max_length=50,null=True)
+    Chair_color=models.CharField('顏色偏好',max_length=50,null=True)
+    Cus_PastItem=models.CharField('過去消費過的品牌產品',max_length=520,null=True)
+    Chair_power=models.IntegerField('按摩模式力道偏好 (1~10 弱到強)',null=True)
+    product_past=models.ForeignKey(product,on_delete=models.CASCADE,null=True)
+    Cus_job=models.CharField('客戶職業',max_length=50,null=True)
+
 
 #儀錶板帳密資料表
 class storeboard (models.Model):
