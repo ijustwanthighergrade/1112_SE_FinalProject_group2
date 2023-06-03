@@ -7,7 +7,7 @@
 1.每天的程式進度都要註解當天日期，還有紀錄你的開始與結束工作時間，以及今天進度的檔案名稱到EXCEL上，沒紀錄的老兄恭喜你會獲得奪命連環CALL體驗卷  
 2.每創一個變數或是FUNCTION都要下註解解釋你在幹嘛，變數請不要隨便取個A B之類的，我看不懂你的程式的話你還是會獲得奪命連環CALL體驗卷  
 3.每次PUSH之前都要先PULL，要PUSH上來先檢查好你的程式是不是會讓其他人掛掉，三思而後行  
-4.測試程式時若會動到資料庫就不要把你的資料庫資料PUSH上來，不然你會害大家一起死 WE WILL DIE  
+4.測試程式時除了專門輸入資料的老兄，否則若會動到資料庫資料就不要把你的資料庫PUSH上來，不然WE WILL GO DIE TOGETHER  
 5.同樣是資料庫問題，假設你突然發現需要更動欄位請告知所有人你更動了哪裡  
 
 ##關於引入的東西##    
@@ -18,10 +18,11 @@ css之類的檔案請丟到static
 
 
 ##有關開始工作的步驟##      
-去分工表裡打卡  https://docs.google.com/spreadsheets/d/1JDqaZxA5yfKWBMawifZT-NTpyHjTJcQqw2t_Ifw9OJg/edit#gid=1293430266  
-cd 到 seevne\Scripts 下activate(反正先進去虛擬環境)  
-回到專案資料夾 python manage.py runserver   
-等你工作完麻煩再次回去分工表打卡填寫今日進度與今日結束時間
+1.去分工表裡打卡  https://docs.google.com/spreadsheets/d/1JDqaZxA5yfKWBMawifZT-NTpyHjTJcQqw2t_Ifw9OJg/edit#gid=1293430266  
+2.git pull
+3.cd 到 seevne\Scripts 下activate(反正先進去虛擬環境)  
+4.回到專案資料夾 python manage.py runserver   
+5.工作完麻煩再次回去分工表打卡填寫今日進度與今日結束時間
 
 ##如何引入static資料夾中的css/js/images##    
 1.在每個頁面的開頭都加上{% load static %}   
