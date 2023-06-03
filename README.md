@@ -14,11 +14,14 @@
 tempelates裡面放的是html檔    
 css之類的檔案請丟到static    
 
-##如何使用架設好的環境##    
-cd 到 seevne\Scripts 下activate  
 
-##跑網站的測試指令##     
-python manage.py runserver   
+
+
+##有關開始工作的步驟##      
+去分工表裡打卡  https://docs.google.com/spreadsheets/d/1JDqaZxA5yfKWBMawifZT-NTpyHjTJcQqw2t_Ifw9OJg/edit#gid=1293430266  
+cd 到 seevne\Scripts 下activate(反正先進去虛擬環境)  
+回到專案資料夾 python manage.py runserver   
+等你工作完麻煩再次回去分工表打卡填寫今日進度與今日結束時間
 
 ##如何引入static資料夾中的css/js/images##    
 1.在每個頁面的開頭都加上{% load static %}   
