@@ -52,9 +52,9 @@ class APP_Cus (models.Model):
 class Cus (models.Model):
     Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
     Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)
-    Cus_FamilyNum=models.IntegerField('家庭成員數量',max_length=1,null=True)
-    Cus_eld=models.IntegerField('長者有無',max_length=1,null=True)
-    Chair_status=models.IntegerField('家中是否有按摩椅',max_length=1,null=True)
+    Cus_FamilyNum=models.IntegerField('家庭成員數量',null=True)
+    Cus_eld=models.IntegerField('長者有無',null=True)
+    Chair_status=models.IntegerField('家中是否有按摩椅',null=True)
     Chair_floor=models.IntegerField('客戶消費預算下限',null=True)
     Chair_ceiling=models.IntegerField('客戶消費預算上限',null=True)
     Chair_position=models.CharField('主要按摩部位需求 (不要想歪',max_length=50,null=True)
@@ -135,7 +135,7 @@ class Chair (models.Model):
 #按摩椅使用狀況資料表
 class Cu (models.Model):
     Cu_exID=models.CharField('編號(U+date+001)',max_length=18,null=False,unique=True,primary_key=True)
-    Cu_id=models.ForeignKey(Chair,on_delete=models.CASCADE,null=False,unique=True)
+    Cu_id=models.OneToOneField(Chair,on_delete=models.CASCADE,null=False,unique=True)
     Cu_userid=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
     Cu_date=models.DateTimeField('日期',null=False,default=timezone.now)
     
@@ -164,15 +164,15 @@ class Trade (models.Model):
 
 #客戶引薦資料表
 class Referrer (models.Model):
-    Referrer_ID=models.ForeignKey(APP_Cus, related_name='Cus_id', related_query_name='Cus_id',on_delete=models.CASCADE,null=False)      
-    Bref_id=models.ForeignKey(APP_Cus, related_name='Cus_id', related_query_name='Cus_id',on_delete=models.CASCADE,null=False) 
+    Referrer_ID=models.ForeignKey(APP_Cus,related_name='r1',on_delete=models.CASCADE,null=False)      
+    Bref_id=models.ForeignKey(APP_Cus,related_name='r2',on_delete=models.CASCADE,null=False) 
     ref_date=models.DateTimeField('日期',null=False,default=timezone.now)
 
-    class Referrer_PK:
+    class Ab_PK:
         constraints = [
             models.UniqueConstraint(fields=['Referrer_ID', 'Bref_id'], name='Referrer_Primary_key')
-        ]  
-
+        ]
+        
 #出勤資料表
 class Ab (models.Model):
     Ab_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
@@ -219,6 +219,6 @@ class An (models.Model):
     An_id=models.CharField('公告id  An+14日期+random(3)',max_length=19,null=False,primary_key=True)
     An_text=models.TextField('公告內容',null=False) 
     An_dateON=models.DateTimeField('日期',null=False,default=timezone.now)  
-    An_dateOFF=models.IntegerField('展示狀態',max_length=1,null=True)
+    An_dateOFF=models.IntegerField('展示狀態',null=True)
     def __str__(self):
         return self.An_id
