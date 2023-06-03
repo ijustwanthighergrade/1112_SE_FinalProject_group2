@@ -47,11 +47,11 @@ class APP_Cus (models.Model):
     Voucher_count=models.IntegerField('按摩卷擁有數量',null=False)
     Cus_status=models.IntegerField('帳號停用',null=False)
     Referrer_id=models.CharField('引薦人',max_length=18,null=True) 
+    Cus_Name=models.CharField('APP客戶姓名 (default後面數字逐漸增加)',max_length=512,null=True,default= 'user1') 
     
 #客戶業務資料表
 class Cus (models.Model):
     Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
-    Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)
     Cus_FamilyNum=models.IntegerField('家庭成員數量',null=True)
     Cus_eld=models.IntegerField('長者有無',null=True)
     Chair_status=models.IntegerField('家中是否有按摩椅',null=True)
