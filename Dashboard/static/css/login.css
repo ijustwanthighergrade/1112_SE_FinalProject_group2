@@ -1,0 +1,31 @@
+.loginform{
+    width: 350px;
+    margin: 170px 440px;
+    background-color: gainsboro;
+}
+.logintitle{
+    background-color: rgb(127, 204, 255);
+    text-align: center;
+    padding: 20px;
+}
+.loginfield{
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.loginbutton{
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 45%;
+    border-style: dashed;
+    
+}
+.linktoregister{
+    margin-top: 0px;
+    font-size: 15px;
+}
