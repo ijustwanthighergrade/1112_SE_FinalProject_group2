@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+.container {
+    width: 1920px;
+    height: 1080px;
+    background-color: #f0f0f0b4;
+/* 其他样式属性 */
+}
