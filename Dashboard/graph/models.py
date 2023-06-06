@@ -222,3 +222,55 @@ class An (models.Model):
     An_dateOFF=models.IntegerField('展示狀態',null=True)
     def __str__(self):
         return self.An_id
+    
+#客戶需求分類類型表
+class demand (models.Model):
+    demand_id=models.CharField('需求類型ID(n+0001)',max_length=5,null=False,primary_key=True)
+    demand_text=models.TextField('需求名稱(EX主要按摩部位需求 顏色偏好 客戶職業)',null=False) 
+    def __str__(self):
+        return self.demand_id
+    
+#類型種類表
+class need (models.Model):
+    type_id=models.CharField('類型種類ID(Ty+001)',max_length=4,null=False)
+    demand_id=models.ForeignKey(demand,on_delete=models.CASCADE,null=False)    
+    type_name=models.TextField('類型種類選項',null=False,unique=True) 
+    def __str__(self):
+        return self.need_id
+    
+    class need_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['type_id', 'need_id'], name='need_Primary_key')
+        ]
+
+#排班資料表
+class feedback (models.Model):
+    Ab_ID=models.OneToOneField(Sp,on_delete=models.CASCADE,null=False,primary_key=True)    
+    Ab_DATE=models.DateTimeField('排班日期',null=False,default=timezone.now)
+    Ab_STIME=models.DateTimeField('排班開始時間',null=False)
+    Ab_ETIME=models.DateTimeField('排班結束時間',null=False)
+
+#失敗原因表
+class FALSE (models.Model):
+    FALSE_id=models.CharField('失敗因素編號(fa+001)',max_length=5,null=False,unique=True,primary_key=True)
+    FALSE_TYPE=models.CharField('失敗因素類別',max_length=512,null=False,unique=True) 
+
+#客戶專案管理資料表
+class manage (models.Model):
+    Cus_id=models.OneToOneField(APP_Cus,on_delete=models.CASCADE,null=False)    
+    manage_stage=models.IntegerField('展示狀態',null=False)
+    manage_date=models.DateTimeField('回饋日期',null=False,default=timezone.now)
+    manage_deal=models.BooleanField('成交與否',null=False)
+    manage_category=models.OneToOneField(FALSE,on_delete=models.CASCADE,null=False)      
+    manage_detail=models.TextField('失敗原因詳述',null=False) 
+    manage_stage=models.IntegerField('聯絡次數',null=False)
+    Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)    
+    store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=False)    
+
+    def __str__(self):
+        return self.Cus_id
+    
+    class manage_PK:
+        constraints = [
+            models.UniqueConstraint(fields=['Cus_id', 'Sp_id'], name='manage_Primary_key')
+        ]
