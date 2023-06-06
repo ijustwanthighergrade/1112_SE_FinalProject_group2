@@ -21,7 +21,7 @@ css之類的檔案請丟到static
 ##有關開始工作的步驟##      
 1.去分工表裡打卡  https://docs.google.com/spreadsheets/d/1JDqaZxA5yfKWBMawifZT-NTpyHjTJcQqw2t_Ifw9OJg/edit#gid=1293430266  
 2.git pull
-3.cd 到 seenve\Scripts 下activate(反正先進去虛擬環境)  
+3.cd 到 seevne\Scripts 下activate(反正先進去虛擬環境)  
 4.回到專案資料夾 python manage.py runserver   
 5.工作完麻煩再次回去分工表打卡填寫今日進度與今日結束時間
 
