@@ -211,7 +211,11 @@
 
             </div>
             <div class="chartarea ">
-
+                <div>
+                    {% autoescape off %}
+                        {{plot_div }}
+                    {% endautoescape %}
+                </div>
             </div>
             <div class="chartarea ">
 

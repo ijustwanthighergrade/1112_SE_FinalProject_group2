@@ -21,14 +21,13 @@
   border-bottom: #66ebff;
 }
 .chartarea{
-  background-color: #b15723b4;
   width:24%;
   height: 100%;
   float: left;
   margin-left: 1.5%;
 }
 .small_chartarea{
-  background-color: #c8cbff;
+  background-color: #9499ea;
   width:24%;
   height: 100%;
   float: left;
@@ -40,6 +39,11 @@
   height: 100%;
   float: left;
   margin-left: 2%;
+}
+.chartarea div{
+  width:100%;
+  height: 100%;
+  float: left;
 }
 
 .container_button_left{
