@@ -77,3 +77,5 @@ https://www.finlab.tw/python-bokeh1-setup-and-first-impression/
 https://hahow.in/contents/articles/626a094dfc2cb700071ca212  
 7.Python 互動式圖表筆記(1) ploty  
 https://hackmd.io/@SeedFood/DjPloty1  
+8.Plotly Python web Framework Django
+https://www.youtube.com/watch?v=Fwbn1HMsyng
