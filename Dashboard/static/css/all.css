@@ -1,0 +1,76 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+  }
+  @media screen and (max-width: 1280px) {
+    .container {
+      width: 1000px;
+      height: 720px;
+      background-color: #f7a8a8b4;
+  /* 其他样式属性 */
+    }
+    .container_select{
+      width:4%;
+      height: 100%;
+      background-color: #8affb7b4;
+      overflow-y: scroll;
+      
+    }
+  }
+  @media screen and (max-width: 1920px) {
+    .container {
+      width: 1530px;
+      height: 720px;
+      background-color: #f0f0f0b4;
+    }
+    
+  }
+  
+::-webkit-scrollbar {
+    width: 10px; /* 设置滚动条宽度 */
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+  }
+  /* 设置滚动条滑块的背景色 */
+  ::-webkit-scrollbar-thumb {
+    background-color: #3fa6cf;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .container_top{
+    background-color: #ffdfdf;
+    height: 40%;
+    width: 93%;
+    margin: 0%;
+    padding: 0;
+    float: left;
+  }
+  .container_button{
+    background-color: #f5dfff;
+    height: 60%;
+    width: 93%;
+    margin: 0%;
+    padding: 0;
+    float: left;
+  }
+  .container_select{
+    width:7%;
+    height: 100%;
+    background-color: #000000b4;
+    float: left;
+  }
+  .container_select_small{
+
+    margin-left: 1%;
+  }
