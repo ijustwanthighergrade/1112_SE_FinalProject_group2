@@ -1,12 +1,21 @@
 .loginform{
-    width: 350px;
-    margin: 170px 440px;
+    top: 300px;
+    left: 49%;
+    width: 325px;
+    transform: translate(-50%, -50%);
+    position: fixed;
     background-color: gainsboro;
+    border-radius: 30% 30% 25% 25% ;
 }
 .logintitle{
-    background-color: rgb(127, 204, 255);
+    background-color: rgb(95, 202, 252);  
     text-align: center;
     padding: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    margin-top: 0px;
+    color: white;
+    font-size: 30px;
 }
 .loginfield{
     text-align: center;
@@ -15,6 +24,18 @@
     font-weight: bold;
 }
 .loginbutton{
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 50%;
+    border-style: dashed;
+    
+}
+.loginbutton2{
     margin-left: 0px;
     margin-top: 10px;
     margin-bottom: 3px;
@@ -23,9 +44,19 @@
     font-weight: bolder;
     border-radius: 45%;
     border-style: dashed;
-    
+    float: right;
 }
 .linktoregister{
     margin-top: 0px;
     font-size: 15px;
+    color: rgba(65, 65, 65, 0.521);
+    text-decoration: none;
+}
+
+.loginbutton:hover{
+    background-color: rgb(62, 189, 248);
+    transition: 0.2s;
+    color: white;
+    cursor:pointer;
+    border-color: white;
 }
