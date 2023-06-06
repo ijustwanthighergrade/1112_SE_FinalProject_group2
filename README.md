@@ -14,7 +14,8 @@
 tempelates裡面放的是html檔    
 css之類的檔案請丟到static    
 
-
+##如何引入header menu 在你的html下 ##
+{% include 'header.html' %}
 
 
 ##有關開始工作的步驟##      
@@ -24,7 +25,8 @@ css之類的檔案請丟到static
 4.回到專案資料夾 python manage.py runserver   
 5.工作完麻煩再次回去分工表打卡填寫今日進度與今日結束時間
 
-##如何引入static資料夾中的css/js/images##    
+##如何引入static資料夾中的css/js/images##   
+#這是python語法runserver才看得到 不要直接開！！！！！！！！！！！！！      
 1.在每個頁面的開頭都加上{% load static %}   
 2.css的部份請改成下列這種形式  
 ex:<link href="{% static "css/aaa.css" %}" rel="stylesheet">   
