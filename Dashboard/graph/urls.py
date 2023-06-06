@@ -3,8 +3,9 @@ from django.urls import path,include,re_path
 from graph import views
 from graph import views_seller
 import graph
-
+from .views_seller import ChartData
 urlpatterns = [
     path('seller_page/',views_seller.seller_page,name='seller_page'),
-    
+    path('api/data/', views_seller.get_data, name='api-data'),
+    path('api/chart/data/', ChartData.as_view(), name='data'),
 ]

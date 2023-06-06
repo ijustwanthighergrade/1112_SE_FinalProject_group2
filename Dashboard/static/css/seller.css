@@ -13,7 +13,7 @@
 .sellertable_container{
   width:100%;
   height: 100%;
-  background-color: #b15723b4;
+  background-color: #ffffffb4;
 }
 .seller_select,tr{
   background-color: #ffffff;
@@ -21,10 +21,10 @@
   border-bottom: #66ebff;
 }
 .chartarea{
-  width:24%;
+  width:26%;
   height: 100%;
   float: left;
-  margin-left: 1.5%;
+  background-color: #ffffff;
 }
 .small_chartarea{
   background-color: #9499ea;
@@ -38,12 +38,7 @@
   width:12%;
   height: 100%;
   float: left;
-  margin-left: 2%;
-}
-.chartarea div{
-  width:100%;
-  height: 100%;
-  float: left;
+  margin-left: 1%;
 }
 
 .container_button_left{
