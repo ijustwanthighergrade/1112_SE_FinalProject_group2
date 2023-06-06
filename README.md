@@ -26,7 +26,7 @@ css之類的檔案請丟到static
 5.工作完麻煩再次回去分工表打卡填寫今日進度與今日結束時間
 
 ##如何引入static資料夾中的css/js/images##   
-#這是python語法runserver才看得到 不要直接開！！！！！！！！！！！！！      
+#這是python語法runserver才看得到 不要直接開！！！！！！！！！！！！！   我很抱歉！！！！！   
 1.在每個頁面的開頭都加上{% load static %}   
 2.css的部份請改成下列這種形式  
 ex:<link href="{% static "css/aaa.css" %}" rel="stylesheet">   
