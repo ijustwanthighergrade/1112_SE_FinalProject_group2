@@ -79,3 +79,5 @@ https://hahow.in/contents/articles/626a094dfc2cb700071ca212
 https://hackmd.io/@SeedFood/DjPloty1  
 8.Plotly Python web Framework Django
 https://www.youtube.com/watch?v=Fwbn1HMsyng
+9.Django + Chart.js
+https://www.youtube.com/watch?v=B4Vmm3yZPgc

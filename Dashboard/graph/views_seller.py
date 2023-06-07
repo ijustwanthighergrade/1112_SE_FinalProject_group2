@@ -11,9 +11,6 @@ from django.contrib.auth import get_user_model
 User =get_user_model()
 
 def seller_page(request):
-    
-  
-    
     return render(request,"seller.html")
 
 def get_data(request, *args, **kwargs):

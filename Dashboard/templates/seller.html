@@ -13,12 +13,16 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="#" />
+    <script src="{% static 'js/seller_page/piechart.js' %}"></script>
+    <script src="{% static 'js/seller_page/piechart2.js' %}"></script>
+    <script src="{% static 'js/seller_page/lineChart1.js' %}"></script>
+    <script src="{% static 'js/seller_page/lineChart2.js' %}"></script>
 
-    <script src="{% static 'js/seller.js' %}"></script>
+    <script src="{% static 'js/seller_page/seller.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
 </head>
 <body>
-    {% comment %} {% include 'header.html' %} {% endcomment %}
+      {% include 'header.html' %}
     <div class="container">
         <div class="container_select ">
             <div class="container_table ">
@@ -222,10 +226,10 @@
                 <canvas id="myChart"></canvas>
             </div>
             <div class="chartarea ">
-
+                <canvas id="mypieChart"></canvas>
             </div>
             <div class="chartarea ">
-
+                <canvas id="mypieChart1"></canvas>
             </div>
         </div>
         <div class="container_button ">
@@ -250,11 +254,12 @@
             </div>
             <div class="container_button_right ">
                 <div class="container_button_right_divide ">
-    
+                     <canvas id="mylineChart"></canvas>
                 </div>
                 
                 <div class="container_button_right_divide ">
         
+                    <canvas id="mylineChart2"></canvas>
                 </div>
                 
                 
