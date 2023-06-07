@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第二組｜登入頁面</title>
-    <link rel="stylesheet" href="../static/css/login.css" />
+    <link href="{% static "css/login.css" %}" rel="stylesheet">
 </head>
 <body>
+    {% include 'header.html' %} 
     <div class="loginform">
         <h1 class="logintitle">店家登入</h1> 
         <div class="loginfield">
         帳號：<input type="text" required><br>
         密碼：<input type="password" required><br>
-        <button class="loginbutton">登入</button>
-        <br><a class="linktoregister" href="register.html">註冊店家</a>
+        <div><button class="loginbutton" >登入</button>
+        <button class="loginbutton" >註冊</button></div>
+        <!--以防萬一預留：<a class="linktoregister" href="register.html">註冊店家</a>-->
     </div>
     </div>
 </body>
