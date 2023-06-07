@@ -81,3 +81,5 @@ https://hackmd.io/@SeedFood/DjPloty1
 https://www.youtube.com/watch?v=Fwbn1HMsyng
 9.Django + Chart.js
 https://www.youtube.com/watch?v=B4Vmm3yZPgc
+10.Chart.js的yt
+https://www.youtube.com/@ChartJS-tutorials
