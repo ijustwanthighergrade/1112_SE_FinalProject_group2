@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link href="{% static "css/header.css" %}" rel="stylesheet">-->
+    <!--<link href="{% static "css/APPchart.css" %}" rel="stylesheet">-->
+    <link rel=stylesheet type="text/css" href="APPchart.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <title>app使用狀態儀錶板</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="A">
+        <table>
+            <tr class="B">
+                <td rowspan="12">篩選bar</td>
+                <td>客戶ID</td>
+                <td>客戶姓名</td>
+                <td>引介之客戶ID</td>
+                <td>引介之客戶姓名</td>
+                <td>引介日期</td>
+            </tr>
+            <tr class="B">
+                <td>c20231230456</td>
+                <td>客戶1</td>
+                <td>c20231230216</td>
+                <td>客戶2</td>
+                <td>12/30</td>
+            </tr>
+            <tr class="B">
+                <td>c20231230456</td>
+                <td>客戶1</td>
+                <td>c20231230651</td>
+                <td>客戶3</td>
+                <td>12/30</td>
+            </tr>
+            <tr class="C">
+                <td colspan="5" rowspan="0"><canvas id="myChart1" width="200" height="200"></canvas></td>
+            </tr>
+        </table></div>
+        <div class="A">
+            <table>
+                <tr class="B">
+                    <td rowspan="12">篩選bar</td>
+                    <td colspan="4"><canvas id="myChart2" width="200" height="200"></canvas></td>
+                    <td colspan="2"><canvas id="myChart4" width="200" height="200"></canvas></td>
+                    <td rowspan="0"><canvas id="myChart3" width="200" height="200"></canvas></td>
+                </tr>
+                <tr class="C">
+                    <td>日期</td>
+                    <td>按摩券編號</td>
+                    <td>紀錄</td>
+                    <td>關係人</td>
+                    <td>數量</td>
+                    <td>金額</td>
+                </tr>
+                <tr class="C">
+                    <td>日期</td>
+                    <td>按摩券編號</td>
+                    <td>紀錄</td>
+                    <td>關係人</td>
+                    <td>數量</td>
+                    <td>金額</td>
+                </tr>
+                <tr class="C">
+                    <td>日期</td>
+                    <td>按摩券編號</td>
+                    <td>紀錄</td>
+                    <td>關係人</td>
+                    <td>數量</td>
+                    <td>金額</td>
+                </tr>
+                <tr class="C">
+                    <td>日期</td>
+                    <td>按摩券編號</td>
+                    <td>紀錄</td>
+                    <td>關係人</td>
+                    <td>數量</td>
+                    <td>金額</td>
+                </tr>
+            </table>
+    </div>
+    <script>
+var ctx = document.getElementById('myChart1');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['一月', '二月', '三月'],
+    datasets: [{
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1,
+      label: '銷售業績(百萬)',
+      data: [60, 49, 72]
+    }]
+  }
+});
+
+var ctx2 = document.getElementById('myChart2');
+var myBarChart = new Chart(ctx2, {
+    type: "bar",
+    data: {
+    labels: ['一月', '二月', '三月','四月','五月','六月','七月'],
+  datasets: [{
+    axis: 'y',
+    label: 'My First Dataset',
+    data: [65, 59, 80, 81, 56, 55, 40],
+    fill: false,
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 205, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(201, 203, 207, 0.2)'
+    ],
+    borderColor: [
+      'rgb(255, 99, 132)',
+      'rgb(255, 159, 64)',
+      'rgb(255, 205, 86)',
+      'rgb(75, 192, 192)',
+      'rgb(54, 162, 235)',
+      'rgb(153, 102, 255)',
+      'rgb(201, 203, 207)'
+    ],
+    borderWidth: 1
+  }]
+},
+options: {
+    indexAxis: 'y',
+  }
+});
+
+var ctx3 = document.getElementById('myChart3');
+var myChart = new Chart(ctx3, {
+  type: 'bar',
+  data: {
+    labels: ['一月', '二月', '三月'],
+    datasets: [{
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1,
+      label: '銷售業績(百萬)',
+      data: [60, 49, 72]
+    }]
+  }
+});
+
+var ctx4 = document.getElementById('myChart4');
+var myPieChart = new Chart(ctx4, {
+    type: "pie",
+    data: {
+  labels: [
+    'Red',
+    'Blue'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)'
+    ],
+    hoverOffset: 4
+  }]
+}
+});
+    </script>
+</body>
+</html>
