@@ -15,12 +15,14 @@
     <link rel="shortcut icon" href="#" />
     <script src="{% static 'js/seller_page/piechart.js' %}"></script>
     <script src="{% static 'js/seller_page/piechart2.js' %}"></script>
+    <script src="{% static 'js/seller_page/lineChart1.js' %}"></script>
+    <script src="{% static 'js/seller_page/lineChart2.js' %}"></script>
 
     <script src="{% static 'js/seller_page/seller.js' %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
 </head>
 <body>
-    {% include 'header.html' %}
+     {% comment %} {% include 'header.html' %} {% endcomment %}
     <div class="container">
         <div class="container_select ">
             <div class="container_table ">
@@ -252,11 +254,12 @@
             </div>
             <div class="container_button_right ">
                 <div class="container_button_right_divide ">
-    
+                     <canvas id="mylineChart"></canvas>
                 </div>
                 
                 <div class="container_button_right_divide ">
         
+                    <canvas id="mylineChart2"></canvas>
                 </div>
                 
                 
