@@ -4,15 +4,22 @@
     background-color: rgb(255, 255, 255);
     margin: 6px 0;
 }
+
 .mainHeader{
 background-color: rgb(95, 202, 252);    
-height:75px;
-margin-top: -13px;
+height:85px;
+margin-top: -8px;
 margin-left: -10px;
 margin-right: -8px;
 padding: 5px;
-padding-top: 3px;
-padding-bottom: 10px;
+padding-top: 1px;
+margin-bottom: 20px;
+vertical-align: auto;
+position: sticky;
+}
+
+.headercontent{
+  height: fit-content;
 }
 
 .logouticon{
@@ -23,13 +30,15 @@ padding-bottom: 10px;
   padding: 1px;
   border-radius: 100%;
   position: absolute;
-  top: 480px;
-  right: 35px;
+  top: 500px;
+  right: 40px;
 }
 
 .logouticon:hover{
-top: 476px;
-right: 31px;
+  width: 50px;
+  height: 50px;
+top: 502px;
+right: 38px;
 float: right;
 background-color: white;
 padding: 4px;
@@ -42,17 +51,19 @@ cursor: pointer;
   font-weight: bold;
   text-align: center;
   color: white;
-  font-size: 20px;
-  padding-right:65px;
-  
+  font-size: 21px;
+  padding-right:50px;
+  padding-top: 20px;
+  margin-bottom: 10px;
 }
 
 .indexmenu{
-margin-top: 4px;
+padding-top: 10px;
 font-size:30px;
 cursor:pointer;
 float: left;
 margin-left: 20px;
+margin-top: 20px;
 }
 
 .overlay {
