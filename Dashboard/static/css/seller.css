@@ -16,9 +16,9 @@
   background-color: #ffffffb4;
 }
 .seller_select,tr{
-  background-color: #c3daff;
+  background-color: #f0f8ff;
   height: 50px;
-  border-bottom: #66ebff;
+  border: 2px solid rgb(255, 255, 255);
 }
 .chartarea{
   width:16%;
@@ -28,8 +28,8 @@
   overflow-y: scroll;
 }
 .small_chartarea{
-  background-color: #9499ea;
-  width:23%;
+  background-color: #ffffff;
+  width:24%;
   height: 100%;
   float: left;
   margin-left: 1%;
@@ -44,7 +44,6 @@
 
 .container_button_left{
   
-  background-color: #b15723b4;
   width:50%;
   height: 100%;
   float: left;
@@ -58,7 +57,7 @@
   float: left;
 }
 .container_button_inside{
-  background-color: #f5dfff;
+  background-color: #ffffff;
   height: 50%;
   width: 100%;
   margin: 0%;
@@ -67,7 +66,7 @@
 }
 .container_top_inside{
 
-  background-color: #ffdfdf;
+  background-color: #ffffff;
   height: 50%;
   width: 100%;
   margin: 0%;
@@ -75,7 +74,6 @@
   float: left;
 }
 .container_button_right_divide{
-  background-color: #ffb2b2;
   height: 100%;
   width: 50%;
   margin: 0%;
@@ -99,6 +97,87 @@
   width: 35%;
   height: 100%;
   float: left;
-  background-color: #a7ff1a;
+  background-color: #ffffff;
 
+}
+
+/* radio button */
+input[type="radio"] {
+  display: none;
+}
+
+/* 自訂 Radio Button 的外觀 */
+.radio-button {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 創建 Radio Button 的外觀 */
+.radio-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* calendar */
+.calendar{
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+
+}
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+  text-align: center;
+  padding: 0px;
+  border: 1px solid #ccc;
+  width: 10px; /* 调整日期框的宽度 */
+  height: 10px; /* 调整日期框的高度 */
+  font-size: 10px; /* 调整日期框的字体大小 */
+
+}
+
+.calendar-table td {
+  cursor: pointer;
+}
+
+.today {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.backend-date {
+  background-color: #ffc107;
+  color: #333;
 }

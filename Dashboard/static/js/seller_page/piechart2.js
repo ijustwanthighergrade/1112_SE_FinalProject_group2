@@ -42,14 +42,6 @@ function setpieChart1(){
                 borderWidth: 1
             }]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
+        options: options
     });
 }
