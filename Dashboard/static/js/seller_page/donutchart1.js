@@ -8,16 +8,16 @@ $.ajax({
         
         labels = data.labels
         defaultData = data.default    
-        setlineChart();
+        setdonutChart();
     },
     error: function(error_data){
         console.log('error'); 
     }
 })
-function setlineChart(){
-    var ctx = document.getElementById("mylineChart"); 
-    var mylineChart = new Chart(ctx, {
-        type: 'line',
+function setdonutChart(){
+    var ctx = document.getElementById("myChart1"); 
+    var myChart1 = new Chart(ctx, {
+        type: 'doughnut',
         data: {
             labels: labels, // 這裡
             datasets: [{
@@ -49,8 +49,24 @@ function setlineChart(){
                         fontSize:allfontsize ,
                         beginAtZero:true
                     }
+                    ,legend: {
+                        usePointStyle: true, // 使用点样式来表示标签的颜色框
+                        pointStyle: 'circle', // 将点的样式设置为圆形
+                        pointRadius: 6, // 设置标签框的半径
+                        pointHoverRadius: 8, // 设置鼠标悬停时标签框的半径
+                        display: true,
+                        position: 'top',
+                        align: 'end',
+                        labels: {
+                          fontColor: '#333',
+                          fontSize: 12,
+                          boxWidth: 12,
+                          padding: 10
+                        }
+                      }
                 }]
-            }
+            },
+            
         }
     });
 }

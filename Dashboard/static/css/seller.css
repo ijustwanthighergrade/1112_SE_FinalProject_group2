@@ -1,6 +1,6 @@
 .container_table{
   width:100%;
-  height: 80%;
+  height: 100%;
   overflow-y: scroll;
 }
 .seller_select{
@@ -21,30 +21,29 @@
   border-bottom: #66ebff;
 }
 .chartarea{
-  width:26%;
+  width:16%;
   height: 100%;
   float: left;
   background-color: #ffffff;
 }
 .small_chartarea{
   background-color: #9499ea;
-  width:24%;
+  width:23%;
   height: 100%;
   float: left;
   margin-left: 1%;
 }
 .cardarea{
   background-color: #b15723b4;
-  width:12%;
+  width:11.5%;
   height: 100%;
   float: left;
-  margin-left: 1%;
 }
 
 .container_button_left{
   
   background-color: #b15723b4;
-  width:60%;
+  width:50%;
   height: 100%;
   float: left;
 }
@@ -52,13 +51,13 @@
 .container_button_right{
   
   background-color: #d1b9abb4;
-  width:40%;
+  width:50%;
   height: 100%;
   float: left;
 }
 .container_button_inside{
   background-color: #f5dfff;
-  height: 60%;
+  height: 50%;
   width: 100%;
   margin: 0%;
   padding: 0;
@@ -67,18 +66,37 @@
 .container_top_inside{
 
   background-color: #ffdfdf;
-  height: 40%;
+  height: 50%;
   width: 100%;
   margin: 0%;
   padding: 0;
   float: left;
 }
 .container_button_right_divide{
-  background-color: #ffffff;
-  height: 50%;
-  width: 100%;
+  background-color: #ffb2b2;
+  height: 100%;
+  width: 50%;
   margin: 0%;
   padding: 0;
   float: left;
+
+}
+.mylineChart_text{
+  width: 5%;
+  height: 100%;
+  float: left;
+  background-color: #d29b9b;
+}
+.mylineChart_chart{
+  width: 90%;
+  height: 100%;
+  float: left;
+  margin-left: 5%;
+}
+.stacked_barchart_area{
+  width: 35%;
+  height: 100%;
+  float: left;
+  background-color: #a7ff1a;
 
 }

@@ -3,10 +3,10 @@ html,body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
+    overflow: hidden;
   }
   @media screen and (max-width: 1280px) {
-    .container {
+    .seller_container {
       width: 1000px;
       height: 720px;
       background-color: #ffffff;
@@ -21,10 +21,10 @@ html,body {
     }
   }
   @media screen and (max-width: 1920px) {
-    .container {
+    .seller_container {
       width: 1530px;
-      height: 720px;
-      background-color: #f0f0f0b4;
+      height: 658px;
+      background-color: black;
     }
     
   }
@@ -51,7 +51,7 @@ html,body {
   .container_top{
     background-color: #ffdfdf;
     height: 40%;
-    width: 93%;
+    width: 95%;
     margin: 0%;
     padding: 0;
     float: left;
@@ -59,18 +59,17 @@ html,body {
   .container_button{
     background-color: #f5dfff;
     height: 60%;
-    width: 93%;
+    width: 95%;
     margin: 0%;
     padding: 0;
     float: left;
   }
   .container_select{
-    width:7%;
+    width:5%;
     height: 100%;
     background-color: #000000b4;
     float: left;
   }
   .container_select_small{
 
-    margin-left: 1%;
   }

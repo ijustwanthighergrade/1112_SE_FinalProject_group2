@@ -1,6 +1,7 @@
 var endpoint = '../api/chart/data/'
 var defaultData=[]
 var labels=[]
+var allfontsize=12;
 $.ajax({
     method: 'GET',
     url: endpoint,
@@ -46,6 +47,7 @@ function setlineChart2(){
             scales: {
                 yAxes: [{
                     ticks: {
+                        fontSize:allfontsize ,
                         beginAtZero:true
                     }
                 }]

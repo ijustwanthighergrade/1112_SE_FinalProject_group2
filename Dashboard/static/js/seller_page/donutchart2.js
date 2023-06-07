@@ -8,16 +8,16 @@ $.ajax({
         
         labels = data.labels
         defaultData = data.default    
-        setlineChart();
+        setChart();
     },
     error: function(error_data){
         console.log('error'); 
     }
 })
-function setlineChart(){
-    var ctx = document.getElementById("mylineChart"); 
-    var mylineChart = new Chart(ctx, {
-        type: 'line',
+function setChart(){
+    var ctx = document.getElementById("myChart"); 
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
         data: {
             labels: labels, // 這裡
             datasets: [{
@@ -46,7 +46,6 @@ function setlineChart(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        fontSize:allfontsize ,
                         beginAtZero:true
                     }
                 }]
