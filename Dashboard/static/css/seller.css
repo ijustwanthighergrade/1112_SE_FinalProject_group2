@@ -16,7 +16,7 @@
   background-color: #ffffffb4;
 }
 .seller_select,tr{
-  background-color: #ffffff;
+  background-color: #c3daff;
   height: 50px;
   border-bottom: #66ebff;
 }
@@ -25,6 +25,7 @@
   height: 100%;
   float: left;
   background-color: #ffffff;
+  overflow-y: scroll;
 }
 .small_chartarea{
   background-color: #9499ea;
@@ -32,6 +33,7 @@
   height: 100%;
   float: left;
   margin-left: 1%;
+  overflow-y: scroll;
 }
 .cardarea{
   background-color: #b15723b4;

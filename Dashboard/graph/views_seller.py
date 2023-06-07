@@ -28,8 +28,8 @@ class ChartData(APIView):
 
     def get(self, request, format=None):
         qs_count=User.objects.all().count()
-        defaultdata = [qs_count, 52, 2, 3, 4, 5, 4, 5, 4, 5, 4, 5]
-        labels = ["Users","Red", "Blue", "Yellow", "Green", "Purple", "Green", "Purple", "Green", "Purple", "Green", "Purple"]
+        defaultdata = [qs_count, 52, 2, 3, 4, 5, 4, 5]
+        labels = ["Users","Red", "Blue", "Yellow", "Green", "Purple", "Green", "Purple"]
         content = {
             'default': defaultdata,
             'labels': labels,

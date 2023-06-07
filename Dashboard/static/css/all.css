@@ -4,6 +4,7 @@ html,body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-size: 12px;
   }
   @media screen and (max-width: 1280px) {
     .seller_container {
@@ -22,9 +23,11 @@ html,body {
   }
   @media screen and (max-width: 1920px) {
     .seller_container {
+      margin: 0 auto;
       width: 1530px;
-      height: 658px;
-      background-color: black;
+      height: 620px;
+      background-color: rgb(255, 255, 255);
+
     }
     
   }
@@ -37,7 +40,7 @@ html,body {
   }
   /* 设置滚动条滑块的背景色 */
   ::-webkit-scrollbar-thumb {
-    background-color: #3fa6cf;
+    background-color: #56c4f0;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -67,7 +70,7 @@ html,body {
   .container_select{
     width:5%;
     height: 100%;
-    background-color: #000000b4;
+    background-color: rgb(255, 255, 255);
     float: left;
   }
   .container_select_small{
