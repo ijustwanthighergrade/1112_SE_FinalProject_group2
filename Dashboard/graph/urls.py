@@ -13,6 +13,6 @@ urlpatterns = [
     # path('api/data/', views_seller.get_data, name='api-data'),
     path('api/chart/data/', ChartData.as_view(), name='data'),
     path('achievment_page/',views_achievement.achv_page,name='achievment_page'),
-    path('client/',views_client.client,name='client')
+    path('client/',views_client.client,name='client'),
 ]
 
