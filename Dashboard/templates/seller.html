@@ -9,10 +9,16 @@
     <link href="{% static "css/seller.css" %}" rel="stylesheet">   
     <link href="{% static "css/all.css" %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-3dZ9wIrMMij8rOH7X3kLfXAzwtcHpuYpEgQg1OA4QAob1e81H8ntUQmQm3pBudqIoySO5j0tHN4ENzA6+n2r4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   {% endcomment %}
     <link rel="shortcut icon" href="#" />
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script> {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> {% endcomment %}
     <script src="{% static 'js/seller_page/piechart.js' %}"></script>
     <script src="{% static 'js/seller_page/piechart2.js' %}"></script>
     <script src="{% static 'js/seller_page/lineChart1.js' %}"></script>
@@ -25,7 +31,6 @@
     <script src="{% static 'js/seller_page/barchart.js' %}"></script>
     <script src="{% static 'js/seller_page/calender.js' %}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
 </head>
 <body>
       {% include 'header.html' %}
@@ -69,9 +74,12 @@
             </div>
         </div>
         <div class="container_top ">
-            <div class="cardarea ">
+            {% comment %} <div class="cardarea ">
+                <div class="cardarea_text ">
+                    客戶資料蒐集完成度
+                </div>
 
-            </div>
+            </div> {% endcomment %}
             <div class="container_select container_select_small">
                 <div class="container_table ">
                     <table class="seller_select">
@@ -88,21 +96,17 @@
             <div class="chartarea " id="myDiv">
                 <canvas id="myChart"></canvas>
             </div>
-            <div class="cardarea ">
-
-            </div>
             <div class="chartarea ">
                 <canvas id="mypieChart"></canvas>
-            </div>
-            <div class="cardarea ">
-
             </div>
             <div class="chartarea ">
                 <canvas id="mypieChart1"></canvas>
             </div>
             <div class="cardarea ">
-
-            </div>
+                <div class="cardarea_text ">
+                    客戶資料蒐集完成度
+                </div>
+            </div> 
             <div class="stacked_barchart_area ">
                 <canvas id="mybarChart"></canvas>
             </div>
@@ -112,9 +116,12 @@
                 <div class="container_button_inside">
                     
                 <div class="container_button_right_divide ">
-                    <div class="mylineChart_text">
-                        折現圖
-                    </div> 
+                    <div class="mylineChart_text"> 
+
+                        <div class="cardarea_text ">
+                            客戶資料蒐集完成度
+                        </div>
+                    </div>  
 
                     <div class="mylineChart_chart">
                         <canvas id="mylineChart"></canvas>
@@ -123,9 +130,11 @@
                 </div>
                 
                 <div class="container_button_right_divide ">
-                    <div class="mylineChart_text">
-                        折現圖
-                    </div> 
+                     <div class="mylineChart_text">
+                        <div class="cardarea_text ">
+                            客戶資料蒐集完成度
+                        </div>
+                    </div>  
                     <div class="mylineChart_chart">
                         <canvas id="mylineChart2"></canvas>
                     </div>
@@ -137,6 +146,11 @@
                     <div class="small_chartarea ">
                         <canvas id="myChart1"></canvas>
                     </div>
+                    {% comment %} <div class="mydonutChart_text"> 
+                        <div class="cardarea_text ">
+                            第二階段成敗率
+                        </div>
+                    </div>  {% endcomment %}
                     <div class="small_chartarea ">
                         <canvas id="myChart2"></canvas>
                     </div>
@@ -149,10 +163,12 @@
                 </div>
             </div>
             <div class="container_button_right ">
-                <div class="container_button_right_cardarea ">
-    
-                </div>
-
+                
+                <div class="calander_text">
+                    <div class="cardarea_text ">
+                        客戶資料蒐集完成度
+                    </div>
+                </div>  
                 <div class="calendar">
                     <div id="calendar">
                         <div class="calendar-header">
@@ -206,11 +222,18 @@
                 <div class="title_cardarea">
                     <div class="top_cardarea">
                         <div class="title_cardarea_text">
-                            業務
+                            業務分析
                         </div>
                     </div>
                     <div class="top_cardarea">
-                    
+                        <div class="title_cardarea_text">
+                            業務分析
+                        </div>
+                    </div>
+                    <div class="top_cardarea">
+                        <div class="title_cardarea_text">
+                            業務分析
+                        </div>
                     </div>
                 </div>
                 

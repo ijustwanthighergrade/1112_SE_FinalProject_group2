@@ -50,6 +50,12 @@ function setlineChart(){
                         beginAtZero:true
                     }
                 }]
+            },
+            title:{
+                display: true,
+                text:"第一階段",
+                position:'left',
+                align:'top'
             }
         }
     });

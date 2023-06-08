@@ -26,7 +26,13 @@ options={
                   boxWidth: 8,
                   padding: 4
                 }
-              }
+        },
+        title:{
+            display: true,
+            text:"第一階段",
+            position:'top',
+            align:'top'
+        }
     }
 }
 $.ajax({
