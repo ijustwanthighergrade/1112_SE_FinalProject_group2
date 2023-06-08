@@ -17,7 +17,7 @@ urlpatterns = [
     path('achievment_page/',views_achievement.achv_page,name='achievment_page'),
     path('chair/',views_chair.chair,name='chair'),
     path('client/',views_client.client,name='client'),
-    path('APPchart/',views_app.APPchart,name='APPchart')
+    path('appchart/',views_app.appchart,name='appchart')
 
 ]
 

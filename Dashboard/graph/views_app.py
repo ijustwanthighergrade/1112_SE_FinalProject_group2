@@ -3,5 +3,5 @@ import base64
 from io import BytesIO
 from django.shortcuts import render
 
-def APPchart(request):
+def appchart(request):
  return render(request,"APPchart.html")
