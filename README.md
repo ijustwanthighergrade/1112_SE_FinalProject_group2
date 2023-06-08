@@ -17,6 +17,10 @@ css之類的檔案請丟到static
 ##如何引入header menu 在你的html下 ##
 {% include 'header.html' %}
 
+## 如果有人動了資料庫下次pull之後請跑 ##
+python manage.py makemigrations
+python manage.py migrate
+
 
 ##有關開始工作的步驟##      
 1.去分工表裡打卡  https://docs.google.com/spreadsheets/d/1JDqaZxA5yfKWBMawifZT-NTpyHjTJcQqw2t_Ifw9OJg/edit#gid=1293430266  
