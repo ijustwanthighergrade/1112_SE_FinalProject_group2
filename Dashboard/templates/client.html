@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>client</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <script src="{% static 'js/client_page/client1.js' %}"></script>
+    <script src="{% static 'js/client_page/client2.js' %}"></script>
+    <script src="{% static 'js/client_page/client3.js' %}"></script>
+    <script src="{% static 'js/client_page/client4.js' %}"></script>
+
+</head>
+
+<body>
+    {% include 'header.html' %}
+    <table style="width: 800px; border: 1px black double;">
+        <tr>
+            <td rowspan="3" style="border: 1px black double;">
+                <table>
+                    <tr><td style="border: 1px black double;">按摩椅編號</td></tr>
+                    <tr><td style="border: 1px black double;">001</td></tr>
+                    <tr><td style="border: 1px black double;">002</td></tr>
+                    <tr><td style="border: 1px black double;">003</td></tr>
+                    <tr><td style="border: 1px black double;">004</td></tr>
+                </table>
+            </td>
+            <td rowspan="2"> <canvas id="myChart" width="400" height="400"></canvas></td>
+            <td colspan="2">
+                <table style="border: 1px black double;">
+                    <tr><td>客戶</td><td>日期</td><td>回饋內容</td></tr> 
+                    <tr><td>001</td><td>6/20</td><td>爽</td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">月使用次數 <canvas id="my3"></canvas></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2"> 回顧<canvas id="my2"></canvas></td>
+            <td>圓餅圖<canvas id="my4"></canvas></td>
+        </tr>
+    </table>
+    
+</body>
+
+</html>
