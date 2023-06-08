@@ -244,7 +244,7 @@ class need (models.Model):
         ]
 
 #排班資料表
-class feedback (models.Model):
+class arrange (models.Model):
     Ab_ID=models.OneToOneField(Sp,on_delete=models.CASCADE,null=False,primary_key=True)    
     Ab_DATE=models.DateTimeField('排班日期',null=False,default=timezone.now)
     Ab_STIME=models.DateTimeField('排班開始時間',null=False)

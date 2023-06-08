@@ -1,6 +1,34 @@
 var endpoint = '../api/chart/data/'
 var defaultData=[]
 var labels=[]
+options={
+    scales: {
+        yAxes: [{
+            ticks: {
+                fontSize:allfontsize ,
+                beginAtZero:true
+            }
+            ,
+        }]
+    },
+    plugins:{
+        legend: {
+                usePointStyle: true, // 使用点样式来表示标签的颜色框
+                pointStyle: 'circle', // 将点的样式设置为圆形
+                pointRadius: 6, // 设置标签框的半径
+                pointHoverRadius: 8, // 设置鼠标悬停时标签框的半径
+                display: true,
+                position: 'top',
+                align: 'end',
+                labels: {
+                  fontColor: '#333',
+                  fontSize: 5,
+                  boxWidth: 8,
+                  padding: 4
+                }
+              }
+    }
+}
 $.ajax({
     method: 'GET',
     url: endpoint,
@@ -42,31 +70,6 @@ function setdonutChart(){
                 borderWidth: 1
             }]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        fontSize:allfontsize ,
-                        beginAtZero:true
-                    }
-                    ,legend: {
-                        usePointStyle: true, // 使用点样式来表示标签的颜色框
-                        pointStyle: 'circle', // 将点的样式设置为圆形
-                        pointRadius: 6, // 设置标签框的半径
-                        pointHoverRadius: 8, // 设置鼠标悬停时标签框的半径
-                        display: true,
-                        position: 'top',
-                        align: 'end',
-                        labels: {
-                          fontColor: '#333',
-                          fontSize: 12,
-                          boxWidth: 12,
-                          padding: 10
-                        }
-                      }
-                }]
-            },
-            
-        }
+        options: options
     });
 }

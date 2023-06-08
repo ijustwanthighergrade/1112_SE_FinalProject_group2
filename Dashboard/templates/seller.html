@@ -22,6 +22,8 @@
     <script src="{% static 'js/seller_page/donutchart2.js' %}"></script>
     <script src="{% static 'js/seller_page/donutchart3.js' %}"></script>
     <script src="{% static 'js/seller_page/donutchart4.js' %}"></script>
+    <script src="{% static 'js/seller_page/barchart.js' %}"></script>
+    <script src="{% static 'js/seller_page/calender.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
 </head>
@@ -61,119 +63,15 @@
                 <tr>
                 <td>Row 3</td>
                 </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
-                </tr>
-                <tr>
-                <td>Row 3</td>
                 </tr>
               </table>
         
             </div>
         </div>
         <div class="container_top ">
+            <div class="cardarea ">
+
+            </div>
             <div class="container_select container_select_small">
                 <div class="container_table ">
                     <table class="seller_select">
@@ -183,60 +81,30 @@
                             <tr>
                             <td>Row 2</td>
                             </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
-                            <td>Row 3</td>
-                            </tr>
-                            <tr>
+                        </tr>
                     </table>
                 </div>
             </div>
             <div class="chartarea " id="myDiv">
                 <canvas id="myChart"></canvas>
             </div>
+            <div class="cardarea ">
+
+            </div>
             <div class="chartarea ">
                 <canvas id="mypieChart"></canvas>
+            </div>
+            <div class="cardarea ">
+
             </div>
             <div class="chartarea ">
                 <canvas id="mypieChart1"></canvas>
             </div>
-            <div class="stacked_barchart_area ">
-                
-            </div>
             <div class="cardarea ">
 
+            </div>
+            <div class="stacked_barchart_area ">
+                <canvas id="mybarChart"></canvas>
             </div>
         </div>
         <div class="container_button ">
@@ -266,23 +134,85 @@
                 </div>
                 <div class="container_top_inside ">
                     
-                <div class="small_chartarea ">
-                    <canvas id="myChart1"></canvas>
-                </div>
-                <div class="small_chartarea ">
-                    <canvas id="myChart2"></canvas>
-                </div>
-                <div class="small_chartarea ">
-                    <canvas id="myChart3"></canvas>
-                </div>
-                <div class="small_chartarea ">
-                    <canvas id="myChart4"></canvas>
-                </div>
+                    <div class="small_chartarea ">
+                        <canvas id="myChart1"></canvas>
+                    </div>
+                    <div class="small_chartarea ">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                    <div class="small_chartarea ">
+                        <canvas id="myChart3"></canvas>
+                    </div>
+                    <div class="small_chartarea ">
+                        <canvas id="myChart4"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="container_button_right ">
-                
-                
+                <div class="container_button_right_cardarea ">
+    
+                </div>
+
+                <div class="calendar">
+                    <div id="calendar">
+                        <div class="calendar-header">
+                          <button id="prev-month">&lt;</button>
+                          <span id="current-month"></span>
+                          <button id="next-month">&gt;</button>
+                        </div>
+                        <table class="calendar-table">
+                          <thead>
+                            <tr>
+                              <th>日</th>
+                              <th>一</th>
+                              <th>二</th>
+                              <th>三</th>
+                              <th>四</th>
+                              <th>五</th>
+                              <th>六</th>
+                            </tr>
+                          </thead>
+                          <tbody id="calendar-body">
+                            <!-- 使用JavaScript生成日期行 -->
+                          </tbody>
+                        </table>
+                      </div>
+
+                        
+                        <!-- 弹出框 -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">日期</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body" id="modal-content">
+                                    誰值班
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+  
+                      
+                      
+                </div>
+                  
+                <div class="title_cardarea">
+                    <div class="top_cardarea">
+                        <div class="title_cardarea_text">
+                            業務
+                        </div>
+                    </div>
+                    <div class="top_cardarea">
+                    
+                    </div>
+                </div>
                 
             </div>
         </div>

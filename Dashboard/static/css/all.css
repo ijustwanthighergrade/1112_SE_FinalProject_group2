@@ -4,6 +4,7 @@ html,body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-size: 12px;
   }
   @media screen and (max-width: 1280px) {
     .seller_container {
@@ -15,16 +16,18 @@ html,body {
     .container_select{
       width:4%;
       height: 100%;
-      background-color: #8affb7b4;
+      background-color: #ffffff;
       overflow-y: scroll;
       
     }
   }
   @media screen and (max-width: 1920px) {
     .seller_container {
-      width: 1530px;
-      height: 658px;
-      background-color: black;
+      margin: 0 auto;
+      width: 1500px;
+      height: 620px;
+      background-color: rgb(255, 255, 255);
+
     }
     
   }
@@ -33,11 +36,11 @@ html,body {
     width: 10px; /* 设置滚动条宽度 */
   }
   ::-webkit-scrollbar-track {
-    background-color: #F5F5F5;
+    background-color: #ffffff;
   }
   /* 设置滚动条滑块的背景色 */
   ::-webkit-scrollbar-thumb {
-    background-color: #3fa6cf;
+    background-color: #56c4f0;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -45,11 +48,11 @@ html,body {
   
   
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+    background-color: rgb(4, 0, 86);
   }
   
   .container_top{
-    background-color: #ffdfdf;
+    background-color: #ffffff;
     height: 40%;
     width: 95%;
     margin: 0%;
@@ -57,7 +60,7 @@ html,body {
     float: left;
   }
   .container_button{
-    background-color: #f5dfff;
+    background-color: #ffffff;
     height: 60%;
     width: 95%;
     margin: 0%;
@@ -67,7 +70,7 @@ html,body {
   .container_select{
     width:5%;
     height: 100%;
-    background-color: #000000b4;
+    background-color: rgb(255, 255, 255);
     float: left;
   }
   .container_select_small{

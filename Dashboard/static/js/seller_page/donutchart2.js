@@ -8,15 +8,15 @@ $.ajax({
         
         labels = data.labels
         defaultData = data.default    
-        setChart();
+        setdonutChart2();
     },
     error: function(error_data){
         console.log('error'); 
     }
 })
-function setChart(){
-    var ctx = document.getElementById("myChart"); 
-    var myChart = new Chart(ctx, {
+function setdonutChart2(){
+    var ctx = document.getElementById("myChart2"); 
+    var myChart2 = new Chart(ctx, {
         type: 'doughnut',
         data: {
             labels: labels, // 這裡
@@ -42,14 +42,6 @@ function setChart(){
                 borderWidth: 1
             }]
         },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
-        }
+        options: options
     });
 }
