@@ -15,7 +15,7 @@ function createChart2() {
                 ],
                 borderWidth: 1
             },{
-                label: '# of Votes',
+                label: '# of ',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
                     'rgba(194, 252, 2, 0.2)'
@@ -26,15 +26,14 @@ function createChart2() {
                 borderWidth: 1
             }]
         },
-        options: {  indexAxis: 'y',
+        options: {
+            indexAxis: 'y',
             scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
+                y: {
+                  beginAtZero: true
+                }
+              }
+          }
     });
 }
 

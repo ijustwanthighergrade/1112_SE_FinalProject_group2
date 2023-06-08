@@ -27,13 +27,9 @@ function createChart() {
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
+            
+                indexAxis: 'y',
+              
         }
     });
 }

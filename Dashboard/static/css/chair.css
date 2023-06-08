@@ -18,3 +18,8 @@ text-align: center;
 .text2{
     font-size: 20px;
 }
+
+.quantity{
+  font-size: 20px;
+  border: 1px double black;
+}

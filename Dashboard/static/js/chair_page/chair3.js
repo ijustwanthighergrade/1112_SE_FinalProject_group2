@@ -26,14 +26,8 @@ function createChart3() {
                 borderWidth: 1
             }]
         },
-        options: {  indexAxis: 'y',
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
+        options: {  
+            indexAxis: 'y',
         }
     });
 }
