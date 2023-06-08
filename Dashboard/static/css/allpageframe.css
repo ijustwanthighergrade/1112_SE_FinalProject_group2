@@ -26,7 +26,7 @@ html,body {
       margin: 0 auto;
       width: 1450px;
       height: 600px;
-      background-color: rgb(138, 90, 90);
+      background-color: rgb(149, 110, 110);
 
     }
     
@@ -51,28 +51,3 @@ html,body {
     background-color: rgb(4, 0, 86);
   }
   
-  .container_top{
-    background-color: #ffffff;
-    height: 40%;
-    width: 95%;
-    margin: 0%;
-    padding: 0;
-    float: left;
-  }
-  .container_button{
-    background-color: #ffffff;
-    height: 60%;
-    width: 95%;
-    margin: 0%;
-    padding: 0;
-    float: left;
-  }
-  .container_select{
-    width:5%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-    float: left;
-  }
-  .container_select_small{
-
-  }
