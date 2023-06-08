@@ -16,6 +16,10 @@ var myPieChart = new Chart(ctx4, {
     ],
     hoverOffset: 4
   }]
+},
+options:{
+  rotation: -90,
+  circumference: 180,
 }
 });}
 window.addEventListener('load', createChart);
