@@ -3,7 +3,7 @@ function createChart() {
 var myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['一月', '二月', '三月'],
+    labels: ['c20231230456', 'c20231230456', 'c20231230456'],
     datasets: [{
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',

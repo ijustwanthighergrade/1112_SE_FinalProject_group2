@@ -3,7 +3,7 @@ var ctx2 = document.getElementById('myChart2');
 var myBarChart = new Chart(ctx2, {
     type: "bar",
     data: {
-    labels: ['一月', '二月', '三月','四月','五月','六月','七月'],
+    labels: ['第一週', '第一週', '第一週','第一週','第一週','第一週','第一週'],
   datasets: [{
     axis: 'y',
     label: 'My First Dataset',
