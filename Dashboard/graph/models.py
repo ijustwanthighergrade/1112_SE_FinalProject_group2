@@ -28,7 +28,7 @@ class Sp (models.Model):
 
 #產品基本資料表
 class product (models.Model):
-    product_id=models.CharField('產品id P+001',max_length=4,null=False,primary_key=True)
+    product_id=models.CharField('產品id P+001',max_length=4,null=True,primary_key=True)
     product_name=models.CharField('產品名',max_length=512,null=False)
     product_price=models.IntegerField('單價',null=False)
     product_status=models.IntegerField('上/下架 1/0',null=False,default=1)
