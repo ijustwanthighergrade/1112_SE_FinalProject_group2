@@ -8,6 +8,7 @@ $.ajax({
         
         labels = data.labels
         defaultData = data.default    
+        setoptions("客戶資料蒐集完成度")  
         setChart();
     },
     error: function(error_data){
