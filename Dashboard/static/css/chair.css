@@ -1,0 +1,21 @@
+@media screen and (max-width: 1920px) {
+    .seller_container {
+      background-color: rgb(203, 186, 186);
+      text-align: center;
+      height: 650px;
+    }
+    
+  }
+
+.table1{
+text-align: center;
+}
+
+.text1{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.text2{
+    font-size: 20px;
+}
