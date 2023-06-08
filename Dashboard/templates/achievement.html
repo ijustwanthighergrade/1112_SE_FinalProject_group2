@@ -5,19 +5,324 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static "css/achievment.css" %}" rel="stylesheet">   
-    <link href="{% static "css/all.css" %}" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{% static 'js/achievment_page/barchart.js' %}"></script>
+    <link href="{% static "css/achievment.css" %}" rel="stylesheet"> 
+    <!--<link href="{% static "css/all.css" %}" rel="stylesheet">-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+
     <title>Achievmnet and Sales Analysis</title>
 </head>
 <body>
+    {% load static %}
     {% include 'header.html' %}
-    <div class="container">
+    <table class="month" style=" background-color: #f3ebc2">
+        <tr>
+            <td>月份</td>
+        </tr>
+        <tr>
+            <td>一月</td>
+        </tr>
+        <tr>
+            <td>二月</td>
+        </tr>
+        <tr>
+            <td>三月</td>
+        </tr>
+        <tr>
+            <td>四月</td>
+        </tr>
+        <tr>
+            <td>五月</td>
+        </tr>
+        <tr>
+            <td>六月</td>
+        </tr>
+        <tr>
+            <td>七月</td>
+        </tr>
+        <tr>
+            <td>八月</td>
+        </tr>
+        <tr>
+            <td>九月</td>
+        </tr>
+        <tr>
+            <td>十月</td>
+        </tr>
+        <tr>
+            <td>十一月</td>
+        </tr>
+    </table>
+    <div class="announcement" style="background-color: #f3ebc2">
+        <p>
+        公告
+        </p>
+        2023/12/12<br>
+        訊息：我肚子好餓<br>
+
+        2023/12/13<br>
+        訊息：晚餐要吃什麼<br>
+    </div>
+
     connect succes
     fuck this shit im out
-    <canvas id="myChart" width="800" height="600">
+    <p>
+        個別產品業績排行榜
+    </p>
+    <canvas id="barChart1" width="400" height="400">
     </canvas>
-    </div>
+    <p>
+        產品類型銷售狀況
+    </p>
+    <canvas id="barChart2" width="400" height="400">
+    </canvas>
+    <p>
+        成本花費表
+    </p>    
+    <canvas id="pieChart1" width="400" height="400">
+    </canvas>
+    <p>
+        顧客成分分析表（業務員）
+    </p>
+    <canvas id="pieChart2" width="400" height="400">
+    </canvas>
+
+
+    <script>
+
+        var ctx = document.getElementById("barChart1");
+        var barChart1 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["1月", "2月", "3月", "4月", "5月", "6月","7月","8月","9月","10月","11月","12月"], // 換成自己的labels
+                datasets: [
+                {
+                    type:"line",
+                    label:'D型按摩椅',
+                    data:[25,49,36,51,48,98,65,12,3,10,15,78],
+                    lineTension:0,
+                    fill:true
+
+                },
+                {
+                    label: 'a型按摩椅', 
+                    data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'b型按摩椅', 
+                    data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
+                    backgroundColor: [
+                        'yellow',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'c型按摩椅', 
+                    data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
+                    backgroundColor: [
+                        'gray',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+
+                    ],
+                    borderWidth: 1
+                },
+                
+                ]
+            },
+            options: {
+                scales: {
+                    x:{
+                        stacked:true
+
+                    },
+                    y:{
+                        stacked:true
+                    },
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx = document.getElementById("barChart2");
+        var barChart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["老人","中年人","年輕人","肩頸加強","腿部按摩"], // 換成自己的labels
+                datasets: [{
+                    label: '睡魔智眠椅', 
+                    data: [12, 19, 3, 5,10], // 換成自己的data
+                    backgroundColor: [
+                        'rgba(255,99,131,0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',            
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: '大師椅', 
+                    data: [17, 9, 5, 7,19], // 換成自己的data
+                    backgroundColor: [
+                        'black'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',            
+                    ],
+                    borderWidth: 1
+
+                },
+                {
+                    label: '天王按摩椅', 
+                    data: [17, 9, 5, 7,19], // 換成自己的data
+                    backgroundColor: [
+                        'red'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',            
+                    ],
+                    borderWidth: 1
+
+                },
+                {
+                    label: 'v-motion', 
+                    data: [17, 9, 5, 7,19], // 換成自己的data
+                    backgroundColor: [
+                        'green'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',            
+                    ],
+                    borderWidth: 1
+
+                },
+
+                
+                
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+
+        var ctx = document.getElementById('pieChart1').getContext('2d');
+        var pieChart1 = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['按摩椅', '按摩券', '維護', '折舊', '現金'],
+                datasets: [{
+                    label: '成本花費表',
+                    data: [10, 20, 30, 40, 50],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var label = context.label || '';
+                                var value = context.parsed || 0;
+                                var percent = context.dataset.data.reduce((a, b) => a + b, 0) > 0 ? (value / context.dataset.data.reduce((a, b) => a + b, 0) * 100).toFixed(2) : 0;
+                                return label + ': ' + value + ' (' + percent + '%)';
+                            }
+                        }
+                    }
+                }
+                // 其他配置選項...
+            }
+        });
+
+        var ctx = document.getElementById('pieChart2').getContext('2d');
+        var pieChart2 = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['不是孤兒', '孤兒', '老人', '上班族', '家庭主婦'],
+                datasets: [{
+                    label: '成本花費表',
+                    data: [10, 20, 30, 40, 50],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
+                        'rgba(255, 206, 86, 0.5)',
+                        'rgba(75, 192, 192, 0.5)',
+                        'rgba(153, 102, 255, 0.5)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                var label = context.label || '';
+                                var value = context.parsed || 0;
+                                var total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                return label + ': ' + value + ' (' + ((value / total) * 100).toFixed(2) + '%)';
+                            }
+                        }
+                    },
+                    datalabels: {
+                        color: '#fff',
+                        formatter: function(value, context) {
+                            var total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            return Math.round((value / total) * 100) + '%';
+                        }
+                    }
+                }
+                // 其他配置選項...
+            }
+        });
+        </script>
 </body>
 </html>
