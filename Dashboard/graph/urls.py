@@ -9,7 +9,7 @@ from .views_seller import ChartData
 urlpatterns = [
     path('seller_page/',views_seller.seller_page,name='seller_page'),
     path('login/',views_login.login_page,name='login_page'),
-    path('api/data/', views_seller.get_data, name='api-data'),
+    # path('api/data/', views_seller.get_data, name='api-data'),
     path('api/chart/data/', ChartData.as_view(), name='data'),
     path('achievment_page/',views_achievement.achv_page,name='achievment_page')
 ]
