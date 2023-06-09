@@ -8,6 +8,7 @@ $.ajax({
         
         labels = data.labels
         defaultData = data.default    
+        setoptions("第三階段成敗率")  
         setdonutChart3();
     },
     error: function(error_data){

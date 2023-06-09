@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link href="{% static "css/header.css" %}" rel="stylesheet">-->
-    <!--<link href="{% static "css/APPchart.css" %}" rel="stylesheet">-->
-    <link rel=stylesheet type="text/css" href="APPchart.css">
+    <link href="{% static "css/APPchart.css" %}" rel="stylesheet">
+    <link href="{% static "css/allpageframe.css" %}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <script src="{% static 'js/APPchart_page/barchart.js' %}"></script>
+    <script src="{% static 'js/APPchart_page/barchart-H.js' %}"></script>
+    <script src="{% static 'js/APPchart_page/barchart2.js' %}"></script>
+    <script src="{% static 'js/APPchart_page/doughnut.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js" integrity="sha512-3dZ9wIrMMij8rOH7X3kLfXAzwtcHpuYpEgQg1OA4QAob1e81H8ntUQmQm3pBudqIoySO5j0tHN4ENzA6+n2r4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   {% endcomment %}
+    <link rel="shortcut icon" href="#" />
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script> {% endcomment %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    {% comment %} <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> {% endcomment %}
+   
     <title>app使用狀態儀錶板</title>
 </head>
 <body>
     {% include 'header.html' %}
-    <div class="A">
-        <table>
+    <div class="seller_container">
+        <table class="A">
             <tr class="B">
                 <td rowspan="12">篩選bar</td>
                 <td>客戶ID</td>
@@ -21,6 +37,13 @@
                 <td>引介之客戶ID</td>
                 <td>引介之客戶姓名</td>
                 <td>引介日期</td>
+                <td rowspan="12">篩選bar</td>
+                <td>日期</td>
+                <td>按摩券編號</td>
+                <td colspan="2">紀錄</td>
+                <td>關係人</td>
+                <td>數量</td>
+                <td>金額</td>
             </tr>
             <tr class="B">
                 <td>c20231230456</td>
@@ -28,6 +51,12 @@
                 <td>c20231230216</td>
                 <td>客戶2</td>
                 <td>12/30</td>
+                <td>日期</td>
+                <td>按摩券編號</td>
+                <td colspan="2">紀錄</td>
+                <td>關係人</td>
+                <td>數量</td>
+                <td>金額</td>
             </tr>
             <tr class="B">
                 <td>c20231230456</td>
@@ -35,157 +64,22 @@
                 <td>c20231230651</td>
                 <td>客戶3</td>
                 <td>12/30</td>
+                <td>日期</td>
+                <td>按摩券編號</td>
+                <td colspan="2">紀錄</td>
+                <td>關係人</td>
+                <td>數量</td>
+                <td>金額</td>
             </tr>
             <tr class="C">
                 <td colspan="5" rowspan="0"><canvas id="myChart1" width="200" height="200"></canvas></td>
             </tr>
-        </table></div>
-        <div class="A">
-            <table>
                 <tr class="B">
-                    <td rowspan="12">篩選bar</td>
                     <td colspan="4"><canvas id="myChart2" width="200" height="200"></canvas></td>
                     <td colspan="2"><canvas id="myChart4" width="200" height="200"></canvas></td>
                     <td rowspan="0"><canvas id="myChart3" width="200" height="200"></canvas></td>
                 </tr>
-                <tr class="C">
-                    <td>日期</td>
-                    <td>按摩券編號</td>
-                    <td>紀錄</td>
-                    <td>關係人</td>
-                    <td>數量</td>
-                    <td>金額</td>
-                </tr>
-                <tr class="C">
-                    <td>日期</td>
-                    <td>按摩券編號</td>
-                    <td>紀錄</td>
-                    <td>關係人</td>
-                    <td>數量</td>
-                    <td>金額</td>
-                </tr>
-                <tr class="C">
-                    <td>日期</td>
-                    <td>按摩券編號</td>
-                    <td>紀錄</td>
-                    <td>關係人</td>
-                    <td>數量</td>
-                    <td>金額</td>
-                </tr>
-                <tr class="C">
-                    <td>日期</td>
-                    <td>按摩券編號</td>
-                    <td>紀錄</td>
-                    <td>關係人</td>
-                    <td>數量</td>
-                    <td>金額</td>
-                </tr>
             </table>
     </div>
-    <script>
-var ctx = document.getElementById('myChart1');
-var myChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['一月', '二月', '三月'],
-    datasets: [{
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)'
-      ],
-      borderWidth: 1,
-      label: '銷售業績(百萬)',
-      data: [60, 49, 72]
-    }]
-  }
-});
-
-var ctx2 = document.getElementById('myChart2');
-var myBarChart = new Chart(ctx2, {
-    type: "bar",
-    data: {
-    labels: ['一月', '二月', '三月','四月','五月','六月','七月'],
-  datasets: [{
-    axis: 'y',
-    label: 'My First Dataset',
-    data: [65, 59, 80, 81, 56, 55, 40],
-    fill: false,
-    backgroundColor: [
-      'rgba(255, 99, 132, 0.2)',
-      'rgba(255, 159, 64, 0.2)',
-      'rgba(255, 205, 86, 0.2)',
-      'rgba(75, 192, 192, 0.2)',
-      'rgba(54, 162, 235, 0.2)',
-      'rgba(153, 102, 255, 0.2)',
-      'rgba(201, 203, 207, 0.2)'
-    ],
-    borderColor: [
-      'rgb(255, 99, 132)',
-      'rgb(255, 159, 64)',
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(54, 162, 235)',
-      'rgb(153, 102, 255)',
-      'rgb(201, 203, 207)'
-    ],
-    borderWidth: 1
-  }]
-},
-options: {
-    indexAxis: 'y',
-  }
-});
-
-var ctx3 = document.getElementById('myChart3');
-var myChart = new Chart(ctx3, {
-  type: 'bar',
-  data: {
-    labels: ['一月', '二月', '三月'],
-    datasets: [{
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)'
-      ],
-      borderWidth: 1,
-      label: '銷售業績(百萬)',
-      data: [60, 49, 72]
-    }]
-  }
-});
-
-var ctx4 = document.getElementById('myChart4');
-var myPieChart = new Chart(ctx4, {
-    type: "pie",
-    data: {
-  labels: [
-    'Red',
-    'Blue'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)'
-    ],
-    hoverOffset: 4
-  }]
-}
-});
-    </script>
 </body>
 </html>

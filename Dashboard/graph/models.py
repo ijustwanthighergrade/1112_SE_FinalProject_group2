@@ -48,6 +48,9 @@ class APP_Cus (models.Model):
     Cus_status=models.IntegerField('帳號停用',null=False)
     Referrer_id=models.CharField('引薦人',max_length=18,null=True) 
     Cus_Name=models.CharField('APP客戶姓名 (default後面數字逐漸增加)',max_length=512,null=True,default= 'user1') 
+
+    def __str__(self):
+        return str(self.Cus_id)
     
 #客戶業務資料表
 class Cus (models.Model):
