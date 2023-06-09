@@ -24,10 +24,22 @@ text-align: center;
     font-size: 20px;
 }
 
+.text3{
+    font-size: 20px;
+    border-bottom: 1px double black;
+
+}
+
 .quantity{
   text-align: center;
   font-size: 20px;
   border: 1px double black;
+  width: 200px;
+}
+
+.quantity1{
+  text-align: center;
+  font-size: 20px;
   width: 200px;
 }
 
