@@ -271,7 +271,7 @@ class manage (models.Model):
     store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=False)    
 
     def __str__(self):
-        return self.Cus_id
+        return self.manage_detail
     
     class manage_PK:
         constraints = [
