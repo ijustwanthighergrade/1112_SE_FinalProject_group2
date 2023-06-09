@@ -6,13 +6,16 @@
   margin-top: 10px;
   position: fixed
 }
+table{
+  background-color: aliceblue;
+}
 
 tr{
   border:1px solid black;
-  padding:5px;
+  padding:5gpx;
 }
 
-.announcement{
+.chair{
   background-color: #f3ebc2;
   margin: 10px;
   padding: 5px;
@@ -20,28 +23,38 @@ tr{
   top:400px;
 
 }
+.announcement{
+  background-color: #f3ebc2;
+  margin-left: 800px;
+  margin-top: 10px;
+  padding: 5px;
+  position: fixed;
+  width: 500px;
+  height: 330px;
+
+}
 
 .bchart1{
   position: fixed;
-  left: 150px;
-  top:500px
-
+  margin-left: 100px;
+  margin-top: 350px;
 
 }
 .bchart2{
   position: fixed;
-  left: 700px;
-  top:500px
+  margin-left: 630px;
+  margin-top: 350px;
 }
+
 .pchart1{
   position: fixed;
-  left: 150px;
-  height: 100px;
-  width: 100px;
+  margin-left: 100px;
+  margin-top: 10px;
 }
 .pchart2{
-  position: fixed;
-  left: 700px;
+  position:  fixed;
+  margin-left: 450px;
+  margin-top: 10px;
   
   
 }

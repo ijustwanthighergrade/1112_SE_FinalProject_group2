@@ -27,8 +27,8 @@
 
 </head>
 <body>
-    {% include 'header.html' %}
-    <div class="seller_container">
+{% include 'header.html' %}
+<div class="seller_container">
     <table class="month">
         <tr>
             <td>月份</td>
@@ -71,28 +71,29 @@
         </tr>
     </table>
 
-    <table class="announcement" >
+    <table class="chair" >
         <tr>
-        <td>公告</td>
+        <td>睡魔智眠椅</td>
         </tr>
 
         <tr>
-        <td>2023/12/12<br>
-        訊息：我肚子好餓<br></td>
+        <td>大師椅</td>
         </tr>
 
         <tr>
-        <td>2023/12/13<br>
-        訊息：晚餐要吃什麼<br></td>
+        <td>天王按摩椅</td>
         </tr>
+        <tr>
+        <td>V-Motion </td>
+        </tr>
+
     </table>
-
     <table class="bchart1">
         <tr>
         <td>個別產品業績排行榜</td>
         </tr>
         <tr>
-            <td><canvas id="barChart1" width="400" height="400">
+            <td><canvas id="barChart1" width="500" height="200">
             </canvas></td>
         </tr>
     </table>
@@ -102,18 +103,21 @@
     </tr>
     <tr>
 
-    <td><canvas id="barChart2" width="400" height="400">
+    <td><canvas id="barChart2" width="500" height="200">
     </canvas></td>
     </tr>
 </table>
+
 <table class="pchart1">
     <tr>
         <td>成本花費表</td>
-    </tr>   
+    </tr> 
+
     <tr> 
-    <td><canvas id="pieChart1" width="400" height="400">
+    <td><canvas id="pieChart1" width="300" height="300">
     </canvas></td>
     </tr>
+
 </table>
 
 <table class="pchart2">
@@ -121,12 +125,29 @@
         <td>顧客成分分析表（業務員）</td>
     </tr>
     <tr>
-        <td><canvas id="pieChart2" width="400" height="400">
+        <td><canvas id="pieChart2" width="300" height="300">
     </canvas></td>
     </tr>
 </table>
+<table class="announcement" >
+    <tr>
+    <td>公告</td>
+    </tr>
+
+    <tr>
+    <td>2023/12/12<br>
+    訊息：我肚子好餓<br></td>
+    </tr>
+
+    <tr>
+    <td>2023/12/13<br>
+    訊息：晚餐要吃什麼<br></td>
+    </tr>
+</table>
+
 
 </div>
+
 
     <script>
 
@@ -293,7 +314,9 @@
                     borderWidth: 1
                 }]
             },
-            options: {
+            options: { 
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     legend: {
                         position: 'right'
