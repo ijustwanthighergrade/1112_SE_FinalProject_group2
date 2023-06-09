@@ -1,19 +1,47 @@
-html,body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  /* overflow: hidden; */
-}
-
-.container{
-  float: center;
-}
-
 .month{
-  width:90%;
-  height: 90%;
-  margin: 5%;
   background-color: #f3ebc2;
+  border:1px solid black;
+  margin:10px;
+  padding:15px;
+  margin-top: 10px;
+  position: fixed
+}
+
+tr{
+  border:1px solid black;
+  padding:5px;
+}
+
+.announcement{
+  background-color: #f3ebc2;
+  margin: 10px;
+  padding: 5px;
+  position: fixed;
+  top:400px;
+
+}
+
+.bchart1{
+  position: fixed;
+  left: 150px;
+  top:500px
+
+
+}
+.bchart2{
+  position: fixed;
+  left: 700px;
+  top:500px
+}
+.pchart1{
+  position: fixed;
+  left: 150px;
+  height: 100px;
+  width: 100px;
+}
+.pchart2{
+  position: fixed;
+  left: 700px;
+  
   
 }
