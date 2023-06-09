@@ -31,6 +31,7 @@
     <script src="{% static 'js/seller_page/barchart.js' %}"></script>
     <script src="{% static 'js/seller_page/calender.js' %}"></script>
     <script src="{% static 'js/seller_page/seller_selected.js' %}"></script>
+    {% comment %} <script src="{% static 'js/seller_page/costomer_selected.js' %}"></script> {% endcomment %}
 
 </head>
 <body>
@@ -45,7 +46,7 @@
                 {% for Sp_id in all_Sp_id %} 
                 <tr>
                     <td>
-                        <button class="btn" data-id="{{ Sp_id.Sp_id}}">{{ Sp_id.Sp_id }}</button>
+                        <button class="btn" data-spid="{{ Sp_id.Sp_id}}">{{ Sp_id.Sp_id }}</button>
                     </td>
                 </tr>
                 {% endfor %}
@@ -63,9 +64,17 @@
             <div class="container_select container_select_small">
                 <div class="container_table ">
                     <table class="seller_select " id="cus_select">
-                        <tr id="cus_titile">
+                        <tr id="cus_title">
                             <td>客戶編號</td>
                         </tr>
+                        {% for Cus_id in all_Cus_id %} 
+                        <tr>
+                            <td>
+                                <button class="btn_cus" data-cusid="{{ Cus_id.Cus_id}}">{{ Cus_id.Cus_id }}</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
                     </table>
                 </div>
             </div>

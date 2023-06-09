@@ -15,25 +15,31 @@ User =get_user_model()
 @csrf_exempt
 def seller_page(request: HttpRequest):
     all_Cus_id=""
+    spid=""
+    cusid="" #前端傳回客戶id
     if request.method == 'GET':
         all_Sp_id=Sp.objects.values('Sp_id')
+        all_Cus_id=manage.objects.values('Cus_id')
         return render(request,"seller.html",{
-            'all_Sp_id':all_Sp_id
+            'all_Sp_id':all_Sp_id,
+            'all_Cus_id':all_Cus_id
         })
-    
     elif request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
-        id = request.POST.get('id')  # 获取按钮的编号值
-        # all_Cus_id=id
-        Cus_id= manage.objects.filter(Sp_id=id)
-        all_Cus_id =list(Cus_id.values())
+        if request.POST.get('spid'):
+            spid = request.POST.get('spid')  # #前端傳回業務員id
+            Cus_id= manage.objects.filter(Sp_id=spid)
+            all_Cus_id =list(Cus_id.values())
+            return JsonResponse({'all_Cus_id':all_Cus_id},safe=False)
+        if request.POST.get('cusid'):
+            cusid =  request.POST.get('cusid')
+            return JsonResponse({'cusid':cusid},safe=False)
+            
+            
         # 根据编号值从数据库或其他数据源中获取对应的数据
         # 进行相应的操作
         
         # 返回结果
-        return JsonResponse({'all_Cus_id':all_Cus_id},safe=False)
-    
-    # all_Sp_id =list(Sp_id.values())
-    
+        return JsonResponse({'all_Cus_id':all_Cus_id,'cusid':cusid},safe=False)
     
 
 

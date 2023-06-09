@@ -1,13 +1,17 @@
 $(document).ready(function() {
+  spid=""
+  cusid=""
   $('.btn').click(function() {
-    var id = $(this).data('id');  // 获取按钮的编号值
+    var spid = $(this).data('spid');  // 获取按钮的编号值
+    console.log(spid); // 这里可以处理返回的结果
     
     // 发送Ajax请求
     $.ajax({
       type: 'POST',
       url: '/seller_page/',  // 替换为你的Django视图函数的URL
       data: {
-        id: id
+        spid: spid,
+        cusid: cusid
       },
       success: function(response) {
         // 在成功返回后的回调函数中执行操作
@@ -15,31 +19,34 @@ $(document).ready(function() {
         var datacus = response.all_Cus_id.map(function(item) {
           return item.Cus_id_id;
         });
+
         var tableBody = document.getElementById("cus_select");
-        for (var i = tableBody.children.length - 1; i >= 0; i--) {
-          var childElement = tableBody.children[i];
         
-          // 檢查子元素的標籤名稱和 ID
-          if ((childElement.tagName === "TR") && childElement.id !== "cus_titile") {
-            // 子元素是 <div> 且不是擁有特定 ID 的 div，從父級 div 中移除該子元素
-            while (childElement.firstChild) {
-              removeElement(childElement.firstChild);
-              childElement.removeChild(childElement.firstChild);
+        var rows = tableBody.getElementsByTagName("tr"); // 取得所有的 <tr> 元素
+
+        // 從後往前遍歷所有的 <tr> 元素（除了第一個標題行）
+        for (var i = rows.length - 1; i > 0; i--) {
+          var row = rows[i];
+          // 檢查是否為特定 ID 的行，如果是，保留，否則刪除
+          if (row.id !== "cus_title") {
+            while (row.firstChild) {
+              row.firstChild.remove(); // 刪除行元素的第一個子元素（<td>）
             }
+            row.remove(); // 刪除行元素
           }
         }
-
 
         if (datacus && Array.isArray(datacus)) {
           datacus.forEach(function(item) {
             var row = document.createElement("tr");
             var col = document.createElement("td");
             var button = document.createElement("button");
-            button.className = "btn1";
-            button.setAttribute("cusdata-id", item);
+            button.className = "btn_cus";
+            button.setAttribute("data-cusid", item);
             button.textContent = item;
-            row.appendChild(button);
-            tableBody.appendChild(col);
+
+            col.appendChild(button);
+            row.appendChild(col);
             tableBody.appendChild(row);
             
           });
@@ -56,26 +63,27 @@ $(document).ready(function() {
       }
     });
   });
-});
-$(document).ready(function() {
-  $('.btn1').click(function() {
-    var id = $(this).data('id');  // 获取按钮的编号值
+  
+  $('#cus_select').on('click', '.btn_cus', function() {
+    var cusid = $(this).data('cusid');  // 获取按钮的编号值
+    console.log(cusid); // 这里可以处理返回的结果
     
     // 发送Ajax请求
     $.ajax({
-      type: 'POST',
-      url: '/seller_page/',  // 替换为你的Django视图函数的URL
-      data: {
-        id: id
-      },
-      success: function(response) {
+    type: 'POST',
+    url: '/seller_page/',  // 替换为你的Django视图函数的URL
+    data: {
+      spid: spid,
+      cusid: cusid
+    },
+    success: function(response) {
         // 在成功返回后的回调函数中执行操作
         console.log(response); // 这里可以处理返回的结果
-      },
-      error: function(xhr, status, error) {
+    },
+    error: function(xhr, status, error) {
         // 在请求失败时的回调函数中执行操作
         console.log(error); // 这里可以处理错误信息
-      }
+    }
     });
-  });
+});
 });
