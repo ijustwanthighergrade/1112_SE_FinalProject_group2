@@ -209,10 +209,10 @@ class cost (models.Model):
 
 #按摩椅意見回饋資料表表
 class feedback (models.Model):
-    feedback_id=models.CharField('回饋表id F+14日期+random(3)',max_length=18,null=False,primary_key=True)
-    feedbackCu_id=models.ForeignKey(Chair,on_delete=models.CASCADE,null=False)    
-    feedcus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
-    feedback_text=models.TextField('回饋內容',null=False) 
+    feedback_id=models.CharField('回饋表id F+14日期+random(3)',max_length=18,null=False,primary_key=True,default=0)
+    feedbackCu_id=models.ForeignKey(Chair,on_delete=models.CASCADE,null=False,default=0)    
+    feedcus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False,default=0)      
+    feedback_text=models.TextField('回饋內容',null=False,default=0) 
     feedback_date=models.DateTimeField('回饋日期',null=False,default=timezone.now)
     def __str__(self):
         return self.feedback_id
