@@ -32,7 +32,7 @@ var myChart = new Chart(ctx3, {
       ],
       borderWidth: 1,
       label: '銷售業績(百萬)',
-      data: [60, 49, 72]
+      data: [60, 49, 72,88,20,50,60,30,40,26,80,10]
     }]
   }
 });}
