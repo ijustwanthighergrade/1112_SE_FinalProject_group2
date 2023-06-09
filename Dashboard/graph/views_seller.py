@@ -23,14 +23,14 @@ def seller_page(request: HttpRequest):
     
     elif request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
         id = request.POST.get('id')  # 获取按钮的编号值
-        all_Cus_id=id
-        # Cus_id= manage.objects.filter(Sp_id=id)
-        # all_Cus_id =list(Cus_id.values())
+        # all_Cus_id=id
+        Cus_id= manage.objects.filter(Sp_id=id)
+        all_Cus_id =list(Cus_id.values())
         # 根据编号值从数据库或其他数据源中获取对应的数据
         # 进行相应的操作
         
         # 返回结果
-        return JsonResponse({'all_Cus_id':id},safe=False)
+        return JsonResponse({'all_Cus_id':all_Cus_id},safe=False)
     
     # all_Sp_id =list(Sp_id.values())
     
