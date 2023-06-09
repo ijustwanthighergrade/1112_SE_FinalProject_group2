@@ -3,4 +3,32 @@ td{
 }
 table{
     background-color: aliceblue;
+    font-size: 16px;
+    text-align: center;
+}
+button{
+    border: 0ch;
+    background-color: rgba(240, 248, 255, 0);
+    width: auto;
+}
+.A{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+}
+.B{
+    font-weight: bold;
+}
+.C{
+    width: 300px;
+}
+.D{
+    width: 150px;
+    height: 80px;
+}
+.E{
+    height: 60px;
+}
+.F{
+    width: 110px;
 }
