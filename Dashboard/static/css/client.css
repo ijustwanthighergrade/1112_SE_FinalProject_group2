@@ -6,6 +6,14 @@
     
   }
 
+table{
+  border-spacing: 15px 50px;
+  border-collapse:separate;
+}
+
+.table1{
+text-align: center;
+}
 
 .text1{
     font-size: 28px;
@@ -17,10 +25,22 @@
 }
 
 .quantity{
+  text-align: center;
   font-size: 20px;
   border: 1px double black;
+  width: 200px;
 }
 
-.ta2{
-  width: 500px;
+.my3{
+  width: 600px;
+  
+}
+
+.my4{
+  width: 150px;
+}
+
+.my5{
+  width: 300px;
+  
 }

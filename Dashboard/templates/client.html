@@ -3,16 +3,18 @@
     {% load static %}
 <head>
     <title>chair</title>
-    <script src="{% static 'js/chair_page/chair1.js' %}"></script>
-    <script src="{% static 'js/chair_page/chair2.js' %}"></script>
-    <script src="{% static 'js/chair_page/chair3.js' %}"></script>
-    <script src="{% static 'js/chair_page/chair4.js' %}"></script>
+    <script src="{% static 'js/client_page/client1.js' %}"></script>
+    <script src="{% static 'js/client_page/client2.js' %}"></script>
+    <script src="{% static 'js/client_page/client3.js' %}"></script>
+    <script src="{% static 'js/client_page/client4.js' %}"></script>
+    <script src="{% static 'js/client_page/client5.js' %}"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="{% static "css/allpageframe.css" %}" rel="stylesheet">   
-    <link href="{% static "css/chair.css" %}" rel="stylesheet">   
+    <link href="{% static "css/client.css" %}" rel="stylesheet">   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
     {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>    
@@ -30,39 +32,63 @@
     {% include 'header.html' %}
 
     <div class="seller_container">
-        <table style=" border: 1px black double;" class="table1">
+        <table>
             <tr>
-                <td rowspan="3" style="border: 1px black double;">
+                <td rowspan="4">
                     <table>
                         <tr><td style="border: 1px black double;" class="text1">客戶編號</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">001</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">002</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">003</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">004</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">c001</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">c002</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">c003</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">c004</td></tr>
                     </table>
                 </td>
-                <td rowspan="3"> 使用次數<canvas id="myChart" width="400" height="400"></canvas></td>
-                <td colspan="2" rowspan="2">月使用次數 <canvas id="my3"></canvas></td>
-                <td >
-                    <table border="2" colspan="2">
-                        <tr class="text1"><td>客戶</td><td>日期</td><td>回饋內容</td></tr> 
-                        <tr class="text2"><td>001</td><td>6/20</td><td>爽</td></tr>
-                    </table>
-                </td>
-            </tr>
-            <tr>
                 <td>
                     <table  class="quantity">
-                        <tr><td>當月顧客數</td></tr>
-                        <tr><td>2000</td></tr>
-                    </table></td></td>
+                        <tr><td>顧客：C001</td></tr>
+                        <tr><td>階段：第一階段</td></tr>
+                    </table>
+                </td>              
+                <td rowspan="2">
+                    <table class="quantity">
+                        <tr><td>備註:</td></tr>
+                        <tr><td>真好騙</td></tr>
+                    </table>
+                </td>
+                <td rowspan="3"  colspan="3"><div class="my3">未點擊時顯示每個客戶資料收集與否 <canvas id="my3"></canvas></div></td>
+    
             </tr>
             <tr>
-                <td colspan="3"> 回顧<canvas id="my2"></canvas></td>
-                
-                    <td rowspan="2">意見回饋數<canvas id="my4"></canvas></td>
+                <td><div class="my4"><canvas id="my4"></canvas>第一階段完成度</div></td>
+
+                <td>
+                    各階段顧客數量總計表
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><canvas id="myChart"></canvas></td>
+            </tr>
+            <tr>
+                <td colspan="2">顧客C001<canvas id="my2"></canvas></td>
+                <td >
+                    <table>
+                        <tr><td style="border: 1px black double;" class="text2">當月成功聯絡紀錄</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">1/4</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">1/10</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">1/14</td></tr>
+                        <tr><td style="border: 1px black double;" class="text2">1/20</td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="quantity">
+                        <tr><td>1/4備註:</td></tr>
+                        <tr><td>他家普通有錢</td></tr>
+                    </table>
+                </td>
+                <td ><div class="my5">點擊後顯示個別客戶資料收集與否 <canvas id="my5"></canvas></div></td>
 
             </tr>
+            
         </table>
     </div>
 </body>

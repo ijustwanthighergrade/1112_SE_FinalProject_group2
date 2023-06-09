@@ -26,11 +26,7 @@ function createChart() {
                 borderWidth: 1
             }]
         },
-        options: {
-            
-                indexAxis: 'y',
-              
-        }
+       
     });
 }
 
