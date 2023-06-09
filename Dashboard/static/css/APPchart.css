@@ -6,36 +6,36 @@ table{
     font-size: 16px;
     text-align: center;
 }
-/*篩選按鈕設定*/
+
 button{
     border: 0ch;
     background-color: rgba(240, 248, 255, 0);
     width: auto;
 }
-/*排版table用*/
+
 .A{
     display:flex;
     flex-direction:row;
     justify-content:flex-start;
 }
-/*粗體字用*/
+
 .B{
     font-weight: bold;
 }
-/*內容框框加寬*/
+
 .C{
     width: 300px;
 }
-/*名片長寬*/
+
 .D{
     width: 150px;
     height: 80px;
 }
-/*標題高度*/
+
 .E{
     height: 60px;
 }
-/*餅圖調小用*/
+
 .F{
     width: 110px;
 }
