@@ -248,10 +248,12 @@ class need (models.Model):
 
 #排班資料表
 class arrange (models.Model):
-    Ab_ID=models.OneToOneField(Sp,on_delete=models.CASCADE,null=False,primary_key=True)    
+    Ab_id=models.CharField('排班(ar+001)',max_length=5,null=False,primary_key=True,default=1)
+    Ab_Sp=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False,default=1)    
     Ab_DATE=models.DateTimeField('排班日期',null=False,default=timezone.now)
     Ab_STIME=models.DateTimeField('排班開始時間',null=False)
     Ab_ETIME=models.DateTimeField('排班結束時間',null=False)
+    
 
 #失敗原因表
 class FALSE (models.Model):
@@ -264,8 +266,8 @@ class manage (models.Model):
     manage_stage=models.IntegerField('展示狀態',null=False)
     manage_date=models.DateTimeField('回饋日期',null=False,default=timezone.now)
     manage_deal=models.BooleanField('成交與否',null=False)
-    manage_category=models.ForeignKey(FALSE,on_delete=models.CASCADE,null=False)      
-    manage_detail=models.TextField('失敗原因詳述',null=False) 
+    manage_category=models.ForeignKey(FALSE,on_delete=models.CASCADE,null=True)      
+    manage_detail=models.TextField('失敗原因詳述',null=True) 
     manage_stage=models.IntegerField('聯絡次數',null=False)
     Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)    
     store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=False)    
