@@ -39,28 +39,18 @@
     margin-bottom: 20px;
     margin-left: 10px;
     padding: 10px;
-    font-size: 15px;
-    font-weight: bolder;
-    border-radius: 20%;
-    border-style: dashed;
-    
-}
-.loginbutton2{
-    margin-left: 0px;
-    margin-top: 10px;
-    margin-bottom: 3px;
-    padding: 10px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bolder;
     border-radius: 45%;
+    width: 90px;
     border-style: dashed;
-    float: right;
-}
-.linktoregister{
-    margin-top: 0px;
-    font-size: 15px;
-    color: rgba(65, 65, 65, 0.521);
-    text-decoration: none;
+    text-align: center;
+    }
+    
+.forregister{
+    text-align: right; 
+    line-height: 0px;
+    margin-bottom: 5px;
 }
 
 .loginbutton:hover{
