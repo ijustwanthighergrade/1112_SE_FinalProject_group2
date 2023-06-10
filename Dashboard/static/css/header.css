@@ -6,14 +6,14 @@
 }
 
 .mainHeader{
-background-color: rgb(95, 202, 252);    
+background-color:rgba(240,178,139,255);
 height:85px;
-margin-top: -8px;
+margin-top: -20px;
 margin-left: -10px;
 margin-right: -8px;
 padding: 5px;
 padding-top: 1px;
-margin-bottom: 20px;
+margin-bottom: 5px;
 vertical-align: auto;
 position: sticky;
 }
@@ -54,7 +54,6 @@ cursor: pointer;
   font-size: 21px;
   padding-right:50px;
   padding-top: 20px;
-  margin-bottom: 10px;
 }
 
 .indexmenu{
@@ -63,7 +62,7 @@ font-size:30px;
 cursor:pointer;
 float: left;
 margin-left: 20px;
-margin-top: 20px;
+margin-top: 22px;
 }
 
 .overlay {

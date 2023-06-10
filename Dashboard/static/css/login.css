@@ -60,3 +60,13 @@
     cursor:pointer;
     border-color: white;
 }
+
+.background{
+    background-color: rgb(95, 231, 255);
+        margin-top: 10%;
+        height: 500px;
+        background-image: url("../images/mc.jpg");
+        background-repeat: no-repeat;
+        /*background-color: rgba(198,226,229,255);*/
+        background-position: center;
+}
