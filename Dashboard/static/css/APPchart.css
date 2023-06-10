@@ -1,36 +1,38 @@
-td{
-    border: 1px black solid;
-}
-table{
-    background-color: aliceblue;
-    font-size: 16px;
+div{
     text-align: center;
-    float: left;
+    font-size: 14px;
 }
-
 button{
     border: 0ch;
-    background-color: rgba(240, 248, 255, 0);
+    border-radius: 10%;
+    background-color: rgb(202, 230, 255);
     width: auto;
 }
-
-.B{
+td{
+    border: 1px solid black;
+}
+.mar-l{
+    margin-left: 0.05%;
+}
+.block{
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    background-color: rgb(255, 255, 255);
+}
+.cen{
+    display: block;
+    width: 100%;
+    font-size: 24px;
     font-weight: bold;
+    margin: 10px 0px;
 }
-
-.C{
-    width: 300px;
+.f-c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-.D{
-    width: 150px;
-    height: 80px;
-}
-
-.E{
-    height: 60px;
-}
-
-.F{
-    width: 110px;
+.f-r{
+    display: flex;
+    flex-direction: row;
 }
