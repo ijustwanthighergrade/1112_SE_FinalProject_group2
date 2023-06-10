@@ -1,27 +1,37 @@
 .loginform{
-    top: 300px;
-    left: 49%;
-    width: 325px;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    background-color: gainsboro;
-    border-radius: 30% 30% 25% 25% ;
+    position: absolute;
+    height: 550px;
+    width: 350px;
+    top: 23px;
+    left: 56%;
+    right: 0;
+    margin: 20px;
+    margin-right: 10px;
+    max-width: 450px;
+    padding: 14px;
+    padding-bottom: 0px;
+    padding-top: 40px;
+    margin-right: 10px;
+    background-color: rgba(80, 80, 80, 0.678);
 }
 .logintitle{
-    background-color: rgb(95, 202, 252);  
+    background-color: rgba(48, 180, 241, 0.788);  
     text-align: center;
-    padding: 20px;
-    padding-top: 18px;
+    padding: 10px;
+    padding-top: 15px;
     padding-bottom: 18px;
     margin-top: 0px;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
+    margin-bottom: 50px;
 }
 .loginfield{
-    text-align: center;
+    text-align: left;
     line-height: 30px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+    padding: 20px;
+    color: rgb(255, 255, 255);
 }
 .loginbutton{
     margin-left: 15px;
@@ -31,7 +41,7 @@
     padding: 10px;
     font-size: 15px;
     font-weight: bolder;
-    border-radius: 50%;
+    border-radius: 20%;
     border-style: dashed;
     
 }
@@ -62,11 +72,32 @@
 }
 
 .background{
-    background-color: rgb(95, 231, 255);
-        margin-top: 10%;
-        height: 500px;
-        background-image: url("../images/mc.jpg");
-        background-repeat: no-repeat;
-        /*background-color: rgba(198,226,229,255);*/
-        background-position: center;
+  /* Control the height of the image */
+  min-height:675px; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1000px 620px;
+  
+  position: relative;
+  background-image: url("../images/mc.jpg");
 }
+
+body{
+    margin: 0px;
+    background-color: rgba(41, 62, 87, 0.849);
+}
+
+input {
+    width: 300px;
+    background: 
+    linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+    /*background-color: #ffffff71;*/
+    border: 0px;
+    padding: 10px;
+    outline: none;
+    caret-color: rgb(255, 255, 255);
+    color: white;
+    font-size: 25px;
+  }

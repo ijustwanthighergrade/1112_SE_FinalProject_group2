@@ -21,11 +21,11 @@
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-          <a href="#">營運與銷售分析</a>
-          <a href="#">APP使用狀態</a>
+          <a href="{% url 'achievment_page' %}">營運與銷售分析</a>
+          <a href="{% url 'appchart' %}">APP使用狀態</a>
           <a href="{% url 'seller_page' %}">業務員分析</a>
-          <a href="#">按摩椅體驗分析</a>
-          <a href="#">客戶分析</a>
+          <a href="{% url 'chair' %}">按摩椅體驗分析</a>
+          <a href="{% url 'client' %}">客戶分析</a>
         </div>
         <a href="{% url 'login_page' %}"><img class="logouticon" src="{% static "images/logout.png" %}"></a> 
       </div>
