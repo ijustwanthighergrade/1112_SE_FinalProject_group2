@@ -93,9 +93,9 @@ class order_detailed (models.Model):
     product_id=models.ForeignKey(product,on_delete=models.CASCADE,null=False)
     order_time=models.DateTimeField('下單時間',null=True,default=timezone.now)
     totalprice=models.IntegerField('訂單總額',null=False)
-    order_addr=models.CharField('運送地址',max_length=512,null=False)
+    order_addr=models.TextField('運送地址',null=False)
     def __str__(self):
-        return self.order_id
+        return self.order_addr
     
     class order_detailed_PK:
         constraints = [
@@ -185,7 +185,7 @@ class Ab (models.Model):
     Ab_REASON=models.TextField('請假理由',null=False)
 
     def __str__(self):
-        return self.Ab_ID
+        return self.Ab_REASON
     
     class Ab_PK:
         constraints = [
@@ -239,7 +239,7 @@ class need (models.Model):
     demand_id=models.ForeignKey(demand,on_delete=models.CASCADE,null=False)    
     type_name=models.TextField('類型種類選項',null=False,unique=True) 
     def __str__(self):
-        return self.need_id
+        return self.type_name
     
     class need_PK:
         constraints = [
