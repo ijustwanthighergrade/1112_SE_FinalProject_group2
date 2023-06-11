@@ -178,7 +178,7 @@ class Referrer (models.Model):
         
 #出勤資料表
 class Ab (models.Model):
-    Ab_ID=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)      
+    Ab_ID=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)      
     Ab_ON=models.IntegerField('打卡上班',null=False) 
     Ab_OFF=models.IntegerField('打卡上班',null=False) 
     Ab_DATE=models.DateTimeField('日期',null=False,default=timezone.now)
