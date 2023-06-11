@@ -54,7 +54,7 @@ class APP_Cus (models.Model):
     
 #客戶業務資料表
 class Cus (models.Model):
-    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
+    Cus_id=models.OneToOneField(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)
     Cus_FamilyNum=models.IntegerField('家庭成員數量',null=True)
     Cus_eld=models.IntegerField('長者有無',null=True)
     Chair_status=models.IntegerField('家中是否有按摩椅',null=True)
@@ -66,11 +66,6 @@ class Cus (models.Model):
     Chair_power=models.IntegerField('按摩模式力道偏好 (1~10 弱到強)',null=True)
     product_past=models.ForeignKey(product,on_delete=models.CASCADE,null=True)
     Cus_job=models.CharField('客戶職業',max_length=50,null=True)
-
-    class CUS_PK:
-        constraints = [
-            models.UniqueConstraint(fields=['Cus_id', 'Sp_id'], name='CUS_Primary_key')
-        ]
 
 #儀錶板帳密資料表
 class storeboard (models.Model):
