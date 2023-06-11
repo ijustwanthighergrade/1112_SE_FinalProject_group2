@@ -15,7 +15,7 @@ class store (models.Model):
 #業務員基本資料表
 class Sp (models.Model):
     Sp_id=models.CharField('業務員ID(PK)/Sp001',max_length=5,null=False,unique=True,primary_key=True)
-    Sp_bonus=models.IntegerField('本月獎金',null=True)
+    Sp_bonus=models.IntegerField('本月獎金',null=True, blank=True)
     Sp_formula=models.IntegerField('績效公式',null=False)
     Sp_salary=models.IntegerField('業務員薪水',null=False)
     Sp_store=models.ForeignKey(store,on_delete=models.CASCADE,null=False)
@@ -46,8 +46,8 @@ class APP_Cus (models.Model):
     Cus_pwd=models.CharField('客戶密碼',max_length=32,null=False)
     Voucher_count=models.IntegerField('按摩卷擁有數量',null=False)
     Cus_status=models.IntegerField('帳號停用',null=False)
-    Referrer_id=models.CharField('引薦人',max_length=18,null=True) 
-    Cus_Name=models.CharField('APP客戶姓名 (default後面數字逐漸增加)',max_length=512,null=True,default= 'user1') 
+    Referrer_id=models.CharField('引薦人',max_length=18,null=True, blank=True) 
+    Cus_Name=models.CharField('APP客戶姓名 (default後面數字逐漸增加)',max_length=512,null=True,default= 'user1', blank=True) 
 
     def __str__(self):
         return str(self.Cus_id)
@@ -55,38 +55,38 @@ class APP_Cus (models.Model):
 #客戶業務資料表
 class Cus (models.Model):
     Cus_id=models.OneToOneField(APP_Cus,on_delete=models.CASCADE,null=False,primary_key=True)
-    Cus_FamilyNum=models.IntegerField('家庭成員數量',null=True)
-    Cus_eld=models.IntegerField('長者有無',null=True)
-    Chair_status=models.IntegerField('家中是否有按摩椅',null=True)
-    Chair_floor=models.IntegerField('客戶消費預算下限',null=True)
-    Chair_ceiling=models.IntegerField('客戶消費預算上限',null=True)
-    Chair_position=models.CharField('主要按摩部位需求 (不要想歪',max_length=50,null=True)
-    Chair_color=models.CharField('顏色偏好',max_length=50,null=True)
-    Cus_PastItem=models.CharField('過去消費過的品牌產品',max_length=520,null=True)
-    Chair_power=models.IntegerField('按摩模式力道偏好 (1~10 弱到強)',null=True)
-    product_past=models.ForeignKey(product,on_delete=models.CASCADE,null=True)
-    Cus_job=models.CharField('客戶職業',max_length=50,null=True)
+    Cus_FamilyNum=models.IntegerField('家庭成員數量',null=True, blank=True)
+    Cus_eld=models.IntegerField('長者有無',null=True, blank=True)
+    Chair_status=models.IntegerField('家中是否有按摩椅',null=True, blank=True)
+    Chair_floor=models.IntegerField('客戶消費預算下限',null=True, blank=True)
+    Chair_ceiling=models.IntegerField('客戶消費預算上限',null=True, blank=True)
+    Chair_position=models.CharField('主要按摩部位需求 (不要想歪',max_length=50,null=True, blank=True)
+    Chair_color=models.CharField('顏色偏好',max_length=50,null=True, blank=True)
+    Cus_PastItem=models.CharField('過去消費過的品牌產品',max_length=520,null=True, blank=True)
+    Chair_power=models.IntegerField('按摩模式力道偏好 (1~10 弱到強)',null=True, blank=True)
+    product_past=models.ForeignKey(product,on_delete=models.CASCADE,null=True, blank=True)
+    Cus_job=models.CharField('客戶職業',max_length=50,null=True, blank=True)
 
 #儀錶板帳密資料表
 class storeboard (models.Model):
     storeboard_id=models.CharField('店家儀錶板流水號 SB+14時間+random(2)',max_length=18,null=False,unique=True,primary_key=True)
     storeboard_time=models.DateTimeField('店家儀錶板成立時間',null=False,default=timezone.now)
-    store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=True)
+    store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=True, blank=True)
     store_username=models.CharField('店家帳號(供自由發揮)',max_length=512,null=False,unique=True)
     store_pwd=models.CharField('店家密碼',max_length=32,null=False)
-    store_status=models.IntegerField('店家帳號狀況',null=True)
+    store_status=models.IntegerField('店家帳號狀況',null=True, blank=True)
 
 #產品販售資料表
 class order (models.Model):
     order_id=models.CharField('訂單編號 order+14+random(3)',max_length=22,null=False,primary_key=True)
     Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)
-    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=True)
+    Cus_id=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=True, blank=True)
 
 #產品販售詳細資料表
 class order_detailed (models.Model):
     order_id=models.ForeignKey(order,on_delete=models.CASCADE,null=False)
     product_id=models.ForeignKey(product,on_delete=models.CASCADE,null=False)
-    order_time=models.DateTimeField('下單時間',null=True,default=timezone.now)
+    order_time=models.DateTimeField('下單時間',null=True,default=timezone.now, blank=True)
     totalprice=models.IntegerField('訂單總額',null=False)
     order_addr=models.TextField('運送地址',null=False)
     def __str__(self):
@@ -102,9 +102,9 @@ class Marketing (models.Model):
     Marketing_id=models.CharField('編號(M+14date+0001)',max_length=19,null=False,primary_key=True)
     Marketing_clerk=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)
     Marketing_client=models.ForeignKey(APP_Cus,on_delete=models.CASCADE,null=False)
-    Marketing_reserve=models.DateTimeField('預約下次來店日期',null=True)
-    Marketing_discount=models.TextField('推薦的優惠',null=True)
-    Marketing_remark=models.TextField('備註',null=True)
+    Marketing_reserve=models.DateTimeField('預約下次來店日期',null=True, blank=True)
+    Marketing_discount=models.TextField('推薦的優惠',null=True, blank=True)
+    Marketing_remark=models.TextField('備註',null=True, blank=True)
     Marketing_date=models.DateTimeField('日期',null=False,default=timezone.now) 
     def __str__(self):
         return self.Marketing_id
@@ -126,8 +126,8 @@ class Chair (models.Model):
     Chair_place=models.ForeignKey(store,on_delete=models.CASCADE,null=False)
     Chair_cost=models.IntegerField('租金費用',null=False)
     Chair_frequency=models.IntegerField('被騎乘次數',null=True,default=0)
-    Chair_state=models.IntegerField('狀態(維修0/正常1/爆炸2/正在使用3)',null=True)
-    Chair_years=models.IntegerField('使用年限',null=True)
+    Chair_state=models.IntegerField('狀態(維修0/正常1/爆炸2/正在使用3)',null=True, blank=True)
+    Chair_years=models.IntegerField('使用年限',null=True, blank=True)
     Chair_pid=models.ForeignKey(product,null=False,on_delete=models.CASCADE) 
 
 #按摩椅使用狀況資料表
@@ -149,7 +149,7 @@ class Cou (models.Model):
     Cou_DATE=models.DateTimeField('購入日期',null=False,default=timezone.now)
     Cou_STATUS=models.IntegerField('啟用狀態',null=False)
     Cou_COST=models.IntegerField('售價',null=False)
-    Cp_ID=models.ForeignKey(Cp,on_delete=models.CASCADE,null=True)    
+    Cp_ID=models.ForeignKey(Cp,on_delete=models.CASCADE,null=True, blank=True)    
 
 #按摩卷交易資料表
 class Trade (models.Model):
@@ -217,7 +217,7 @@ class An (models.Model):
     An_id=models.CharField('公告id  An+14日期+random(3)',max_length=19,null=False,primary_key=True)
     An_text=models.TextField('公告內容',null=False) 
     An_dateON=models.DateTimeField('日期',null=False,default=timezone.now)  
-    An_dateOFF=models.IntegerField('展示狀態',null=True)
+    An_dateOFF=models.IntegerField('展示狀態',null=True, blank=True)
     def __str__(self):
         return self.An_id
     
@@ -262,7 +262,7 @@ class manage (models.Model):
     manage_date=models.DateTimeField('回饋日期',null=False,default=timezone.now)
     manage_deal=models.BooleanField('成交與否',null=False)
     manage_category=models.ForeignKey(FALSE,on_delete=models.CASCADE,null=True)      
-    manage_detail=models.TextField('失敗原因詳述',null=True) 
+    manage_detail=models.TextField('失敗原因詳述',null=True, blank=True) 
     manage_stage=models.IntegerField('聯絡次數',null=False)
     Sp_id=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)    
     store_id=models.ForeignKey(store,on_delete=models.CASCADE,null=False)    

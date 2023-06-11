@@ -2,7 +2,7 @@
 <html lang="en">
     {% load static %}
 <head>
-    <title>chair</title>
+    <title>client</title>
     <script src="{% static 'js/chair_page/chair1.js' %}"></script>
     <script src="{% static 'js/chair_page/chair2.js' %}"></script>
     <script src="{% static 'js/chair_page/chair3.js' %}"></script>
@@ -30,35 +30,44 @@
     {% include 'header.html' %}
 
     <div class="seller_container">
+        <div class="div1">
+            <table class="ta1">
+                <tr><td class="text1">按摩椅編號</td></tr>
+                <tr><td class="text2">001</td></tr>
+                <tr><td class="text2">002</td></tr>
+                <tr><td class="text2">003</td></tr>
+                <tr><td class="text2">004</td></tr>
+            </table>
+        </div>
+        <div class="myChart">使用次數<canvas id="myChart"></canvas></div>
+        <div class="myChart">月使用次數 <canvas id="my3"></canvas></div>
+        <table  class="quantity">
+            <tr><td>當月顧客數</td></tr>
+            <tr><td>2000</td></tr>
+        </table>
+        <div class="myChart"> 回顧<canvas id="my2"></canvas></div>
+        
         <table class="table1">
             <tr>
                 <td rowspan="3">
-                    <table class="ta1">
-                        <tr><td style="border: 1px black double;" class="text1">按摩椅編號</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">001</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">002</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">003</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">004</td></tr>
-                    </table>
+                    
                 </td>
-                <td rowspan="3"> 使用次數<canvas id="myChart" width="400" height="400"></canvas></td>
-                <td colspan="2">月使用次數 <canvas id="my3"></canvas></td>
-                <td >
-                    <table border="2" colspan="2" class="ta2">
-                        <tr class="text1"><td>客戶</td><td>日期</td><td>回饋內容</td></tr> 
-                        <tr class="text2"><td>c001</td><td>6/20</td><td>爽</td></tr>
-                    </table>
-                </td>           
+                <td rowspan="1"> </td>
+                <td colspan="2"></td>
+                          
                 <td>
-                    <table  class="quantity">
-                        <tr><td>當月顧客數</td></tr>
-                        <tr><td>2000</td></tr>
-                    </table>
+                   
                 </td>
             </tr>
             <tr>
-                <td colspan="3"> 回顧<canvas id="my2"></canvas></td>
+                <td colspan="1"></td>
                 <td rowspan="2">意見回饋數<canvas id="my4"></canvas></td>
+                <td  colspan="2">
+                    <table border="2" class="ta2">
+                        <tr class="text1"><td>客戶</td><td>日期</td><td>回饋內容</td></tr> 
+                        <tr class="text2"><td>c001</td><td>6/20</td><td>爽</td></tr>
+                    </table>
+                </td> 
             </tr>
         </table>
     </div>
