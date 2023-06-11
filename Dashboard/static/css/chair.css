@@ -6,7 +6,6 @@
     
   }
 
-
 .text1{
     font-size: 24px;
     font-weight: bold;
@@ -29,18 +28,31 @@
   width: 100%;
 }
 
-.ta2{
-  width: 350px;
-}
-
 .div1{
   width: 15%;
+  height: 50%;
+
   background-color: rgb(198, 226, 229);
   border-radius: 10px;
   border-collapse: separate;
   border: 3px rgb(109, 151, 161) solid ;
   position: relative;
   float: left;
+  margin: 0.5%;
+
+}
+
+.div2{
+  height: 50%;
+  width: 28%;
+  background-color: rgb(198, 226, 229);
+  border-radius: 10px;
+  border-collapse: separate;
+  border: 3px rgb(109, 151, 161) solid ;
+  position: relative;
+  float: left;
+  margin: 0.5% 0%;
+
 }
 
 .myChart{
@@ -49,6 +61,9 @@
   border-collapse: separate;
   border: 3px rgb(109, 151, 161) solid ;
   height: 50%;
-  width: 500px;
-  
+  width: 35%;
+  position: relative;
+  float: right;
+  padding: 1%;
+  margin: 0.5%;
 }
