@@ -15,7 +15,7 @@
     background-color: rgba(80, 80, 80, 0.678);
 }
 .logintitle{
-    background-color: rgba(48, 180, 241, 0.788);  
+    background-color: rgba(169,219,230,255);  
     text-align: center;
     padding: 10px;
     padding-top: 15px;
@@ -42,9 +42,9 @@
     font-size: 20px;
     font-weight: bolder;
     border-radius: 45%;
-    width: 90px;
-    border-style: dashed;
+    width: 100px;
     text-align: center;
+    border: 0px;
     }
     
 .forregister{
@@ -52,13 +52,16 @@
     line-height: 0px;
     margin-bottom: 5px;
 }
+.forregister:hover{
+    color: rgba(169,219,230,255);
+    cursor: pointer; 
+}
 
 .loginbutton:hover{
-    background-color: rgb(62, 189, 248);
+    background-color: rgba(169,219,230,255);
     transition: 0.2s;
     color: white;
     cursor:pointer;
-    border-color: white;
 }
 
 .background{
