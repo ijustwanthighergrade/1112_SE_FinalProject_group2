@@ -244,7 +244,7 @@ class need (models.Model):
 #排班資料表
 class arrange (models.Model):
     Ab_id=models.CharField('排班(ar+001)',max_length=5,null=False,primary_key=True)
-    Ab_Sp=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False)    
+    Ab_Sp=models.ForeignKey(Sp,on_delete=models.CASCADE,null=False,default="a")    
     Ab_DATE=models.DateTimeField('排班日期',null=False,default=timezone.now)
     Ab_STIME=models.DateTimeField('排班開始時間',null=False)
     Ab_ETIME=models.DateTimeField('排班結束時間',null=False)
