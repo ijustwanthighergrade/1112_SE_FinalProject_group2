@@ -4,15 +4,15 @@ var myPieChart = new Chart(ctx4, {
     type: "doughnut",
     data: {
   labels: [
-    'Red',
-    'Blue'
+    '總使用率',
+    '未使用率'
   ],
   datasets: [{
-    label: 'My First Dataset',
+    label: '總使用率',
     data: [300, 50],
     backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)'
+      'rgb(198, 226, 229)',
+      'rgb(243, 177, 178)'
     ],
     hoverOffset: 4
   }]

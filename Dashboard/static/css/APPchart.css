@@ -1,38 +1,80 @@
+@media screen and (max-width: 1920px) {
+    .seller_container {
+      background-color: rgb(255, 255, 255);
+    }  
+  }
 div{
     text-align: center;
     font-size: 14px;
 }
 button{
-    border: 0ch;
-    border-radius: 10%;
-    background-color: rgb(202, 230, 255);
-    width: auto;
+    border: 2px solid;
+    color: white;
+    font-weight: bold;
 }
-td{
-    border: 1px solid black;
+table{
+    margin: auto;
 }
-.mar-l{
-    margin-left: 0.05%;
+.c{
+    border-bottom: 2px solid rgb(243, 177, 178);
+    padding: 7px 5px;
 }
-.block{
-    width: 33.3%;
-    height: 100%;
-    float: left;
-    background-color: rgb(255, 255, 255);
-}
-.cen{
-    display: block;
+.r{
+    background-color: rgb(243, 177, 178) ;
+    border-radius: 5px;
     width: 100%;
+    margin: 2.5px 0px 2.5px 10px;
+}
+.chart1{
+    width: 120%;
+    height: 120%;
+    margin-right: 15px;
+}
+.chart2{
+    width: 120%;
+    height: 120%;
+    margin-right: 23px;
+}
+.chart3{
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+}
+.chart4{
+    width: 100%;
+    height: 50%;
+    padding-left: 33.3%;
+}
+.title{
     font-size: 24px;
     font-weight: bold;
-    margin: 10px 0px;
+    width: 100%;
+}
+.block{
+    float: left;
+    width: 33.3%;
+}
+.block2{
+    background-color: rgb(251, 219, 198);
+    border-radius: 10px;
+    margin: 0.5%;
+    width: 95%;
+}
+.two{
+    height: 400px;
+}
+.three{
+    height: 150px;
 }
 .f-c{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;   
 }
 .f-r{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;   
 }

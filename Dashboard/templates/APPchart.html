@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static "css/APPchart.css" %}" rel="stylesheet">
     <link href="{% static "css/allpageframe.css" %}" rel="stylesheet">
+    <link href="{% static "css/APPchart.css" %}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
     <script src="{% static 'js/APPchart_page/barchart.js' %}"></script>
     <script src="{% static 'js/APPchart_page/barchart-H.js' %}"></script>
@@ -29,158 +29,157 @@
 <body>
     {% include 'header.html' %}
     <div class="seller_container">
-        <div class="block mar-l f">
-            <div class="cen">客戶引介數量表</div>
-            <div class="mar-l">
-                <div>        
-                    <table>
-                        <tr>
-                            <td>客戶ID</td>
-                            <td>客戶姓名</td>
-                            <td>引介之客戶ID</td>
-                            <td>引介之客戶姓名</td>
-                            <td>引介日期</td>
-                        </tr>
-                        <tr>
-                            <td>c20231230456</td>
-                            <td>客戶1</td>
-                            <td>c20231230216</td>
-                            <td>客戶2</td>
-                            <td>12/30</td>
-                        </tr>
-                        <tr>
-                            <td>c20231230456</td>
-                            <td>客戶1</td>
-                            <td>c20231230651</td>
-                            <td>客戶3</td>
-                            <td>12/30</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="f-r">
-                    <div>
-                        <table>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>c20231230456</button></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div>
-                        <div class="c-1"><canvas id="myChart1" width="200" height="200"></canvas></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="block f-l">
-            <div class="cen">按摩券銷售贈與紀錄表</div>
-            <div class="f-l">
+        <div class="block f-c">
+            <div class="block2 title">客戶引介數量表</div>
+            <div class="block2 f-r two">
                 <div>
                     <table>
                         <tr>
-                            <td>日期</td>
-                            <td>按摩券編號</td>
-                            <td>紀錄</td>
-                            <td>關係人</td>
-                            <td>數量</td>
-                            <td>金額</td>
+                            <td><button class="r">c20231230456</button></td>
                         </tr>
                         <tr>
-                            <td>5/25</td>
-                            <td>Cou00001-Cou00010</td>
-                            <td>贈予</td>
-                            <td>c20191212134545111</td>
-                            <td>10</td>
-                            <td>0</td>
+                            <td><button class="r">c20231230456</button></td>
                         </tr>
                         <tr>
-                            <td>5/25</td>
-                            <td>Cou00001-Cou00010</td>
-                            <td>贈予</td>
-                            <td>c20191212134545111</td>
-                            <td>10</td>
-                            <td>0</td>
+                            <td><button class="r">c20231230456</button></td>
                         </tr>
                         <tr>
-                            <td>5/25</td>
-                            <td>Cou00001-Cou00010</td>
-                            <td>贈予</td>
-                            <td>c20191212134545111</td>
-                            <td>10</td>
-                            <td>0</td>
+                            <td><button class="r">c20231230456</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">c20231230456</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">c20231230456</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">c20231230456</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">c20231230456</button></td>
                         </tr>
                     </table>
                 </div>
-                <div class="f-r">
-                    <div>
-                        <table>
-                            <tr>
-                                <td><button>一月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>二月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>三月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>四月</button></td>
-                            <tr>
-                                <td><button>五月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>六月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>七月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>八月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>九月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>十月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>十一月</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>十二月</button></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="f-r">
-                        <div><canvas id="myChart2" width="200" height="200"></canvas></div>
-                        <div><canvas id="myChart4" width="200" height="200"></canvas></div>
-                    </div>
+                <div>
+                        <div class="chart1"><canvas id="myChart1" width="200" height="200"></canvas></div>
                 </div>
             </div>
+            <div class="block2 three">
+                <table>
+                    <tr>
+                        <td class="c">客戶ID</td>
+                        <td class="c">客戶姓名</td>
+                        <td class="c">引介之客戶ID</td>
+                        <td class="c">引介之客戶姓名</td>
+                        <td class="c">引介日期</td>
+                    </tr>
+                    <tr>
+                        <td class="c">c20231230456</td>
+                        <td class="c">客戶1</td>
+                        <td class="c">c20231230216</td>
+                        <td class="c">客戶2</td>
+                        <td class="c">12/30</td>
+                    </tr>
+                    <tr>
+                        <td class="c">c20231230456</td>
+                        <td class="c">客戶1</td>
+                        <td class="c">c20231230651</td>
+                        <td class="c">客戶3</td>
+                        <td class="c">12/30</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div class="block f-l">
-            <div class="cen">按摩卷使用數量統計表</div>
-            <div><canvas id="myChart3" width="200" height="200"></canvas></div>
+
+        <div class="block f-c">
+            <div class="block2 title">按摩券銷售贈與紀錄表</div>
+            <div class="block2 f-r two">
+                <div>
+                    <table>
+                        <tr>
+                            <td><button class="r">一月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">二月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">三月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">四月</button></td>
+                        <tr>
+                            <td><button class="r">五月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">六月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">七月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">八月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">九月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">十月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">十一月</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="r">十二月</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <div class="chart2"><canvas id="myChart2" width="200" height="200"></canvas></div>
+                </div>
+            </div>
+            <div class="block2 three">
+                <table>
+                    <tr>
+                        <td class="c">日期</td>
+                        <td class="c">按摩券編號</td>
+                        <td class="c">紀錄</td>
+                        <td class="c">關係人</td>
+                        <td class="c">數量</td>
+                        <td class="c">金額</td>
+                    </tr>
+                    <tr>
+                        <td class="c">5/25</td>
+                        <td class="c">Cou00001-Cou00010</td>
+                        <td class="c">贈予</td>
+                        <td class="c">c20191212134545111</td>
+                        <td class="c">10</td>
+                        <td class="c">0</td>
+                    </tr>
+                    <tr>
+                        <td class="c">5/25</td>
+                        <td class="c">Cou00001-Cou00010</td>
+                        <td class="c">贈予</td>
+                        <td class="c">c20191212134545111</td>
+                        <td class="c">10</td>
+                        <td class="c">0</td>
+                    </tr>
+                    <tr>
+                        <td class="c">5/25</td>
+                        <td class="c">Cou00001-Cou00010</td>
+                        <td class="c">贈予</td>
+                        <td class="c">c20191212134545111</td>
+                        <td class="c">10</td>
+                        <td class="c">0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="block f-c">
+            <div class="block2 title">按摩卷使用數量統計表</div>
+            <div class="block2 chart3 two"><canvas id="myChart3" width="200" height="200"></canvas></div>
+            <div class="block2 chart4 three"><canvas id="myChart4" width="200" height="200"></canvas></div>
         </div>
     </div>
 </body>
