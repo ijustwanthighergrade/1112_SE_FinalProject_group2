@@ -3,18 +3,13 @@ function createChart4() {
     var my4 = new Chart(ctx, {
         type: 'pie',
         data: data = {
-            labels: [
-              '123',
-              'Blue',
-              'Yellow'
-            ],
+            labels: ['意見回饋數','全部按摩椅意見回饋數'],
             datasets: [{
               label: 'My First Dataset',
-              data: [305, 50, 100],
+              data: [305, 50],
               backgroundColor: [
                 'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
+                'rgb(54, 162, 235)'
               ],
               hoverOffset: 4
             }]
