@@ -11,7 +11,7 @@ function createChart2() {
                     'rgba(25, 99, 132, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(50, 99, 132, 1)'
                 ],
                 borderWidth: 1
             }]
