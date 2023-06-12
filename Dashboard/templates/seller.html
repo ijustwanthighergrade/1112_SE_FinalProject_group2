@@ -40,7 +40,7 @@
         <div class="container_select ">
             <div class="container_table ">
             <table class="seller_select">
-                <tr>
+                <tr class="selected_title ">
                 <td>業務員編號</td>
                 </tr>
                 {% for Sp_id in all_Sp_id %} 
@@ -64,7 +64,7 @@
             <div class="container_select container_select_small">
                 <div class="container_table ">
                     <table class="seller_select " id="cus_select">
-                        <tr id="cus_title">
+                        <tr id="cus_title" class="selected_title ">
                             <td>客戶編號</td>
                         </tr>
                         {% for Cus_id in all_Cus_id %} 
@@ -79,7 +79,137 @@
                 </div>
             </div>
             <div class="chartarea " id="myDiv">
-                <canvas id="myChart"></canvas>
+                <div class="cusiddataframe_cardarea">
+                    <div class="cusiddataframe_text">
+                        業務員資料蒐集完整度
+                    </div>
+                </div>
+                <div class="cusiddataframe_cardarea_button">
+                    <div class="cusiddataframe_cardarea_button_text">
+                        {{selectedrate}}%
+                    </div>
+                </div>
+                
+                <table class="cusiddataframe">
+                    <tr>
+                        <td>
+                            客戶id
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_id_id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            家庭成員數量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_FamilyNum">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            長者有無
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_eld">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            家中是否有按摩椅
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_status">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            客戶消費預算下限
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_floor">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            客戶消費預算上限
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_ceiling">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            主要按摩部位需求
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_position">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            顏色偏好
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_color">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            過去消費過的品牌產品
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_PastItem">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            按摩模式力道偏好
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_power">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            客戶職業
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_job">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            過去買過的產品
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="product_past">
+
+                        </td>
+                    </tr>
+                </table>
+                {% comment %} <canvas id="myChart"></canvas> {% endcomment %}
             </div>
             <div class="chartarea ">
                 <canvas id="mypieChart"></canvas>
@@ -225,5 +355,9 @@
             </div>
         </div>
     </div>
+    {{all_cusid_datalabels}}
 </body>
 </html>
+<script>
+
+</script>
