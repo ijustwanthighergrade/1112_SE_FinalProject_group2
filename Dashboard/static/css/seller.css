@@ -144,22 +144,37 @@
 }
 .top_cardarea{
   width: 100%;
-  height: 25%;
-  display: flex;
+  height: 30%;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  float: right;
+  float: left;
   /* border: #007bff 3px; */
   background-color: #007bff;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .title_cardarea_text{
   text-align: center; /* 水平居中文本内容 */
   color: #ffffff;
   font-size: 30px;
   font-weight: bold;
-}
+  height: 80%;
+  width: 100%;
+  float: left;
+  /* background-color: #9000ff; */
 
+}
+.cardcaption{
+  padding-left: 5%;
+  padding-top: 2%;
+  margin-bottom: 4%;
+  height: 23%;
+  width: 95%;
+  float: left;
+  color: #ffffff;
+  font-weight: bold;
+  
+  /* background-color: #00ffbf; */
+}
 /* calendar */
 .calendar{
   width: 50%;

@@ -1,20 +1,20 @@
 var endpoint = '../api/chart/data/'
 var defaultData=[]
 var labels=[]
-$.ajax({
-    method: 'GET',
-    url: endpoint,
-    success: function(data){
+// $.ajax({
+//     method: 'GET',
+//     url: endpoint,
+//     success: function(data){
         
-        labels = data.labels
-        defaultData = data.default    
-        setoptions("客戶資料蒐集完成度")  
-        //setChart();
-    },
-    error: function(error_data){
-        console.log('error'); 
-    }
-})
+//         labels = data.labels
+//         defaultData = data.default    
+//         setoptions("客戶資料蒐集完成度")  
+//         //setChart();
+//     },
+//     error: function(error_data){
+//         console.log('error'); 
+//     }
+// })
 // function setChart(){
 //     var ctx = document.getElementById("myChart"); 
 //     var myChart = new Chart(ctx, {
@@ -46,3 +46,5 @@ $.ajax({
 //         options:options
 //     });
 // }
+
+
