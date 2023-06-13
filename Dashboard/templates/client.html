@@ -8,6 +8,7 @@
     <script src="{% static 'js/client_page/client3.js' %}"></script>
     <script src="{% static 'js/client_page/client4.js' %}"></script>
     <script src="{% static 'js/client_page/client5.js' %}"></script>
+    <script src="{% static 'js/client_page/client6.js' %}"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,10 +57,10 @@
     </table>
     </div>
     <div class="my3">
-    <div class="text4">未點擊時顯示每個客戶資料收集與否 </div>
+    <div class="text4">各客戶完成階段</div>
         <canvas id="my3"></canvas>
     </div>
-    <div class="div2"><canvas id="myChart"></canvas></div>
+    <div class="div2"><div class="text4">各階段顧客數量</div><canvas id="myChart"></canvas></div>
     <div class="div2">
         <div class="text4">與顧客C001</div>
         <canvas id="my2"></canvas>
@@ -80,11 +81,13 @@
     </div>
     <div class="div2">
         <div class="my5">
-            <div class="text4">點擊後顯示個別客戶資料收集與否
-            </div> 
-        <canvas id="my5"></canvas>
+            <div class="text4">客戶資料收集與否</div>
+            <canvas id="my5"></canvas>
         </div>
     </div>
-    <div class="div2">各階段顧客數量總計表</div>
+    <div class="div2">
+        <div class="text4">各階段顧客數量總計表</div>
+        <div class="my6"><canvas id="my6"></canvas></div>
+    </div>
 </body>
 </html>

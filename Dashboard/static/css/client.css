@@ -121,8 +121,20 @@ text-align: center;
 
 .ta4{
   width: 100%;
+  position: absolute;
+  top: 15%;
+}
+
+#myChart,#my2{
+  position: absolute;
+  bottom: 15%;
 }
 
 .my3{
   width: 30%;
+}
+
+.my6{
+  width: 70%;
+  margin:auto;
 }
