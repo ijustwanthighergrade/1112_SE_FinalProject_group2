@@ -175,7 +175,7 @@ class Referrer (models.Model):
 class Ab (models.Model):
     Ab_ID=models.CharField('業務員ID(PK)/Sp001',max_length=5,null=False)      
     Ab_ON=models.IntegerField('打卡上班',null=False) 
-    Ab_OFF=models.IntegerField('打卡上班',null=False) 
+    Ab_OFF=models.IntegerField('打卡下班',null=False) 
     Ab_DATE=models.DateTimeField('日期',null=False,default=timezone.now)
     Ab_REASON=models.TextField('請假理由',null=False)
 

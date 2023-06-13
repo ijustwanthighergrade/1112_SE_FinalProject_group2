@@ -12,8 +12,7 @@ function createChart4() {
                 'rgba(243, 177, 178, 0.5)'
               ],
               borderColor: [
-                'rgba(50, 99, 132, 1)',
-                'rgba(251, 219, 198, 1)'
+                'rgba(255,255,255)'
               ],
               hoverOffset: 4
             }]

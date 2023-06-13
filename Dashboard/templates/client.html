@@ -2,12 +2,13 @@
 <html lang="en">
     {% load static %}
 <head>
-    <title>chair</title>
+    <title>client</title>
     <script src="{% static 'js/client_page/client1.js' %}"></script>
     <script src="{% static 'js/client_page/client2.js' %}"></script>
     <script src="{% static 'js/client_page/client3.js' %}"></script>
     <script src="{% static 'js/client_page/client4.js' %}"></script>
     <script src="{% static 'js/client_page/client5.js' %}"></script>
+    <script src="{% static 'js/client_page/client6.js' %}"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,63 +33,61 @@
     {% include 'header.html' %}
 
     <div class="seller_container">
-        <table>
-            <tr>
-                <td rowspan="4">
-                    <table>
-                        <tr><td style="border: 1px black double;" class="text1">客戶編號</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">c001</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">c002</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">c003</td></tr>
-                        <tr><td style="border: 1px black double;" class="text2">c004</td></tr>
-                    </table>
-                </td>
-                <td>
-                    <table  class="quantity">
-                        <tr><td>顧客：C001</td></tr>
-                        <tr><td>階段：第一階段</td></tr>
-                    </table>
-                </td>              
-                <td rowspan="2" style="border: 1px black double;" class="td1">
-                    <table class="quantity1">
-                        <tr><td>備註:</td></tr>
-                        <tr><td>真好騙</td></tr>
-                    </table>
-                </td>
-                <td rowspan="3"  colspan="3"><div class="my3">未點擊時顯示每個客戶資料收集與否 <canvas id="my3"></canvas></div></td>
-    
-            </tr>
-            <tr>
-                <td><div class="my4"><canvas id="my4"></canvas>第一階段完成度</div></td>
-                <td>
-                    各階段顧客數量總計表
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"><canvas id="myChart"></canvas></td>
-            </tr>
-            <tr>
-                <td colspan="2">顧客C001<canvas id="my2"></canvas></td>
-                <td  style="border: 1px black double;">
-                    <table>
-                        <tr><td class="text2">當月成功聯絡紀錄</td></tr>
-                        <tr><td class="text3">1/4</td></tr>
-                        <tr><td class="text3">1/10</td></tr>
-                        <tr><td class="text3">1/14</td></tr>
-                        <tr><td class="text3">1/20</td></tr>
-                    </table>
-                </td>
-                <td style="border: 1px black double;">
-                    <table class="quantity1">
-                        <tr><td>1/4備註:</td></tr>
-                        <tr><td>他家普通有錢</td></tr>
-                    </table>
-                </td>
-                <td ><div class="my5">點擊後顯示個別客戶資料收集與否 <canvas id="my5"></canvas></div></td>
-
-            </tr>
-            
+        <div class="div1">
+            <div class="text1">客戶編號</div>
+            <table class="ta4">
+            <tr><td><button class="text2">c20230601100328001</button></td></tr>
+            <tr><td><button class="text2">c20230605112735002</button></td></tr>
+            <tr><td><button class="text2">c20230611205450003</button></td></tr>
+            <tr><td><button class="text2">c20230612052441004</button></td></tr>
         </table>
+    </div>
+    <div class="div3">
+        <table class="ta3">
+        <tr><td class="text4">顧客：</td></tr>
+        <tr><td>c20230601100328001</td></tr>
+        <tr><td>階段：第一階段完成度</td></tr>
+        </table>
+        <div class="my4"><canvas id="my4"></canvas></div>
+    </div>
+    <div class="div1">
+    <table class="quantity1">
+        <tr><td>備註:</td></tr>
+        <tr><td>真好騙</td></tr>
+    </table>
+    </div>
+    <div class="my3">
+    <div class="text4">各客戶完成階段</div>
+        <canvas id="my3"></canvas>
+    </div>
+    <div class="div2"><div class="text4">各階段顧客數量</div><canvas id="myChart"></canvas></div>
+    <div class="div2">
+        <div class="text4">與顧客C001</div>
+        <canvas id="my2"></canvas>
+    </div>
+    <div class="div4">
+        <table class="ta1">
+        <tr><td class="text4">當月成功聯絡紀錄</td></tr>
+        <tr><td><button class="text2">1/4</button></td></tr>
+        <tr><td><button class="text2">1/10</button></td></tr>
+        <tr><td><button class="text2">1/12</button></td></tr>
+        <tr><td><button class="text2">1/16</button></td></tr>
+        </table>
+        <table class="quantity1">
+        <tr><td class="text4">備註:</td></tr>
+        <tr><td>日期:1/4</td></tr>
+        <tr><td>他家普通有錢</td></tr>
+        </table>
+    </div>
+    <div class="div2">
+        <div class="my5">
+            <div class="text4">客戶資料收集與否</div>
+            <canvas id="my5"></canvas>
+        </div>
+    </div>
+    <div class="div2">
+        <div class="text4">各階段顧客數量總計表</div>
+        <div class="my6"><canvas id="my6"></canvas></div>
     </div>
 </body>
 </html>

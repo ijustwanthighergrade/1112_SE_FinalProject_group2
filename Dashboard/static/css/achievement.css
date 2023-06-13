@@ -1,63 +1,90 @@
 .month{
   background-color: #f3ebc2;
-  border:1px solid black;
   padding:15px;
-  margin-top: 10px;
-  margin-left: 15px;
-  position: fixed;
+  margin-top: 1%;
+  margin-left: 1%;
+  position: absolute;
   height: 330px;
   width: 70px;
 }
 table{
   background-color: aliceblue;
-}
-
-tr{
-  border:1px solid black;
-  padding:5gpx;
+  text-align: center;
 }
 
 .chair{
   background-color: #f3ebc2;
-  margin-left: 15px;
-  margin-top: 350px;
+  margin-left: 1%;
+  margin-top: 19%;
   padding: 15px;
-  position: fixed;
+  position: absolute;
   height: 230px;
 
 }
 .announcement{
   background-color: #f3ebc2;
-  margin-left: 800px;
-  margin-top: 10px;
+  margin-left: 37.9%;
+  margin-top: 1%;
   padding: 5px;
-  position: fixed;
+  position: absolute;
   width: 500px;
   height: 330px;
 
 }
 
 .bchart1{
-  position: fixed;
-  margin-left: 100px;
-  margin-top: 350px;
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 19%;
+  height: 230px;
 
 }
 .bchart2{
-  position: fixed;
-  margin-left: 720px;
-  margin-top: 350px;
+  position: absolute;
+  margin-left: 38%;
+  margin-top: 19%;
+  height: 230px;
 }
 
 .pchart1{
-  position: fixed;
-  margin-left: 100px;
-  margin-top: 10px;
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 1%;
+  height: 330px;
 }
 .pchart2{
-  position:  fixed;
-  margin-left: 450px;
-  margin-top: 10px;
+  position:  absolute;
+  margin-left:21.5%;
+  margin-top: 1%;
+  height: 330px
   
   
+}
+.titles{
+  font-weight: bolder;
+  font-size:larger ;
+  border-bottom: black solid 1px;
+}
+
+.carda{
+  background-color: #f3ebc2;
+  position: absolute;
+
+  margin-left: 65.5%;
+  margin-top: 1%;
+
+  width: 200px;
+  height: 100px;
+}
+
+.cardb{
+  background-color: #f3ebc2;
+  position: absolute;
+
+  width: 200px;
+  height: 100px;
+
+  margin-left: 65.5%;
+  margin-top: 7%;
+
 }
