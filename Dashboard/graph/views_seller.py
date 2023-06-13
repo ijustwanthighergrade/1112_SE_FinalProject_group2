@@ -51,13 +51,13 @@ def seller_page(request: HttpRequest):
             
         counter = {}
 
-        for data in cus_false:
-            false_types = False.objects.filter(FALSE_id=data)
-            for false_type in false_types:
-                if false_type in counter:
-                    counter[false_type] += 1
-                else:
-                    counter[false_type] = 1
+        # for data in cus_false:
+        #     false_types = False.objects.filter(FALSE_id=data)
+        #     for false_type in false_types:
+        #         if false_type in counter:
+        #             counter[false_type] += 1
+        #         else:
+        #             counter[false_type] = 1
                     
          #失敗原因表的labels
          
@@ -111,6 +111,7 @@ def seller_page(request: HttpRequest):
             
             totalamount_Cus_id=sp_Cus_id.count()
             # 業務員資料蒐集完整度表 魔改表現方式
+            
             isnull=totalamount_Cus_id*10
             for Cus_id in all_Cus_id:
                 if Cus.objects.filter(Cus_id=cusid,Cus_FamilyNum__isnull=True):

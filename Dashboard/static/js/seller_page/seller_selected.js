@@ -98,7 +98,7 @@ $(document).ready(function() {
         console.log(response); // 这里可以处理返回的结果
         console.log(response.selectedrate)
         
-        var cusid_data = response.cusid_data.map(function(item) {
+        var cusid_data = response.all_Cus_id.map(function(item) {
           Cus_id_id= item.Cus_id_id;
           Cus_FamilyNum= item.Cus_FamilyNum;
           Cus_eld= item.Cus_eld;
