@@ -16,7 +16,7 @@ table{
     margin: auto;
 }
 .c{
-    border-bottom: 2px solid rgb(243, 177, 178);
+    border-bottom: 2px solid rgb(255, 255, 255);
     padding: 7px 5px;
 }
 .r{
@@ -55,7 +55,7 @@ table{
     width: 33.3%;
 }
 .block2{
-    background-color: rgb(251, 219, 198);
+    background-color: rgb(198, 226, 229) ;
     border-radius: 10px;
     margin: 0.5%;
     width: 95%;
