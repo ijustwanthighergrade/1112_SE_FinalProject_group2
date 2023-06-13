@@ -1,90 +1,116 @@
+.div1{
+  float: left;
+  width: 7%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
 .month{
-  background-color: #f3ebc2;
-  padding:15px;
-  margin-top: 1%;
-  margin-left: 1%;
-  position: absolute;
-  height: 330px;
-  width: 70px;
+  background-color: rgb(198, 226, 229);
+  margin-right: 5%;
+  width: 90%;
+  border-radius: 10px;
+
 }
 table{
-  background-color: aliceblue;
+  background-color: rgb(198, 226, 229);
   text-align: center;
 }
 
 .chair{
-  background-color: #f3ebc2;
-  margin-left: 1%;
-  margin-top: 19%;
-  padding: 15px;
-  position: absolute;
-  height: 230px;
-
-}
-.announcement{
-  background-color: #f3ebc2;
-  margin-left: 37.9%;
-  margin-top: 1%;
-  padding: 5px;
-  position: absolute;
-  width: 500px;
-  height: 330px;
-
+  background-color: rgb(198, 226, 229);
+  margin-top: 45%;
+  width: 90%;
+  height: 100%; 
+  border-radius: 10px;
 }
 
+.divb{
+ display: flex;
+ width: 70%;
+ height: 30%;
+ margin-top: 24%;
+
+}
 .bchart1{
-  position: absolute;
-  margin-left: 5%;
-  margin-top: 19%;
-  height: 230px;
-
+  background-color: rgb(198, 226, 229);
+  border-radius: 10px;
 }
+
 .bchart2{
-  position: absolute;
-  margin-left: 38%;
-  margin-top: 19%;
-  height: 230px;
+  background-color: rgb(198, 226, 229);
+  margin-left: 1%;
+  border-radius: 10px;
+}
+
+.div2{
+  display: flex;
+  float: left; 
+  width: 30%;
+
+
 }
 
 .pchart1{
-  position: absolute;
-  margin-left: 5%;
-  margin-top: 1%;
-  height: 330px;
+  background-color: rgb(198, 226, 229);
+  border-radius: 10px;
 }
 .pchart2{
-  position:  absolute;
-  margin-left:21.5%;
-  margin-top: 1%;
-  height: 330px
-  
-  
+  background-color: rgb(198, 226, 229);
+  margin-left: 3%;
+  border-radius: 10px;
 }
 .titles{
   font-weight: bolder;
-  font-size:larger ;
-  border-bottom: black solid 1px;
+  font-size:20px ;
+  border-bottom: rgb(255, 255, 255) solid 3px;
 }
 
+.div3{
+  display: flex;
+  float: left;
+  height: 58.5%;
+  width: 40%;
+  margin-left: 14%;
+}
+
+
+.announcement{
+  background-color: rgb(198, 226, 229);
+  height: 100%;
+  width: 60%;
+  border-radius: 10px;
+}
+.tr1{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.divc{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 30%;
+  padding-left: 1%;
+}
+  
 .carda{
-  background-color: #f3ebc2;
-  position: absolute;
-
-  margin-left: 65.5%;
-  margin-top: 1%;
-
-  width: 200px;
-  height: 100px;
+  background-color: rgb(198, 226, 229);    
+  height: 40%;
+  border-radius: 10px;
 }
 
 .cardb{
-  background-color: #f3ebc2;
-  position: absolute;
+  background-color: rgb(198, 226, 229);
+  height: 40%;
+  margin-top: 30%;
+  border-radius: 10px;
+}
 
-  width: 200px;
-  height: 100px;
-
-  margin-left: 65.5%;
-  margin-top: 7%;
+.seller_container{
+  background-color: white;
 
 }
+

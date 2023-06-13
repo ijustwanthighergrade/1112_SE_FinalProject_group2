@@ -31,7 +31,8 @@
 </head>
 <body>
 {% include 'header.html' %}
-<div class="seller_container">
+<div class="seller_container" style="background-color: white;">
+<div class="div1">
     <table class="month">
         <tr>
             <td class="titles">月份</td>
@@ -76,6 +77,9 @@
 
     <table class="chair" >
         <tr>
+            <td class="titles">按摩椅</td>
+        </tr>
+        <tr>
         <td>睡魔智眠椅</td>
         </tr>
 
@@ -91,6 +95,69 @@
         </tr>
 
     </table>
+</div>
+
+<div class="div2">
+
+<table class="pchart1">
+    <tr>
+        <td class="titles" >成本花費表</td>
+    </tr> 
+
+    <tr> 
+    <td><canvas id="pieChart1" width="300" height="300">
+    </canvas></td>
+    </tr>
+
+</table>
+
+<table class="pchart2">
+    <tr>
+        <td class="titles" >顧客成分分析表（業務員）</td>
+    </tr>
+    <tr>
+        <td><canvas id="pieChart2" width="300" height="300">
+    </canvas></td>
+    </tr>
+</table>
+
+</div>
+<div class="div3">
+<table class="announcement" >
+    <tr>
+    <td class="titles">公告</td>
+    </tr>
+
+    <tr class="tr1">
+    <td>2023/12/12<br>
+    訊息：我肚子好餓<br></td>
+    </tr>
+
+    <tr class="tr1">
+    <td >2023/12/13<br>
+    訊息：晚餐要吃什麼<br></td>
+    </tr>
+</table>
+<div class="divc">
+<table class="carda" >
+    <tr>
+    <td class="titles">當月成本花費</td>
+    </tr>
+    <tr>
+    <td>200000元</td>
+    </tr>
+</table>
+<table class="cardb" >
+    <tr>
+    <td class="titles">當月成交顧客數</td>
+    </tr>
+    <tr>
+        <td>57人</td>
+    </tr>
+</table>
+</div>
+</div>
+<div class="divb">
     <table class="bchart1">
         <tr>
         <td class="titles" >個別產品業績排行榜</td>
@@ -110,60 +177,8 @@
     </canvas></td>
     </tr>
 </table>
+</div>
 
-<table class="pchart1">
-    <tr>
-        <td class="titles">成本花費表</td>
-    </tr> 
-
-    <tr> 
-    <td><canvas id="pieChart1" width="300" height="300">
-    </canvas></td>
-    </tr>
-
-</table>
-
-<table class="pchart2">
-    <tr>
-        <td class="titles">顧客成分分析表（業務員）</td>
-    </tr>
-    <tr>
-        <td><canvas id="pieChart2" width="300" height="300">
-    </canvas></td>
-    </tr>
-</table>
-<table class="announcement" >
-    <tr>
-    <td class="titles">公告</td>
-    </tr>
-
-    <tr>
-    <td>2023/12/12<br>
-    訊息：我肚子好餓<br></td>
-    </tr>
-
-    <tr>
-    <td>2023/12/13<br>
-    訊息：晚餐要吃什麼<br></td>
-    </tr>
-</table>
-
-<table class="carda" >
-    <tr>
-    <td class="titles">當月成本花費</td>
-    </tr>
-    <tr>
-    <td>200000元</td>
-    </tr>
-</table>
-<table class="cardb" >
-    <tr>
-    <td class="titles">當月成交顧客數</td>
-    </tr>
-    <tr>
-        <td>57人</td>
-    </tr>
-</table>
 </div>
 </body>
 </html>
