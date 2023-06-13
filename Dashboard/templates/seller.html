@@ -40,7 +40,7 @@
         <div class="container_select ">
             <div class="container_table ">
             <table class="seller_select">
-                <tr>
+                <tr class="selected_title ">
                 <td>業務員編號</td>
                 </tr>
                 {% for Sp_id in all_Sp_id %} 
@@ -64,7 +64,7 @@
             <div class="container_select container_select_small">
                 <div class="container_table ">
                     <table class="seller_select " id="cus_select">
-                        <tr id="cus_title">
+                        <tr id="cus_title" class="selected_title ">
                             <td>客戶編號</td>
                         </tr>
                         {% for Cus_id in all_Cus_id %} 
@@ -79,7 +79,137 @@
                 </div>
             </div>
             <div class="chartarea " id="myDiv">
-                <canvas id="myChart"></canvas>
+                <div class="cusiddataframe_cardarea">
+                    <div class="cusiddataframe_text">
+                        業務員資料蒐集完整度
+                    </div>
+                </div>
+                <div class="cusiddataframe_cardarea_button">
+                    <div class="cusiddataframe_cardarea_button_text">
+                        {{selectedrate}}%
+                    </div>
+                </div>
+                
+                <table class="cusiddataframe">
+                    <tr>
+                        <td>
+                            客戶id
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_id_id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            家庭成員數量
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_FamilyNum">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            長者有無
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_eld">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            家中是否有按摩椅
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_status">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            客戶消費預算下限
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_floor">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            客戶消費預算上限
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_ceiling">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            主要按摩部位需求
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_position">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            顏色偏好
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_color">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            過去消費過的品牌產品
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_PastItem">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            按摩模式力道偏好
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Chair_power">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            客戶職業
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="Cus_job">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            過去買過的產品
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="product_past">
+
+                        </td>
+                    </tr>
+                </table>
+                {% comment %} <canvas id="myChart"></canvas> {% endcomment %}
             </div>
             <div class="chartarea ">
                 <canvas id="mypieChart"></canvas>
@@ -206,16 +336,23 @@
                   
                 <div class="title_cardarea">
                     <div class="top_cardarea">
-                        <div class="title_cardarea_text">
-                            業務分析
+                        <div class="cardcaption">
+                            目前選擇之業務員
+                        </div>
+                        <div class="title_cardarea_text" id="selected_spid">
+                            所有業務員
                         </div>
                     </div>
                     <div class="top_cardarea">
-                        <div class="title_cardarea_text">
-                            業務分析
+                        <div class="cardcaption">目前選擇之客戶
+                        </div>
+                        <div class="title_cardarea_text" id="selected_cusid">
+                            無
                         </div>
                     </div>
                     <div class="top_cardarea">
+                        <div class="cardcaption">
+                        </div>
                         <div class="title_cardarea_text">
                             業務分析
                         </div>
@@ -224,6 +361,94 @@
                 
             </div>
         </div>
-    </div>
+    </div>{{allsp_turnover}}
 </body>
 </html>
+<script>
+    var endpoint = '../api/chart/data/'
+    var defaultData=[]
+    var labels=[]
+    {% for spid in all_Sp_id %}
+        labels.push("{{spid.Sp_id}}")
+    {%endfor%}
+    {% for sp_turnover in allsp_turnover %}
+        defaultData.push("{{sp_turnover}}")
+    {%endfor%}
+    setpieChart();
+    {% comment %} $.ajax({
+        method: 'GET',
+        url: endpoint,
+        success: function(data){
+            labels = data.labels
+            defaultData = data.default    
+            setpieChart();
+        },
+        error: function(error_data){
+            console.log('error'); 
+        }
+    }) {% endcomment %}
+    function setpieChart(){
+        var ctx = document.getElementById("mypieChart"); 
+        var mypieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels, // 這裡
+                datasets: [{
+                    label: '# of Votes',
+                    data: defaultData, // 和這裡
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontSize:allfontsize ,
+                            beginAtZero:true
+                        }
+                        ,
+                    }]
+                },
+                plugins:{
+                    legend: {
+                            usePointStyle: true, // 使用点样式来表示标签的颜色框
+                            pointStyle: 'circle', // 将点的样式设置为圆形
+                            pointRadius: 6, // 设置标签框的半径
+                            pointHoverRadius: 8, // 设置鼠标悬停时标签框的半径
+                            display: true,
+                            position: 'top',
+                            align: 'end',
+                            labels: {
+                              fontColor: '#333',
+                              fontSize: 5,
+                              boxWidth: 8,
+                              padding: 4
+                            }
+                    },
+                    title:{
+                        display: true,
+                        text:"業務員貢獻營業額佔比",
+                        position:'top',
+                        align:'top'
+                    }
+                }
+            }
+        });
+    }
+</script>

@@ -144,22 +144,37 @@
 }
 .top_cardarea{
   width: 100%;
-  height: 25%;
-  display: flex;
+  height: 30%;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  float: right;
+  float: left;
   /* border: #007bff 3px; */
   background-color: #007bff;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .title_cardarea_text{
   text-align: center; /* 水平居中文本内容 */
   color: #ffffff;
   font-size: 30px;
   font-weight: bold;
-}
+  height: 80%;
+  width: 100%;
+  float: left;
+  /* background-color: #9000ff; */
 
+}
+.cardcaption{
+  padding-left: 5%;
+  padding-top: 2%;
+  margin-bottom: 4%;
+  height: 23%;
+  width: 95%;
+  float: left;
+  color: #ffffff;
+  font-weight: bold;
+  
+  /* background-color: #00ffbf; */
+}
 /* calendar */
 .calendar{
   width: 50%;
@@ -220,4 +235,67 @@
   height: 100%;
   background-color: inherit;
   border: inherit;
+}
+.cusiddataframe tbody,tr,td{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.cusiddataframe{
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.selected_title{
+
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+.cusiddataframe tr:nth-child(odd) {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+}
+.cusiddataframe tr:nth-child(even) {
+  color: #007bff;
+  font-weight: bold;
+  font-size: 15px;
+}
+.cusiddataframe_cardarea{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  float: right;
+  /* border: #007bff 3px; */
+  background-color: #007bff;
+}
+.cusiddataframe_cardarea_button{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  background-color: #f0f8ff;
+}
+.cusiddataframe_cardarea_button_text{
+  
+  font-size: 50px;
+  
+  text-align: center; /* 水平居中文本内容 */
+  color: #007bff;
+  font-weight: bold;
+}
+.cusiddataframe_text{
+  font-size: 15px;
+  
+  text-align: center; /* 水平居中文本内容 */
+  color: #ffffff;
+  font-weight: bold;
 }

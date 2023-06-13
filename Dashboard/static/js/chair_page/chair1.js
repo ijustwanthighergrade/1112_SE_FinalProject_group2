@@ -3,27 +3,27 @@ function createChart() {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["6/1", "6/2", "6/3", "6/4", "6/5"],
             datasets: [{
-                label: '# of Votes',
+                label: '使用次數',
                 data: [13, 19, 3, 5, 2, 3],
                 backgroundColor: [
                     'rgba(50, 99, 132, 0.2)',
                 ],
                 borderColor: [
-                    'rgba(50, 99, 132, 1)',
+                    'rgba(255,255,255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             },{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: '全店按摩椅使用次數',
+                data: [58, 80, 30, 50, 30, 40],
                 backgroundColor: [
-                    'rgba(2, 252, 2, 0.2)'
+                    'rgba(243, 177, 178, 0.5)'
                 ],
                 borderColor: [
-                    'rgba(2, 253, 2, 1)'
+                    'rgba(255,255,255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
        

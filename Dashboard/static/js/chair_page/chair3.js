@@ -11,19 +11,19 @@ function createChart3() {
                     'rgba(25, 99, 132, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(255,255,255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             },{
-                label: '全店',
+                label: '全店本月使用次數',
                 data: [250],
                 backgroundColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(243, 177, 178, 0.5)'
                 ],
                 borderColor: [
-                    'rgba(194, 253, 2, 1)'
+                    'rgba(255,255,255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {  
