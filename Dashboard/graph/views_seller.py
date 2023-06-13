@@ -98,7 +98,7 @@ def seller_page(request: HttpRequest):
             'selectedrate':selectedrate,
             'allsp_turnover':allsp_turnover,
             'false_labels':false_labels,
-            'counter':counter
+            # 'counter':counter
         })
     elif request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
                

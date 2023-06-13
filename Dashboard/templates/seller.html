@@ -583,7 +583,7 @@
                     data: defaultDatastate, // 和這裡
                     backgroundColor: [
                     'rgb(198, 226, 229)',
-                        'rgb(255, 255, 255)',
+                    'rgb(255, 255, 255)',
                     ],
                     borderColor: [
                         'rgb(0, 109, 121)',
@@ -608,8 +608,8 @@
                     label: '# of Votes',
                     data: defaultDatastate, // 和這裡
                     backgroundColor: [
-                        'rgb(255, 255, 255)',
-                        'rgb(198, 226, 229)',
+                    'rgb(198, 226, 229)',
+                    'rgb(255, 255, 255)',
                     ],
                     borderColor: [
                         'rgb(0, 109, 121)',
@@ -636,8 +636,8 @@
                     label: '# of Votes',
                     data: defaultDatastate, // 和這裡
                     backgroundColor: [
-                        'rgb(255, 255, 255)',
                         'rgb(198, 226, 229)',
+                        'rgb(255, 255, 255)',
                     ],
                     borderColor: [
                         'rgb(0, 109, 121)',
@@ -662,8 +662,8 @@
                     label: '# of Votes',
                     data: defaultDatastate, // 和這裡
                     backgroundColor: [
-                        'rgb(255, 255, 255)',
-                        'rgb(198, 226, 229)',
+                    'rgb(198, 226, 229)',
+                    'rgb(255, 255, 255)',
                     ],
                     borderColor: [
                         'rgb(0, 109, 121)',
@@ -676,9 +676,9 @@
     }
 
 
-    
+    setlineChart();
     var statelabels=['第一階段','第二階段','第三階段','第四階段']
-    
+    var statedefaultData =[3,5,8,2]
 function setlineChart(){
     var ctx = document.getElementById("mylineChart"); 
     var mylineChart = new Chart(ctx, {
@@ -688,7 +688,7 @@ function setlineChart(){
             datasets: [
                 {
                     label: '# of Votes',
-                    data: defaultData, // 和這裡
+                    data: statedefaultData, // 和這裡
                     backgroundColor: [
                         'rgb(243, 177, 178)',
                     ],
@@ -699,7 +699,7 @@ function setlineChart(){
                 },
                 {
                     label: '# of Votes',
-                    data: defaultData1, // 和這裡
+                    data: statedefaultData, // 和這裡
                     backgroundColor: [
                         'rgb(198, 226, 229)',
                     ],
@@ -712,18 +712,12 @@ function setlineChart(){
         },
         options: {
             scales: {
-                y: [{
+                yAxes: [{
                     ticks: {
                         fontSize:allfontsize ,
                         beginAtZero:true
                     }
-                }],
-            },
-            title:{
-                display: true,
-                text:"第一階段",
-                position:'left',
-                align:'top'
+                }]
             }
         }
     });
