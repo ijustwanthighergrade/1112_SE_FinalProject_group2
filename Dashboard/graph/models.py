@@ -159,6 +159,7 @@ class Trade (models.Model):
     Voucher_date=models.DateTimeField('發放時間',null=False,default=timezone.now)
     Voucher_provider=models.CharField('業務員ID(PK)/Sp001',max_length=5,null=False)    #這裡我再研究一下    
     Voucher_status=models.IntegerField('使用狀況',null=False)
+    Voucher_type=models.CharField('銷售贈予狀態',max_length=2,null=False,default=0)
 
 #客戶引薦資料表
 class Referrer (models.Model):
