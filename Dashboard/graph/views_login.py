@@ -195,7 +195,7 @@ else:
 
 if not feedback.objects.exists():
         feedback.objects.create(feedback_id="F20230612145624987",feedbackCu_id="C001",feedcus_id="c20230601091315340",feedback_text="很舒適，椅子很乾淨",feedback_date="2023-06-12 14:56:24")
-        feedback.objects.create(feedback_id="F20230603224434763",feedbackCu_id="C001",feedcus_id="c20230431222222045",feedback_text="力道似乎有點弱",feedback_date="F2023-06-03 22:44:34")
+        feedback.objects.create(feedback_id="F20230603224434763",feedbackCu_id="C001",feedcus_id="c20230431222222045",feedback_text="力道似乎有點弱",feedback_date="2023-06-03 22:44:34")
         feedback.objects.create(feedback_id="F20230601192645037",feedbackCu_id="C002",feedcus_id="c20230601091315340",feedback_text="希望能體驗時間加長，都還沒感覺",feedback_date="2023-06-01 19:26:45")
         feedback.objects.create(feedback_id="F20230602175208295",feedbackCu_id="C003",feedcus_id="c20230502111314778",feedback_text="以後有機會來買一台",feedback_date="2023-06-02 17:52:08")
         feedback.objects.create(feedback_id="F20230608195712274",feedbackCu_id="C004",feedcus_id="c20230605142259011",feedback_text="第一次體驗這台，會來回顧",feedback_date="2023-06-08 19:57:12")
