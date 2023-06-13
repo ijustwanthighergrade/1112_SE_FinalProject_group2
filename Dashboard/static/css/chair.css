@@ -45,7 +45,6 @@
   margin: 0.5%;
 }
 
-
 .div1{
   width: 10%;
   height: 50%;
@@ -95,6 +94,7 @@
 
 .myChart{
   height: 102%;
+  width: 36%;
   float: right;
 }
 

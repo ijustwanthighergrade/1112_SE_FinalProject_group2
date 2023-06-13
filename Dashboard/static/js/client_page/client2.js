@@ -7,13 +7,13 @@ function createChart2() {
             datasets: [{
                 label: '聯絡成功次數',
                 data: [30, 45, 60, 50, 30, 25, 28],
-                backgroundColor: 'rgb(120, 150, 192)',
+                backgroundColor: 'rgba(243, 177, 178, 0.5)',
                 fill: true,
                 tension: 0.1
             },{
                 label: '聯絡次數',
                 data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: 'rgb(75, 192, 192)',
+                backgroundColor: 'rgba(50, 99, 132, 0.2)',
                 fill: true,
                 tension: 0.1
             }]

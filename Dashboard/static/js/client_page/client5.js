@@ -8,12 +8,12 @@ function createChart5() {
                 label: '第一階段',
                 data: [1, 0, 1],
                 backgroundColor: [
-                    'rgba(25, 99, 132, 0.2)'
+                    'rgba(50, 99, 132, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(255,255,255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {  

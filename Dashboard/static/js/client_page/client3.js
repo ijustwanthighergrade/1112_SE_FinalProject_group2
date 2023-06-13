@@ -8,22 +8,22 @@ function createChart3() {
                 label: '第一階段',
                 data: [1, 0, 1, 1],
                 backgroundColor: [
-                    'rgba(25, 99, 132, 0.2)'
+                    'rgba(50, 99, 132, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(255, 255, 255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             },{
                 label: '第二階段',
                 data: [1, 0, 1, 1],
                 backgroundColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(243, 177, 178, 0.5)'
                 ],
                 borderColor: [
-                    'rgba(194, 253, 2, 1)'
+                    'rgba(255, 255, 255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             },{
                 label: '第三階段',
                 data: [1, 0, 0, 0],
@@ -31,9 +31,9 @@ function createChart3() {
                     'rgba(194, 252, 2, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(194, 253, 2, 1)'
+                    'rgba(255, 255, 255)'
                 ],
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {  
