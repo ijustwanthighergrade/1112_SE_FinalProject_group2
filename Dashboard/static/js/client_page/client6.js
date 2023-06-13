@@ -12,9 +12,9 @@ function createChart5() {
               label: 'My First Dataset',
               data: [100, 85, 60],
               backgroundColor: [
-                'rgba(50, 99, 132, 0.2)',
+                'rgba(79, 85, 143, 0.5)',
                 'rgba(243, 177, 178, 0.5)',
-                'rgba(194, 252, 2, 0.2)'
+                'rgba(69, 219, 78, 0.5)'
             ]
             }]
           },

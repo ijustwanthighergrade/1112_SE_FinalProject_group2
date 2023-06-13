@@ -8,7 +8,7 @@ function createChart5() {
                 label: '第一階段',
                 data: [1, 0, 1],
                 backgroundColor: [
-                    'rgba(50, 99, 132, 0.2)'
+                    'rgba(79, 85, 143, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255,255,255)'

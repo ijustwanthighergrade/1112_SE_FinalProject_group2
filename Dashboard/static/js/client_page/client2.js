@@ -13,7 +13,7 @@ function createChart2() {
             },{
                 label: '聯絡次數',
                 data: [65, 59, 80, 81, 56, 55, 40],
-                backgroundColor: 'rgba(50, 99, 132, 0.2)',
+                backgroundColor: 'rgba(79, 85, 143, 0.5)',
                 fill: true,
                 tension: 0.1
             }]
