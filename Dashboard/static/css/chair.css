@@ -17,7 +17,18 @@
     padding: 1%;
 }
 
-.ta1{
+.text2:hover{
+  font-weight: bold;
+}
+
+.text3{
+  font-size: 20px;
+  padding: 1%;
+  border-bottom: 1px black solid;
+
+}
+
+.ta1,.ta2{
   width: 100%;
 }
 
@@ -47,8 +58,6 @@
   height: 50%;
   width: 29%;
   margin: 0.5% ;
-  align-items: center;
-  display: flex;
   padding: 2%;
 }
 
