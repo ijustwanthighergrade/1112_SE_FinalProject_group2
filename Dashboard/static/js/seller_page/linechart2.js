@@ -1,6 +1,6 @@
 var endpoint = '../api/chart/data/'
 var defaultData=[]
-var labels=[]
+var timelabels=['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
 var allfontsize=12;
 $.ajax({
     method: 'GET',
@@ -20,7 +20,7 @@ function setlineChart2(){
     var mylineChart2 = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: labels, // 這裡
+            labels: timelabels, // 這裡
             datasets: [{
                 label: '# of Votes',
                 data: defaultData, // 和這裡
