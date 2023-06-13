@@ -4,15 +4,15 @@ function createChart4() {
         type: 'pie',
         data: data = {
             labels: [
-              '123',
-              'Blue'
+              '已完成',
+              '未完成'
             ],
             datasets: [{
               label: 'My First Dataset',
               data: [305, 50],
               backgroundColor: [
                 'rgba(243, 177, 178, 0.5)',
-                'rgba(50, 99, 132, 0.2)'
+                'rgba(79, 85, 143, 0.5)'
               ],
               hoverOffset: 4
             }]

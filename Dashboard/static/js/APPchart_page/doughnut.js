@@ -11,8 +11,8 @@ var myPieChart = new Chart(ctx4, {
     label: '總使用率',
     data: [300, 50],
     backgroundColor: [
-      'rgb(198, 226, 229)',
-      'rgb(243, 177, 178)'
+      'rgb(169, 219, 230)',
+      'rgb(251, 219, 198)'
     ],
     hoverOffset: 4
   }]

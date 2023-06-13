@@ -8,7 +8,7 @@ function createChart2() {
                 label: '回報的顧客&次數',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
-                    'rgba(25, 99, 132, 0.2)'
+                    'rgba(79, 85, 143, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255,255,255)'

@@ -10,7 +10,7 @@ var myBarChart = new Chart(ctx2, {
     data: [65, 59, 80, 81, 56, 55, 40],
     fill: false,
     backgroundColor: [
-      'rgba(198, 226, 229, 0.8)'
+      'rgb(251, 219, 198)'
     ],
     borderColor: [
       'rgb(255, 255, 255)'

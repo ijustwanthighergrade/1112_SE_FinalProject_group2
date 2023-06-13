@@ -264,7 +264,7 @@ class manage (models.Model):
     manage_deal=models.BooleanField('成交與否',null=False)
     manage_category=models.CharField('失敗因素編號(fa+001)',max_length=5,null=True, blank=True)      
     manage_detail=models.TextField('失敗原因詳述',null=True, blank=True) 
-    manage_stage=models.IntegerField('聯絡次數',null=False)
+    manage_frequency=models.IntegerField('聯絡次數',null=False,default=0)
     Sp_id=models.CharField('業務員ID(PK)/Sp001',max_length=5,null=False)    
     store_id=models.CharField('店家id S+001',max_length=4,null=False)    
 

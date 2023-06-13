@@ -8,7 +8,7 @@ function createChart() {
                 label: '使用次數',
                 data: [13, 19, 3, 5, 2, 3],
                 backgroundColor: [
-                    'rgba(50, 99, 132, 0.2)',
+                    'rgba(79, 85, 143, 0.5)',
                 ],
                 borderColor: [
                     'rgba(255,255,255)'

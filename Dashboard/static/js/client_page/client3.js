@@ -8,7 +8,7 @@ function createChart3() {
                 label: '第一階段',
                 data: [1, 0, 1, 1],
                 backgroundColor: [
-                    'rgba(50, 99, 132, 0.2)'
+                    'rgba(79, 85, 143, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255, 255, 255)'
@@ -28,7 +28,7 @@ function createChart3() {
                 label: '第三階段',
                 data: [1, 0, 0, 0],
                 backgroundColor: [
-                    'rgba(194, 252, 2, 0.2)'
+                    'rgba(69, 219, 78, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255, 255, 255)'
