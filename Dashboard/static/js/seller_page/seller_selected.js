@@ -220,7 +220,7 @@ $('#calendar-body').on('click', '.calendar-day', function() { //點擊獲取日�
     // 获取点击的日期
     selectedDate = $(this).attr('data-date');
     // openModal(selectedDate);
-    spid=document.getElementById('selected_spid').textContent
+    selected_spid=document.getElementById('selected_spid').textContent
     console.log(spid)
     // 发起 AJAX 请求获取数据
     $.ajax({
@@ -228,10 +228,11 @@ $('#calendar-body').on('click', '.calendar-day', function() { //點擊獲取日�
       method: 'POST',
       data: { 
         date: selectedDate,
-        beselectedspid:spid ,
+        beselectedspid:selected_spid ,
        },
       success: function(response) {
         // 处理成功响应
+        document.getElementById('selected_spid').textContent = response.beselectedspid;
         openModal(response);
         console.log(response)
       },

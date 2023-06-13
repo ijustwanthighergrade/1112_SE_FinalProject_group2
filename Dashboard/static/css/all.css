@@ -41,7 +41,7 @@ html,body {
   }
   /* 设置滚动条滑块的背景色 */
   ::-webkit-scrollbar-thumb {
-    background-color: #56c4f0;
+    background-color: rgb(0, 89, 100);
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;

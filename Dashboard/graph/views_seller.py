@@ -4,12 +4,14 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
-from graph.models import Sp,manage,Cus,Ab,arrange,order,order_detailed
+from graph.models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpRequest
 import json
 from django.core.serializers import serialize
 from django.utils import timezone
+from django.db.models import Q
+from datetime import datetime
 
 class DateTimeJSONEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -28,28 +30,42 @@ def seller_page(request: HttpRequest):
         all_Sp_id=Sp.objects.values('Sp_id')        #所有的業務員
         all_Cus_id=manage.objects.values('Cus_id')  #所有的顧客專案
         
-        #業績用業務篩產品販售資料表抓詳細資料表的每筆訂單加總訂單總額
+        #業績用業務篩產品販售資料表抓詳細資料表的每筆訂單加總訂單總額 piechart1 data
         allsp_turnover=[]       #存所有業務業績
         for Sid in all_Sp_id:   #對所有業務 抓取每一筆產品販售資料表
             totalprice=0
-            ordersp=order.objects.filter(Sp_id=Sid)
+            ordersp=order.objects.filter(Sp_id=Sid)#對單一業務 抓取每一筆產品販售資料表
             totalprice_list=0
             allorder=[]
             for sporder in ordersp:#用業務篩產品販售資料表
                 sporder_detailed=order_detailed.objects.filter(order_id=sporder.order_id)#order_id篩產品販售詳細資料表
                 totalprice_list = sporder_detailed.values_list('totalprice', flat=True)
-                totalprice_list = list(totalprice_list)
-                totalprice=sum(totalprice_list)
+                totalprice+=totalprice_list
             allsp_turnover.append(totalprice)
+        #業績用業務篩產品販售資料表抓詳細資料表的每筆訂單加總訂單總額
         
-        
-        
-        
-        
-        
-        
+        #失敗原因表的labels
+        false_labels=list(FALSE.objects.values('FALSE_TYPE'))#失敗原因表的labels
+        flase=FALSE.objects.values('FALSE_id','FALSE_TYPE')
+        cus_false=manage.objects.values('manage_category')            #客戶專案管理資料表中所有失敗原因
+            
+        counter = {}
+
+        for data in cus_false:
+            false_types = False.objects.filter(FALSE_id=data)
+            for false_type in false_types:
+                if false_type in counter:
+                    counter[false_type] += 1
+                else:
+                    counter[false_type] = 1
+                    
+         #失敗原因表的labels
+         
+         
         # 業務員資料蒐集完整度表 魔改表現方式
         totalamount_Cus_id=manage.objects.all().count()
+        if totalamount_Cus_id ==0:
+            totalamount_Cus_id=1
         isnull=totalamount_Cus_id*10
         for Cus_id in all_Cus_id:
             if Cus.objects.filter(Cus_id=cusid,Cus_FamilyNum__isnull=True):
@@ -81,6 +97,8 @@ def seller_page(request: HttpRequest):
             'all_Cus_id':all_Cus_id,
             'selectedrate':selectedrate,
             'allsp_turnover':allsp_turnover,
+            'false_labels':false_labels,
+            'counter':counter
         })
     elif request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
                
