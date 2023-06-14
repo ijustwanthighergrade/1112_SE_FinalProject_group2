@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>第二組｜登入頁面</title>
     <link href="{% static "css/login.css" %}" rel="stylesheet">
+    <script>
+        {% if error_message %}
+            alert("{{ error_message }}");
+        {% endif %}
+    </script>
 </head>
 <body>
     <div class="background">
@@ -16,8 +21,8 @@
         <div class="loginfield">
         <form action="/login/" method="POST">
             {% csrf_token %}
-        帳號<br><input id="username" type="text" required><br><br>
-        密碼<br><input id="password" type="password" required><br><p class="forregister">註冊帳號<br>
+        帳號<br><input id="username" name="username" type="text" required><br><br>
+        密碼<br><input id="password" name="password" type="password" required><br><p class="forregister"><a href="register.html">註冊帳號</a><br>
         </p><div class="loginbuttonarea"><button class="loginbutton" type="submit" value="Login" >登入</button>
         </div>
         </form>

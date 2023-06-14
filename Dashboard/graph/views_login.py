@@ -26,9 +26,43 @@ from graph.models import need
 from graph.models import arrange
 from graph.models import FALSE
 from graph.models import manage
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.db import connection
+from django.core.exceptions import ObjectDoesNotExist
 
 def login_page(request):
- return render(request,"login.html")
+
+        if not storeboard.objects.exists():
+                storeboard.objects.create(storeboard_id="SB2021121314235711",storeboard_time="2021-12-13 14:23:57",store_id="S001",store_username="storeone",store_pwd="onestore",store_status=1)
+                storeboard.objects.create(storeboard_id="SB2022040411034734",storeboard_time="2022-04-04 11:03:47",store_id="S002",store_username="storetwo",store_pwd="twostore",store_status=1)
+                storeboard.objects.create(storeboard_id="SB2023033123204298",storeboard_time="2023-03-31 23:20:42",store_id="S003",store_username="storethree",store_pwd="threestore",store_status=1)
+                storeboard.objects.create(storeboard_id="SB2022050821074467",storeboard_time="2022-05-08 21:07:44",store_id="S004",store_username="storefour",store_pwd="fourstore",store_status=0)
+                storeboard.objects.create(storeboard_id="SB2021111417215741",storeboard_time="2021-11-14 17:21:57",store_id="S005",store_username="storefive",store_pwd="fivestore",store_status=0)
+        else:
+                pass
+
+        if request.method == 'POST':
+                username = request.POST['username']
+                password = request.POST['password']
+                try:
+                        storeboard.objects.get(store_username=username, store_pwd=password)
+                        create_table(request)  # 登入成功後創建資料表
+                        return redirect('achievment_page')  # 導向首頁或其他頁面
+                except ObjectDoesNotExist:
+                        error_message = "帳密錯誤，請重新輸入或註冊帳號！"
+                        return render(request, 'login.html',{'error_message': error_message})
+
+        else:
+            return render(request,"login.html")
+
+
+@login_required
+def create_table(request):
+    # 創建資料表的程式碼
+    with connection.cursor() as cursor:
+        cursor.execute
 
 if not store.objects.exists():
          store.objects.create(store_id="S001",store_address="桃園市中壢區", store_createtime="2023-06-01 10:00:00", store_member=10)
@@ -82,15 +116,6 @@ if not Cus.objects.exists():
         Cus.objects.create(Cus_id="c20230611032124044",Cus_FamilyNum=2,Cus_eld=0,Chair_status=1,Chair_floor=80000,Chair_ceiling=90000,Chair_position="脊椎 小腿", Chair_color="香檳色, 咖啡色", Cus_PastItem="天后按摩椅", Chair_power="1", product_past="P002", Cus_job="物理學家" )
         Cus.objects.create(Cus_id="c20230523080909967",Cus_FamilyNum=12,Cus_eld=1,Chair_status=0,Chair_floor=200000,Chair_ceiling=900000,Chair_position="肩頸", Chair_color="咖啡色", Cus_PastItem="平民按摩椅", Chair_power="5", product_past="P004", Cus_job="教授" )
         Cus.objects.create(Cus_id="c20230602135723987",Cus_FamilyNum=5,Cus_eld=1,Chair_status=0,Chair_floor=40000,Chair_ceiling=1000000,Chair_position="小腿", Chair_color="黑色", Cus_PastItem="普普按摩椅", Chair_power="9", product_past="P001", Cus_job="清潔人員" )
-else:
- pass
-
-if not storeboard.objects.exists():
-        storeboard.objects.create(storeboard_id="SB2021121314235711",storeboard_time="2021-12-13 14:23:57",store_id="S001",store_username="storeone",store_pwd="onestore",store_status=1)
-        storeboard.objects.create(storeboard_id="SB2022040411034734",storeboard_time="2022-04-04 11:03:47",store_id="S002",store_username="storetwo",store_pwd="twostore",store_status=1)
-        storeboard.objects.create(storeboard_id="SB2023033123204298",storeboard_time="2023-03-31 23:20:42",store_id="S003",store_username="storethree",store_pwd="threestore",store_status=1)
-        storeboard.objects.create(storeboard_id="SB2022050821074467",storeboard_time="2022-05-08 21:07:44",store_id="S004",store_username="storefour",store_pwd="fourstore",store_status=0)
-        storeboard.objects.create(storeboard_id="SB2021111417215741",storeboard_time="2021-11-14 17:21:57",store_id="S005",store_username="storefive",store_pwd="fivestore",store_status=0)
 else:
  pass
 
@@ -267,4 +292,5 @@ if not manage.objects.exists():
         manage.objects.create(Cus_id="c20230523080909967",manage_stage=0,manage_date="2023-06-14",manage_deal=0,manage_category="fa005",manage_detail="太久沒有追蹤而失去動向",manage_frequency=1,Sp_id="Sp001",store_id="S001")
         manage.objects.create(Cus_id="c20230602135723987",manage_stage=0,manage_date="2023-06-13",manage_deal=0,manage_category="fa002",manage_detail="對方不滿意被頻繁打擾",manage_frequency=25,Sp_id="Sp003",store_id="S001")
 else:
-    pass
+    pass 
+
