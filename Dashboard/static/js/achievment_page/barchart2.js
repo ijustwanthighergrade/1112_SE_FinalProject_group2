@@ -8,10 +8,10 @@ var barChart2 = new Chart(ctx, {
             label: '睡魔智眠椅', 
             data: [12, 19, 3, 5,10], // 換成自己的data
             backgroundColor: [
-                'rgba(255,99,131,0.4)'
+                'rgb(243, 177, 178)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',            
+                'white',
             ],
             borderWidth: 1
         },
@@ -19,22 +19,22 @@ var barChart2 = new Chart(ctx, {
             label: '大師椅', 
             data: [17, 9, 5, 7,19], // 換成自己的data
             backgroundColor: [
-                'black'
+                'rgb(169, 219, 230)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',            
+                'white',
+
             ],
             borderWidth: 1
-
         },
         {
             label: '天王按摩椅', 
             data: [17, 9, 5, 7,19], // 換成自己的data
             backgroundColor: [
-                'red'
+                'rgb(198, 226, 229)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',            
+                'white',
             ],
             borderWidth: 1
 
@@ -43,10 +43,10 @@ var barChart2 = new Chart(ctx, {
             label: 'v-motion', 
             data: [17, 9, 5, 7,19], // 換成自己的data
             backgroundColor: [
-                'green'
+                'rgb(251, 219, 198)'
             ],
             borderColor: [
-                'rgba(255,99,132,1)',            
+                'white',            
             ],
             borderWidth: 1
 

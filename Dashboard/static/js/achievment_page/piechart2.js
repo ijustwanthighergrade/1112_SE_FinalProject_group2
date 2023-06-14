@@ -1,5 +1,5 @@
 function createChart() {
-    var ctx = document.getElementById('pieChart2').getContext('2d');
+    var ctx = document.getElementById('pieChart2').getContext('2d'); 
     var pieChart2 = new Chart(ctx, {
         type: 'pie',
         data: {
@@ -8,18 +8,15 @@ function createChart() {
                 label: '成本花費表',
                 data: [10, 20, 30, 40, 50],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                    'rgba(153, 102, 255, 0.5)'
+                'rgb(243, 177, 178) ',
+                'rgb(169, 219, 230)',
+                'rgb(198, 226, 229)',
+                'rgb(251, 219, 198)',
+                'rgb(192, 221, 193)',
+                'rgb(202, 202, 226)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
+                    'white'
                 ],
                 borderWidth: 1
             }]

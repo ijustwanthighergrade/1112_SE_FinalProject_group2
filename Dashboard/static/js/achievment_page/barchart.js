@@ -7,32 +7,20 @@ var barChart1 = new Chart(ctx, {
         datasets: [
         {
             type:"line",
-            label:'D型按摩椅',
+            label:'a型按摩椅',
             data:[25,49,36,51,48,98,65,12,3,10,15,78],
             lineTension:0,
             fill:true
 
         },
         {
-            label: 'a型按摩椅', 
-            data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.2)',
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-            ],
-            borderWidth: 1
-        },
-        {
             label: 'b型按摩椅', 
             data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
             backgroundColor: [
-                'yellow',
+                'rgb(243, 177, 178)',
             ],
             borderColor: [
-                'rgba(54, 162, 235, 1)',
-
+                'white',
             ],
             borderWidth: 1
         },
@@ -40,10 +28,22 @@ var barChart1 = new Chart(ctx, {
             label: 'c型按摩椅', 
             data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
             backgroundColor: [
-                'gray',
+                'rgb(169, 219, 230)',
             ],
             borderColor: [
-                'rgba(54, 162, 235, 1)',
+                'white',
+
+            ],
+            borderWidth: 1
+        },
+        {
+            label: 'd型按摩椅', 
+            data: [25, 17, 75, 56, 120, 30,75,68,87,94,23,65], // 換成自己的data
+            backgroundColor: [
+                'rgb(198, 226, 229)',
+            ],
+            borderColor: [
+                'white',
 
             ],
             borderWidth: 1

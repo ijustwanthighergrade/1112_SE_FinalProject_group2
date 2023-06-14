@@ -31,7 +31,8 @@
 </head>
 <body>
 {% include 'header.html' %}
-<div class="seller_container" style="background-color: white;">
+<div class="seller_container" style="background-color: white;oversc">
+<div class="top">
 <div class="div1">
     <table class="month">
         <tr>
@@ -82,25 +83,26 @@
 <table class="pchart1">
     <tr>
         <td class="titles" >成本花費表</td>
+    
     </tr> 
 
     <tr> 
-    <td><canvas id="pieChart1" width="400%" height="400%">
+    <td><canvas id="pieChart1" width="350%" height="200%">
     </canvas></td>
     </tr>
-
 </table>
 
 <table class="pchart2">
     <tr>
-        <td class="titles" >顧客成分分析表（業務員）</td>
+        <td class="titles" >顧客成分分析表（業務員） </td>
     </tr>
+
     <tr>
-        <td><canvas id="pieChart2" width="400%" height="400%">
+    <td><canvas id="pieChart2" width="350%" height="100%">
     </canvas></td>
     </tr>
-</table>
 
+</table>
 </div>
 <div class="div3">
 <table class="announcement" >
@@ -121,19 +123,7 @@
         <td class="tda" >2023/12/17<br>
         訊息：晚餐要吃什麼<br></td>
     </tr>
-    <tr class="tr1">
-        <td class="tda">2023/12/13<br>
-        訊息：晚餐要吃什麼<br></td>
-        </tr>
-        <tr class="tr1">
-            <td class="tda" >2023/12/13<br>
-            訊息：晚餐要吃什麼<br></td>
-            </tr>
-            <tr class="tr1">
-                <td class="tda" >2023/12/13<br>
-                訊息：晚餐要吃什麼<br></td>
-                </tr>
-                    
+
 </table>
 <div class="divc">
 <table class="carda" >
@@ -154,6 +144,9 @@
 </table>
 </div>
 </div>
+
+</div>
+
 <div class="divb">
     <table class="chair" >
         <tr>
@@ -181,7 +174,7 @@
         <td class="titles" >個別產品業績排行榜</td>
         </tr>
         <tr>
-            <td><canvas id="barChart1" width="650%" height="300%">
+            <td><canvas id="barChart1" width="620%" height="200%">
             </canvas></td>
         </tr>
     </table>
@@ -191,7 +184,7 @@
     </tr>
     <tr>
 
-    <td><canvas id="barChart2" width="650%" height="300%">
+    <td><canvas id="barChart2" width="620%" height="200%">
     </canvas></td>
     </tr>
 </table>
