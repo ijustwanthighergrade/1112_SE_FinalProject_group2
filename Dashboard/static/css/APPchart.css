@@ -69,8 +69,17 @@ table{
     width: 95%;
 }
 .two{
-    height: 400px;
+    height: 380px;
 }
+.over{
+    padding-right: 3%;
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(25, 99, 132, 0.5); /* 滚动条滑块颜色 */
+  }
 .three{
     height: 150px;
 }

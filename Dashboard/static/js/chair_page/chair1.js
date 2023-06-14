@@ -8,7 +8,7 @@ function createChart() {
                 label: '使用次數',
                 data: [13, 19, 3, 5],
                 backgroundColor: [
-                    'rgba(79, 85, 143, 0.5)',
+                    'rgba(79, 85, 143)',
                 ],
                 borderColor: [
                     'rgba(255,255,255)'
@@ -18,7 +18,7 @@ function createChart() {
                 label: '全店',
                 data: [58, 80, 30, 50],
                 backgroundColor: [
-                    'rgba(243, 177, 178, 0.5)'
+                    'rgba(243, 177, 178)'
                 ],
                 borderColor: [
                     'rgba(255,255,255)'

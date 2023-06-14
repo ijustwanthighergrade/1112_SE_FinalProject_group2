@@ -8,7 +8,7 @@ function createChart3() {
                 label: '本月使用次數',
                 data: [20],
                 backgroundColor: [
-                    'rgba(79, 85, 143, 0.5)',
+                    'rgba(79, 85, 143)',
                 ],
                 borderColor: [
                     'rgba(255,255,255)'
@@ -18,7 +18,7 @@ function createChart3() {
                 label: '全店本月使用次數',
                 data: [300],
                 backgroundColor: [
-                    'rgba(243, 177, 178, 0.5)'
+                    'rgba(243, 177, 178)'
                 ],
                 borderColor: [
                     'rgba(255,255,255)'
