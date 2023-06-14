@@ -25,6 +25,14 @@ table{
     width: 100%;
     margin: 2.5px 0px 2.5px 10px;
 }
+.r1{
+    background-color: rgb(243, 177, 178) ;
+    border-radius: 5px;
+    margin: 2.5px 0px 2.5px 10px;
+    width: 100px;
+    height: auto;
+    word-wrap:break-word;
+}
 .chart1{
     width: 120%;
     height: 120%;

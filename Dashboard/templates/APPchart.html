@@ -12,6 +12,7 @@
     <script src="{% static 'js/APPchart_page/barchart-H.js' %}"></script>
     <script src="{% static 'js/APPchart_page/barchart2.js' %}"></script>
     <script src="{% static 'js/APPchart_page/doughnut.js' %}"></script>
+    <script src="{% static 'js/APPchart_page/click.js' %}"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
     {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>    
@@ -35,28 +36,16 @@
                 <div>
                     <table>
                         <tr>
-                            <td><button class="r" onclick="c1()">c20231230456</button></td>
+                            <td><button class="r1" onclick="c01()">c20210302121314000</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r" onclick="c1()">c20231230456</button></td>
+                            <td><button class="r1" onclick="c02()">c20230502111314778</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">c20231230456</button></td>
+                            <td><button class="r1" onclick="c03()">c20230601091315340</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">c20231230456</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="r">c20231230456</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="r">c20231230456</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="r">c20231230456</button></td>
-                        </tr>
-                        <tr>
-                            <td><button class="r">c20231230456</button></td>
+                            <td><button class="r1" onclick="c04()">c20230431222222045</button></td>
                         </tr>
                     </table>
                 </div>
@@ -74,62 +63,62 @@
                         <td class="c">引介日期</td>
                     </tr>
                     <tr>
-                        <td class="c">c20231230456</td>
-                        <td class="c">客戶1</td>
-                        <td class="c">c20231230216</td>
-                        <td class="c">客戶2</td>
-                        <td class="c">12/30</td>
+                        <td class="c" id="cus1">c20210302121314000</td>
+                        <td class="c" id="cusname1">user1</td>
+                        <td class="c" id="cus2">c20230502111314778</td>
+                        <td class="c" id="cusname2">user2</td>
+                        <td class="c" id="day1">12/30</td>
                     </tr>
                     <tr>
-                        <td class="c">c20231230456</td>
-                        <td class="c">客戶1</td>
-                        <td class="c">c20231230651</td>
-                        <td class="c">客戶3</td>
-                        <td class="c">12/30</td>
+                        <td class="c" id="cus3">c20210302121314000</td>
+                        <td class="c" id="cusname3">user1</td>
+                        <td class="c" id="cus4">c20230431222222045</td>
+                        <td class="c" id="cusname4">user4</td>
+                        <td class="c" id="day2">12/30</td>
                     </tr>
                 </table>
             </div>
         </div>
 
         <div class="block f-c">
-            <div class="block2 title">按摩券銷售贈與紀錄表</div>
+            <div class="block2 title">按摩券銷售贈予紀錄表</div>
             <div class="block2 f-r two">
                 <div>
                     <table>
                         <tr>
-                            <td><button class="r">一月</button></td>
+                            <td><button class="r" onclick="c09()">一月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">二月</button></td>
+                            <td><button class="r" onclick="c10()">二月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">三月</button></td>
+                            <td><button class="r" onclick="c11()">三月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">四月</button></td>
+                            <td><button class="r" onclick="c12()">四月</button></td>
                         <tr>
-                            <td><button class="r">五月</button></td>
+                            <td><button class="r" onclick="c13()">五月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">六月</button></td>
+                            <td><button class="r" onclick="c14()">六月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">七月</button></td>
+                            <td><button class="r" onclick="c15()">七月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">八月</button></td>
+                            <td><button class="r" onclick="c16()">八月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">九月</button></td>
+                            <td><button class="r" onclick="c17()">九月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">十月</button></td>
+                            <td><button class="r" onclick="c18()">十月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">十一月</button></td>
+                            <td><button class="r" onclick="c19()">十一月</button></td>
                         </tr>
                         <tr>
-                            <td><button class="r">十二月</button></td>
+                            <td><button class="r" onclick="c20()">十二月</button></td>
                         </tr>
                     </table>
                 </div>
@@ -148,28 +137,28 @@
                         <td class="c">金額</td>
                     </tr>
                     <tr>
-                        <td class="c">5/25</td>
-                        <td class="c">Cou00001-Cou00010</td>
-                        <td class="c">贈予</td>
-                        <td class="c">c20191212134545111</td>
-                        <td class="c">10</td>
-                        <td class="c">0</td>
+                        <td class="c" id="day3">2023-04-04</td>
+                        <td class="c" id="cou1">Cou001</td>
+                        <td class="c" id="gif1">贈予</td>
+                        <td class="c" id="cus5">c20210302121314000</td>
+                        <td class="c" id="num1">10</td>
+                        <td class="c" id="maney1">0</td>
                     </tr>
                     <tr>
-                        <td class="c">5/25</td>
-                        <td class="c">Cou00001-Cou00010</td>
-                        <td class="c">贈予</td>
-                        <td class="c">c20191212134545111</td>
-                        <td class="c">10</td>
-                        <td class="c">0</td>
+                        <td class="c" id="day4">2023-06-01</td>
+                        <td class="c" id="cou2">Cou0002</td>
+                        <td class="c" id="gif2">銷售</td>
+                        <td class="c" id="cou6">c20230502111314778</td>
+                        <td class="c" id="num2">11</td>
+                        <td class="c" id="maney2">1100</td>
                     </tr>
                     <tr>
-                        <td class="c">5/25</td>
-                        <td class="c">Cou00001-Cou00010</td>
-                        <td class="c">贈予</td>
-                        <td class="c">c20191212134545111</td>
-                        <td class="c">10</td>
-                        <td class="c">0</td>
+                        <td class="c" id="day5">2023-06-06</td>
+                        <td class="c" id="cou3">Cou0003</td>
+                        <td class="c" id="gif3">贈予</td>
+                        <td class="c" id="cou7">c20230601091315340</td>
+                        <td class="c" id="num3">2</td>
+                        <td class="c" id="maney3">0</td>
                     </tr>
                 </table>
             </div>
