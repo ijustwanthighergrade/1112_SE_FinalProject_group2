@@ -1,3 +1,5 @@
+var barchart1;
+
 function createChart() {
 var ctx = document.getElementById("barChart1");
 var barChart1 = new Chart(ctx, {
@@ -69,3 +71,4 @@ var barChart1 = new Chart(ctx, {
     }
 });}
 window.addEventListener('load', createChart);
+
