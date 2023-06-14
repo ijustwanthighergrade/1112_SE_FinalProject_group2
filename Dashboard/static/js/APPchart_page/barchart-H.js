@@ -1,4 +1,4 @@
-function createChart() {
+function c2() {
 var ctx2 = document.getElementById('myChart2');
 var myBarChart = new Chart(ctx2, {
     type: "bar",
@@ -22,4 +22,4 @@ options: {
     indexAxis: 'y',
   }
 });}
-window.addEventListener('load', createChart);
+window.addEventListener('load', c2);

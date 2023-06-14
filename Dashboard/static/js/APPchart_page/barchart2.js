@@ -1,4 +1,4 @@
-function createChart() {
+function c3() {
 var ctx3 = document.getElementById('myChart3');
 var myChart = new Chart(ctx3, {
   type: 'bar',
@@ -17,4 +17,4 @@ var myChart = new Chart(ctx3, {
     }]
   }
 });}
-window.addEventListener('load', createChart);
+window.addEventListener('load', c3);
