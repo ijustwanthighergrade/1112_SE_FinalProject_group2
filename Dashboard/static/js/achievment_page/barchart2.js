@@ -45,7 +45,7 @@ barChart2 = new Chart(ctx, {
             label: 'v-motion', 
             data: [17, 9, 5, 7,19], // 換成自己的data
             backgroundColor: [
-                'rgb(251, 219, 198)'
+                'rgb(218, 197, 237)'
             ],
             borderColor: [
                 'white',            

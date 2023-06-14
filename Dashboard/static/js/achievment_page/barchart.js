@@ -31,7 +31,7 @@ function createChart() {
                 {
                     label: 'd型按摩椅',
                     data: [25, 17, 75, 56, 120, 30, 75, 68, 87, 94, 23, 65],
-                    backgroundColor: 'rgb(198, 226, 229)',
+                    backgroundColor: 'rgb(218, 197, 237)',
                     borderColor: 'white',
                     borderWidth: 1
                 },
