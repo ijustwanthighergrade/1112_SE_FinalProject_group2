@@ -3,37 +3,17 @@ function createChart3() {
     var my3 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["c001", "c002", "c003", "c004"],
+            labels: ["c20210302121314000", "c20230502111314778", "c20230601091315340", "c20230431222222045", "c20230605142259011"],
             datasets: [{
                 label: '第一階段',
-                data: [1, 0, 1, 1],
+                data: [20, 3, 0, 40, 6],
                 backgroundColor: [
                     'rgba(79, 85, 143, 0.5)'
                 ],
                 borderColor: [
                     'rgba(255, 255, 255)'
                 ],
-                borderWidth: 2
-            },{
-                label: '第二階段',
-                data: [1, 0, 1, 1],
-                backgroundColor: [
-                    'rgba(243, 177, 178, 0.5)'
-                ],
-                borderColor: [
-                    'rgba(255, 255, 255)'
-                ],
-                borderWidth: 2
-            },{
-                label: '第三階段',
-                data: [1, 0, 0, 0],
-                backgroundColor: [
-                    'rgba(69, 219, 78, 0.5)'
-                ],
-                borderColor: [
-                    'rgba(255, 255, 255)'
-                ],
-                borderWidth: 2
+                borderWidth: 1
             }]
         },
         options: {  

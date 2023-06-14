@@ -3,13 +3,6 @@
     {% load static %}
 <head>
     <title>client</title>
-    <script src="{% static 'js/client_page/client1.js' %}"></script>
-    <script src="{% static 'js/client_page/client2.js' %}"></script>
-    <script src="{% static 'js/client_page/client3.js' %}"></script>
-    <script src="{% static 'js/client_page/client4.js' %}"></script>
-    <script src="{% static 'js/client_page/client5.js' %}"></script>
-    <script src="{% static 'js/client_page/client6.js' %}"></script>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,58 +29,336 @@
         <div class="div1">
             <div class="text1">客戶編號</div>
             <table class="ta4">
-            <tr><td><button class="text2">c20230601100328001</button></td></tr>
-            <tr><td><button class="text2">c20230605112735002</button></td></tr>
-            <tr><td><button class="text2">c20230611205450003</button></td></tr>
-            <tr><td><button class="text2">c20230612052441004</button></td></tr>
+            <tr><td><button class="text2" id="client1" style="background-color: rgb(243, 177, 178, 0.5);">c20210302121314000</button></td></tr>
+            <tr><td><button class="text2" id="client2">c20230502111314778</button></td></tr>
+            <tr><td><button class="text2" id="client3">c20230601091315340</button></td></tr>
+            <tr><td><button class="text2" id="client4">c20230431222222045</button></td></tr>
+            <tr><td><button class="text2" id="client5">c20230605142259011</button></td></tr>
         </table>
     </div>
     <div class="div3">
         <table class="ta3">
         <tr><td class="text4">顧客：</td></tr>
-        <tr><td>c20230601100328001</td></tr>
-        <tr><td>階段：第一階段完成度</td></tr>
+        <tr><td id="t1">c20210302121314000</td></tr>
+        <tr><td><div id="t12">第一階段完成度</div></td></tr>
         </table>
-        <div class="my4"><canvas id="my4"></canvas></div>
+        <div class="my4">
+            <canvas id="my4"></canvas>
+            <div id="t2">90%</div>
+        </div>
     </div>
     <div class="div1">
     <table class="quantity1">
         <tr><td>備註:</td></tr>
-        <tr><td>真好騙</td></tr>
+        <tr><td id="t3">有意願購買</td></tr>
     </table>
     </div>
     <div class="my3">
-    <div class="text4">各客戶完成階段</div>
+    <div class="text4">客戶按摩卷擁有數量</div>
         <canvas id="my3"></canvas>
     </div>
     <div class="div2"><div class="text4">各階段顧客數量</div><canvas id="myChart"></canvas></div>
     <div class="div2">
-        <div class="text4">顧客C001聯絡狀況</div>
+        <div class="text4"><div id="t4">c20210302121314000</div>聯絡狀況</div>
         <canvas id="my2"></canvas>
     </div>
     <div class="div4">
         <table class="ta1">
         <tr><td class="text4">成功聯絡紀錄</td></tr>
-        <tr><td><button class="text2">1/4</button></td></tr>
-        <tr><td><button class="text2">1/10</button></td></tr>
-        <tr><td><button class="text2">1/12</button></td></tr>
-        <tr><td><button class="text2">1/16</button></td></tr>
+        <tr><td><button class="text2" id="button1">1/5</button></td></tr>
+        <tr><td><button class="text2" id="button2">3/10</button></td></tr>
+        <tr><td><button class="text2" id="button3">4/12</button></td></tr>
+        <tr><td><button class="text2" id="button4">7/26</button></td></tr>
+        <tr><td><button class="text2" id="button5">8/2</button></td></tr>
         </table>
-        <table class="quantity1">
+        <table class="quantity2">
         <tr><td class="text4">備註:</td></tr>
-        <tr><td>日期:1/4</td></tr>
-        <tr><td>他家普通有錢</td></tr>
+        <tr><td id="but1">日期:1/5</td></tr>
+        <tr><td id="but2">對按摩椅的價格比較敏感，建議提供優惠活動或套餐。</td></tr>
         </table>
     </div>
-    <div class="div2">
-        <div class="my5">
-            <div class="text4">客戶資料收集與否</div>
-            <canvas id="my5"></canvas>
-        </div>
+    <div class="div5">
+            <div class="text4">客戶資料收集狀況</div>
+            <table class="quantity">
+                <tr><td class="text5">家庭成員數量:<div id="t5">4</div></td></tr>
+                <tr><td class="text5">長者有無:<div id="t6">無</div></td></tr>
+                <tr><td class="text5">家中是否有按摩椅:<div id="t7">無</div></td></tr>
+                <tr><td class="text5">客戶消費預算上限:<div id="t8">100,000</div></td></tr>
+                <tr><td class="text5">主要按摩部位需求:<div id="t9">肩頸</div></td></tr>
+                <tr><td class="text5">顏色偏好:<div id="t10">白色, 香檳色</div></td></tr>
+                <tr><td class="text5">按摩模式力道偏好<br> (1~10 弱到強):<div id="t11">10</div></td></tr>
+
+            </table>
     </div>
     <div class="div2">
         <div class="text4">各階段顧客數量總計表</div>
         <div class="my6"><canvas id="my6"></canvas></div>
     </div>
+    <div id="cli">c20210302121314000</div>
 </body>
+    <script src="{% static 'js/client_page/client1.js' %}"></script>
+    <script src="{% static 'js/client_page/client2.js' %}"></script>
+    <script src="{% static 'js/client_page/client3.js' %}"></script>
+    <script src="{% static 'js/client_page/client4.js' %}"></script>
+    <script src="{% static 'js/client_page/client5.js' %}"></script>
+    <script src="{% static 'js/client_page/client6.js' %}"></script>
+
+<script>
+    document.getElementById('client1').onclick = function() {
+        document.getElementById('cli').innerHTML="c20210302121314000";
+        document.getElementById('client1').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+        document.getElementById('client2').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client3').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client4').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client5').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('t1').innerHTML="c20210302121314000";
+        document.getElementById('t12').innerHTML="第一階段完成度";
+        document.getElementById('t2').innerHTML="90%";
+        my4.data.datasets[0].data = [90,10];
+        my2.data.datasets[0].data = [1, 0, 2, 3, 1, 5, 2, 1, 3, 4, 1, 1];
+        my2.data.datasets[1].data = [5, 3, 8, 3, 5, 5, 4, 5, 8, 10, 5, 4];
+        document.getElementById('t3').innerHTML="有意願購買";        
+        document.getElementById('t4').innerHTML="c20210302121314000";
+        document.getElementById('t5').innerHTML="4";
+        document.getElementById('t6').innerHTML="無";
+        document.getElementById('t7').innerHTML="無";
+        document.getElementById('t8').innerHTML="100,000";
+        document.getElementById('t9').innerHTML="肩頸";
+        document.getElementById('t10').innerHTML="白色, 香檳色";
+        document.getElementById('t11').innerHTML="10";
+
+        document.getElementById('button1').innerHTML="1/5";
+        document.getElementById('button2').innerHTML="3/10";
+        document.getElementById('button3').innerHTML="4/12";
+        document.getElementById('button4').innerHTML="7/26";
+        document.getElementById('button5').innerHTML="8/2";
+
+        document.getElementById('but1').innerHTML="日期:1/5";
+        document.getElementById('but2').innerHTML="對按摩椅的價格比較敏感，建議提供優惠活動或套餐。";
+
+        my4.update();
+        my2.update();
+    }
+
+    document.getElementById('client2').onclick = function() {
+        document.getElementById('cli').innerHTML="c20230502111314778";
+        document.getElementById('client2').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+        document.getElementById('client1').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client3').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client4').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client5').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('t1').innerHTML="c20230502111314778";
+        document.getElementById('t12').innerHTML="第三階段完成度";
+        document.getElementById('t2').innerHTML="100%";
+        my4.data.datasets[0].data = [100,0];
+        my2.data.datasets[0].data = [0, 2, 0, 1, 0, 3, 5, 6, 4, 3, 1, 2];
+        my2.data.datasets[1].data = [3, 3, 5, 4, 2, 5, 7, 10, 8, 6, 5, 5];
+        document.getElementById('t3').innerHTML="似乎打算在母親節的時候購買";
+        document.getElementById('t4').innerHTML="c20230502111314778";
+        document.getElementById('t5').innerHTML="5";
+        document.getElementById('t6').innerHTML="有";
+        document.getElementById('t7').innerHTML="無";
+        document.getElementById('t8').innerHTML="10,000";
+        document.getElementById('t9').innerHTML="肩頸";
+        document.getElementById('t10').innerHTML="咖啡色, 香檳色";
+        document.getElementById('t11').innerHTML="5";
+
+        document.getElementById('button1').innerHTML="2/15";
+        document.getElementById('button2').innerHTML="4/12";
+        document.getElementById('button3').innerHTML="8/22";
+        document.getElementById('button4').innerHTML="9/20";
+        document.getElementById('button5').innerHTML="11/2";
+
+        document.getElementById('but1').innerHTML="日期:2/15";
+        document.getElementById('but2').innerHTML="有腰椎間盤突出問題，需要按摩椅提供針對腰部的特殊功能。";
+        
+        my4.update();
+        my2.update();
+    }
+
+    document.getElementById('client3').onclick = function() {
+        document.getElementById('cli').innerHTML="c20230601091315340";
+        document.getElementById('client3').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+        document.getElementById('client1').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client2').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client4').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client5').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('t1').innerHTML="c20230601091315340";
+        document.getElementById('t12').innerHTML="第二階段完成度";
+        document.getElementById('t2').innerHTML="75%";
+        my4.data.datasets[0].data = [75,25];
+        my2.data.datasets[0].data = [5, 2, 3, 5, 4, 0, 1, 3, 2, 1, 4, 6];
+        my2.data.datasets[1].data = [12, 6, 5, 6, 4, 2, 3, 5, 6, 4, 8, 3];
+        document.getElementById('t3').innerHTML="以購買,並介紹給其他親友";
+        document.getElementById('t4').innerHTML="c20230601091315340";
+        document.getElementById('t5').innerHTML="1";
+        document.getElementById('t6').innerHTML="有";
+        document.getElementById('t7').innerHTML="有";
+        document.getElementById('t8').innerHTML="200,000";
+        document.getElementById('t9').innerHTML="脊椎";
+        document.getElementById('t10').innerHTML="黑色";
+        document.getElementById('t11').innerHTML="4";
+
+        document.getElementById('button1').innerHTML="1/8";
+        document.getElementById('button2').innerHTML="3/2";
+        document.getElementById('button3').innerHTML="4/16";
+        document.getElementById('button4').innerHTML="7/21";
+        document.getElementById('button5').innerHTML="12/18";
+
+        document.getElementById('but1').innerHTML="日期:1/8";
+        document.getElementById('but2').innerHTML="希望按摩椅具備定時自動關閉功能，以免睡著後耗電。";
+
+        my4.update();
+        my2.update();
+    }
+
+    document.getElementById('client4').onclick = function() {
+        document.getElementById('cli').innerHTML="c20230431222222045";
+        document.getElementById('client4').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+        document.getElementById('client1').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client2').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client3').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client5').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('t1').innerHTML="c20230431222222045";
+        document.getElementById('t12').innerHTML="第二階段完成度";
+        document.getElementById('t2').innerHTML="10%";
+        my4.data.datasets[0].data = [10,90];
+        my2.data.datasets[0].data = [0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 0, 1];
+        my2.data.datasets[1].data = [5, 2, 3, 4, 2, 2, 3, 5, 4, 3, 3, 2];
+        document.getElementById('t3').innerHTML="意願不高";
+        document.getElementById('t4').innerHTML="c20230431222222045";
+        document.getElementById('t5').innerHTML="2";
+        document.getElementById('t6').innerHTML="無";
+        document.getElementById('t7').innerHTML="無";
+        document.getElementById('t8').innerHTML="300,000";
+        document.getElementById('t9').innerHTML="肩頸, 脊椎, 小腿";
+        document.getElementById('t10').innerHTML="咖啡色";
+        document.getElementById('t11').innerHTML="3";
+
+        document.getElementById('button1').innerHTML="2/20";
+        document.getElementById('button2').innerHTML="4/13";
+        document.getElementById('button3').innerHTML="5/5";
+        document.getElementById('button4').innerHTML="7/3";
+        document.getElementById('button5').innerHTML="12/18";
+
+        document.getElementById('but1').innerHTML="日期:2/20";
+        document.getElementById('but2').innerHTML="對按摩椅的外觀設計有較高要求，注重與家居風格的搭配。";
+        
+        my4.update();
+        my2.update();
+    }
+
+    document.getElementById('client5').onclick = function() {
+        document.getElementById('cli').innerHTML="c20230605142259011";
+        document.getElementById('client5').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+        document.getElementById('client1').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client2').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client3').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('client4').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        document.getElementById('t1').innerHTML="c20230605142259011";
+        document.getElementById('t12').innerHTML="第一階段完成度";
+        document.getElementById('t2').innerHTML="55%";
+        my4.data.datasets[0].data = [55,45];
+        my2.data.datasets[0].data = [2, 5, 3, 1, 0, 1, 2, 0, 4, 2, 3, 5];
+        my2.data.datasets[1].data = [5, 8, 6, 2, 5, 3, 5, 1, 8, 4, 6, 5];
+        document.getElementById('t3').innerHTML="家中有很多人";
+        document.getElementById('t4').innerHTML="c20230605142259011";
+        document.getElementById('t5').innerHTML="9";
+        document.getElementById('t6').innerHTML="無";
+        document.getElementById('t7').innerHTML="無";
+        document.getElementById('t8').innerHTML="200,000";
+        document.getElementById('t9').innerHTML="小腿";
+        document.getElementById('t10').innerHTML="香檳色";
+        document.getElementById('t11').innerHTML="2";
+
+        document.getElementById('button1').innerHTML="1/3";
+        document.getElementById('button2').innerHTML="4/9";
+        document.getElementById('button3').innerHTML="9/7";
+        document.getElementById('button4').innerHTML="9/8";
+        document.getElementById('button5').innerHTML="12/1";
+
+        document.getElementById('but1').innerHTML="日期:1/3";
+        document.getElementById('but2').innerHTML="對按摩椅的保修期限非常關注，希望能夠獲得長期的售後支持。";
+       
+        my4.update();
+        my2.update();
+    }
+
+    document.getElementById('button1').onclick = function() {
+        if(document.getElementById('cli').innerHTML=="c20210302121314000"){
+        document.getElementById('but1').innerHTML="日期:1/5";
+        document.getElementById('but2').innerHTML="對按摩椅的價格比較敏感，建議提供優惠活動或套餐。";
+        }else if(document.getElementById('cli').innerHTML=="c20230502111314778"){
+        document.getElementById('but1').innerHTML="日期:2/15";
+        document.getElementById('but2').innerHTML="有腰椎間盤突出問題，需要按摩椅提供針對腰部的特殊功能。";
+        }else if(document.getElementById('cli').innerHTML=="c20230601091315340"){
+        document.getElementById('but1').innerHTML="日期:1/8";
+        document.getElementById('but2').innerHTML="希望按摩椅具備定時自動關閉功能，以免睡著後耗電。";
+        }else if(document.getElementById('cli').innerHTML=="c20230431222222045"){
+        document.getElementById('but1').innerHTML="日期:2/20";
+        document.getElementById('but2').innerHTML="對按摩椅的外觀設計有較高要求，注重與家居風格的搭配。";
+        }else if(document.getElementById('cli').innerHTML=="c20230605142259011"){
+        document.getElementById('but1').innerHTML="日期:1/3";
+        document.getElementById('but2').innerHTML="對按摩椅的保修期限非常關注，希望能夠獲得長期的售後支持。";
+        }
+    }
+
+    document.getElementById('button2').onclick = function() {
+        if(document.getElementById('cli').innerHTML=="c20210302121314000"){
+        document.getElementById('but1').innerHTML="日期:3/10";
+        document.getElementById('but2').innerHTML="需要按摩椅提供手動調節按摩力度的選項。";
+        }else if(document.getElementById('cli').innerHTML=="c20230502111314778"){
+        document.getElementById('but1').innerHTML="日期:4/12";
+        document.getElementById('but2').innerHTML="對按摩椅的噪音水平有所擔憂，希望能提供靜音功能。";
+        }else if(document.getElementById('cli').innerHTML=="c20230601091315340"){
+        document.getElementById('but1').innerHTML="日期:3/2";
+        document.getElementById('but2').innerHTML="需要按摩椅具備多種按摩模式，以滿足不同需求。";
+        }else if(document.getElementById('cli').innerHTML=="c20230431222222045"){
+        document.getElementById('but1').innerHTML="日期:4/13";
+        document.getElementById('but2').innerHTML="對按摩椅的材質和舒適度要求較高，希望能提供優質的面料和填充物。";
+        }else if(document.getElementById('cli').innerHTML=="c20230605142259011"){
+        document.getElementById('but1').innerHTML="日期:4/9";
+        document.getElementById('but2').innerHTML="需要按摩椅具備加熱功能，以增強按摩效果。";
+        }
+    }
+
+    document.getElementById('button3').onclick = function() {
+        if(document.getElementById('cli').innerHTML=="c20210302121314000"){
+        document.getElementById('but1').innerHTML="日期:4/12";
+        document.getElementById('but2').innerHTML="希望按摩椅具備全身伸展功能，能夠舒緩肌肉僵硬問題。";
+        }else if(document.getElementById('cli').innerHTML=="c20230502111314778"){
+        document.getElementById('but1').innerHTML="日期:8/22";
+        document.getElementById('but2').innerHTML="需要按摩椅提供足底按摩功能，以改善腳部血液循環。";
+        }else if(document.getElementById('cli').innerHTML=="c20230601091315340"){
+        document.getElementById('but1').innerHTML="日期:4/16";
+        document.getElementById('but2').innerHTML="需要按摩椅提供針對頸部和肩部的特殊按摩功能。";
+        }else if(document.getElementById('cli').innerHTML=="c20230431222222045"){
+        document.getElementById('but1').innerHTML="日期:5/5";
+        document.getElementById('but2').innerHTML="對按摩椅的體積和移動性要求較高，希望能夠方便搬運和存放。";
+        }else if(document.getElementById('cli').innerHTML=="c20230605142259011"){
+        document.getElementById('but1').innerHTML="日期:9/7";
+        document.getElementById('but2').innerHTML="希望按摩椅能夠提供空氣壓縮按摩功能，以模擬人手按摩感覺。";
+        }
+    }
+
+    document.getElementById('button4').onclick = function() {
+        if(document.getElementById('cli').innerHTML=="c20210302121314000"){
+        document.getElementById('but1').innerHTML="日期:7/26";
+        document.getElementById('but2').innerHTML="需要按摩椅提供音樂播放功能，以提昇放松效果。";
+        }else if(document.getElementById('cli').innerHTML=="c20230502111314778"){
+        document.getElementById('but1').innerHTML="日期:9/20";
+        document.getElementById('but2').innerHTML="對按摩椅的安全性和穩定性有所關注，希望能提供可靠的使用保。";
+        }else if(document.getElementById('cli').innerHTML=="c20230601091315340"){
+        document.getElementById('but1').innerHTML="日期:7/21";
+        document.getElementById('but2').innerHTML="對按摩椅的按摩手法和技術要求較高，希望能提供專業級的按摩體驗。";
+        }else if(document.getElementById('cli').innerHTML=="c20230431222222045"){
+        document.getElementById('but1').innerHTML="日期:7/3";
+        document.getElementById('but2').innerHTML="需要按摩椅具備調節座椅傾斜角度的功能，以提供更舒適的坐姿。";
+        }else if(document.getElementById('cli').innerHTML=="c20230605142259011"){
+        document.getElementById('but1').innerHTML="日期:9/8";
+        document.getElementById('but2').innerHTML="希望按摩椅能夠提供身體拉伸功能，以增強柔韌性和舒展肌肉。";
+        }
+    }
+
+</script>
 </html>
