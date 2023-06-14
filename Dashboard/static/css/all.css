@@ -62,9 +62,10 @@ html,body {
   }
   .container_button{
     background-color: #ffffff;
-    height: 60%;
+    height: 59%;
     width: 93%;
     margin: 0%;
+    margin-top: 0.5%;
     padding: 0;
     float: left;
   }
