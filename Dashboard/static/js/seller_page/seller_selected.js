@@ -1,7 +1,6 @@
 window.spid=""
 window.cusid=""
-
-window.datesFromBackend="";// calender 替换为您从后端获取的日期数据
+var hiddenDatasets = []; // 用于存储隐藏的数据集
 
 $(document).ready(function() {
 
@@ -9,7 +8,113 @@ $(document).ready(function() {
     spid = $(this).data('spid');  // 获取按钮的编号值
     console.log(spid); // 这里可以处理返回的结果
     document.getElementById('selected_spid').textContent = spid;//右下角卡片顯示
-    
+
+
+    //修改折線圖顯示的值
+    var canvas = $('#mylineChart2');
+    // 获取 Chart.js 图表的实例
+    var chartInstance = Chart.getChart(canvas[0]);
+    chartInstance.data.datasets.forEach(function(dataset) {
+      if (dataset.label !== "全店") {
+        if (dataset.label === spid) {
+            dataset.hidden = false; // 显示特定标签的数据集
+        } else {
+            dataset.hidden = true; // 隐藏其他数据集
+            if (!hiddenDatasets.includes(dataset.label)) {
+                hiddenDatasets.push(dataset.label); // 存储隐藏的数据集标签
+            }
+        }
+      }
+  });
+    // 更新图表
+    chartInstance.update();
+
+    var canvas1 = $('#mylineChart');
+    // 获取 Chart.js 图表的实例
+    var chartInstance1 = Chart.getChart(canvas1[0]);
+    chartInstance1.data.datasets.forEach(function(dataset) {
+      if (dataset.label !== "全店") {
+        if (dataset.label === spid) {
+            dataset.hidden = false; // 显示特定标签的数据集
+        } else {
+            dataset.hidden = true; // 隐藏其他数据集
+            if (!hiddenDatasets.includes(dataset.label)) {
+                hiddenDatasets.push(dataset.label); // 存储隐藏的数据集标签
+            }
+        }
+      }
+  });
+    // 更新图表
+    chartInstance1.update();
+
+    var canvas2 = $('#myChart2');
+    // 获取 Chart.js 图表的实例
+    var chartInstance2 = Chart.getChart(canvas2[0]);
+    var dataset2 = chartInstance2.data.datasets[0];
+    dataset2.data = [50,50];
+    // 更新图表
+
+    var canvas3 = $('#myChart3');
+    // 获取 Chart.js 图表的实例
+    var chartInstance3 = Chart.getChart(canvas3[0]);
+    var dataset3 = chartInstance3.data.datasets[0];
+    dataset3.data = [50,50];
+    // 更新图表
+
+    var canvas4 = $('#myChart4');
+    // 获取 Chart.js 图表的实例
+    var chartInstance4 = Chart.getChart(canvas4[0]);
+    var dataset4 = chartInstance3.data.datasets[0];
+    dataset4.data = [0,100];
+    // 更新图表
+    var canvas5 = $('#myChart1');
+    // 获取 Chart.js 图表的实例
+    var chartInstance5 = Chart.getChart(canvas5[0]);
+    var dataset5 = chartInstance5.data.datasets[0];
+    dataset5.data = [0,100];
+    // 更新图表
+
+
+    if(spid=='Sp001'){
+      dataset2.data = [50,50];
+      dataset3.data = [50,50];
+      dataset4.data = [0,100];
+      dataset5.data = [0,100];
+
+    }
+    else if(spid=='Sp002'){
+      dataset2.data = [50,50];
+      dataset3.data = [30,70];
+      dataset4.data = [0,100];
+      dataset5.data = [0,100];
+
+    }
+    else if(spid=='Sp003'){
+      dataset2.data = [50,50];
+      dataset3.data = [20,20];
+      dataset4.data = [90,10];
+      dataset5.data = [0,100];
+      
+    }
+    else if(spid=='Sp004'){
+      dataset2.data = [40,60];
+      dataset3.data = [50,50];
+      dataset4.data = [0,100];
+      dataset5.data = [0,100];
+      
+    }
+    else if(spid=='Sp005'){
+      dataset2.data = [20,80];
+      dataset3.data = [50,50];
+      dataset4.data = [0,100];
+      dataset5.data = [0,100];
+      
+    }
+
+    chartInstance2.update();
+    chartInstance3.update();
+    chartInstance4.update();
+    chartInstance5.update();
     // 发送Ajax请求
     $.ajax({
       type: 'POST',
@@ -20,8 +125,13 @@ $(document).ready(function() {
       success: function(response) {
         // 在成功返回后的回调函数中执行操作
         console.log(response); // 这里可以处理返回的结果
-        // datesFromBackend=response.arrangedate
-        // console.log(datesFromBackend); // 这里可以处理返回的结果
+        datesFromBackend=response.arrangedatesp
+        // console.log("datesFromBackend:"+datesFromBackend); // 这里可以处理返回的结果
+
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        var currentMonth = currentDate.getMonth();
+        createCalendar(currentYear, currentMonth);
 
         document.getElementById('selectedrate').textContent = response.selectedrate+"%";
 
@@ -133,134 +243,6 @@ $(document).ready(function() {
     });
 });
 
-
-var currentDate = new Date();
-var currentYear = currentDate.getFullYear();
-var currentMonth = currentDate.getMonth();
-// 从 Django 后端获取日期数据，这里使用静态示例数据
-// datesFromBackend = ['2023-06-01', '2023-06-07', '2023-06-15']; // 替换为您从后端获取的日期数据
-
-// 创建日历
-function createCalendar(year, month) {
-    // 添加日期元素
-  var dayCell = $('<td>').text(i).addClass('calendar-day').attr('data-date', year + '-' + (month + 1) + '-' + i);
-  var calendarBody = $('#calendar-body');
-  calendarBody.empty();
-
-  var firstDay = new Date(year, month, 1);
-  var lastDay = new Date(year, month + 1, 0);
-
-  // 设置日历标题
-  $('#current-month').text(`${year}年 ${month + 1}月`);
-
-  // 创建日期行
-  var row = $('<tr>');
-  calendarBody.append(row);
-
-  // 补充前面的空白日期
-  for (var i = 0; i < firstDay.getDay(); i++) {
-    row.append($('<td>'));
-  }
-
-  // 添加日期元素
-  for (var i = 1; i <= lastDay.getDate(); i++) {
-    var day = new Date(year, month, i);
-    var isToday = day.toDateString() === currentDate.toDateString();
-    var isBackendDate = datesFromBackend.includes(day.toISOString().split('T')[0]);
-
-    var dayCell = $('<td>').text(i).addClass('calendar-day').attr('data-date', year + '-' + (month + 1) + '-' + i);
-
-    if (isToday) {
-      dayCell.addClass('today');
-    }
-
-    if (isBackendDate) {
-      dayCell.addClass('backend-date');
-    }
-
-    row.append(dayCell);
-
-    // 创建新的行
-    if (row.children().length === 7) {
-      row = $('<tr>');
-      calendarBody.append(row);
-    }
-  }
-
-  // 补充后面的空白日期
-  while (row.children().length < 7) {
-    row.append($('<td>'));
-  }
-}
-
-// 初始化日历
-createCalendar(currentYear, currentMonth);
-
-// 上一个月按钮点击事件
-$('#prev-month').on('click', function() {
-  currentMonth--;
-  if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
-  }
-  createCalendar(currentYear, currentMonth);
-});
-
-// 下一个月按钮点击事件
-$('#next-month').on('click', function() {
-  currentMonth++;
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  }
-  createCalendar(currentYear, currentMonth);
-});
-
-var selectedDate = ""; // 保存选中的日期
-$('#calendar-body').on('click', '.calendar-day', function() { //點擊獲取日期排班資訊
-    // 获取点击的日期
-    selectedDate = $(this).attr('data-date');
-    // openModal(selectedDate);
-    selected_spid=document.getElementById('selected_spid').textContent
-    console.log(spid)
-    // 发起 AJAX 请求获取数据
-    $.ajax({
-      url: '/seller_page/',  // 替换为实际的 Django 后台 URL
-      method: 'POST',
-      data: { 
-        date: selectedDate,
-        beselectedspid:selected_spid ,
-       },
-      success: function(response) {
-        // 处理成功响应
-        document.getElementById('selected_spid').textContent = response.beselectedspid;
-        openModal(response);
-        console.log(response)
-      },
-      error: function(xhr, status, error) {
-        // 处理错误
-        console.log('发生错误:', error);
-      }
-    });
-
-  // 打开弹出框
-  //之後要改成data和selectedDate兩個引數
-  function openModal(data) {
-    // 根据实际数据格式，构建弹出框的内容
-    // 这里假设返回的数据是一个包含需要显示的内容的 JSON 对象
-    
-    var content = data.selectedDate;
-    var content1 = data.beselectedspid;
-
-    // 使用弹出框库（如Bootstrap Modal）来显示内容
-    // 这里假设您已经引入了相应的弹出框库并设置了相应的 HTML 结构和样式
-    //console.log(content)
-    $('.modal-title').text(content);
-    $('#modal-content').text(content1);
-    $('#myModal').modal('show');
-  }
-});
-//日曆
 
 });
 var Cus_id=""

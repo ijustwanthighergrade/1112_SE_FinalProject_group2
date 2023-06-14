@@ -9,6 +9,11 @@ $.ajax({
         
         labels = data.labels
         defaultData = data.default    
+        defaultData1 = data.default1   
+        defaultData2 = data.default2   
+        defaultData3 = data.default3   
+        defaultData4 = data.default4  
+        defaultData5 = data.default5   
         setlineChart2();
     },
     error: function(error_data){
@@ -22,26 +27,128 @@ function setlineChart2(){
         data: {
             labels: timelabels, // 這裡
             datasets: [{
-                label: '# of Votes',
+                label: '全店',
                 data: defaultData, // 和這裡
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
                 ],
                 borderWidth: 1
-            }]
+            },
+            {
+                label: 'Sp001',
+                data: defaultData1, // 和這裡
+                backgroundColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderWidth: 1
+            },{
+                label: 'Sp002',
+                data: defaultData2, // 和這裡
+                backgroundColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderWidth: 1
+            },{
+                label: 'Sp003',
+                data: defaultData3, // 和這裡
+                backgroundColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderWidth: 1
+            },{
+                label: 'Sp004',
+                data: defaultData4, // 和這裡
+                backgroundColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderWidth: 1
+            },{
+                label: 'Sp005',
+                data: defaultData5, // 和這裡
+                backgroundColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderColor: [
+                    'rgb(243, 177, 178)',
+                    'rgb(169, 219, 230)',
+                    'rgb(198, 226, 229)',
+                    'rgb(251, 219, 198)',
+                    'rgb(192, 221, 193)',
+                    'rgb(202, 202, 226)'
+                ],
+                borderWidth: 1
+            }
+        ]
         },
         options: {
             scales: {
