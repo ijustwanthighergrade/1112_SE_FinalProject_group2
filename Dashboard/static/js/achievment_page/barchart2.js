@@ -73,11 +73,28 @@ window.addEventListener('load', createChart);
 
 window.addEventListener('load', function () {
     // 綁定按鈕事件
-    var button = document.getElementById('showDataButton');
-    button.addEventListener('click', function () {
-        // 獲取目標標籤的索引或標籤名稱
-        var targetLabel = '睡魔智眠椅'; // 更換為您要顯示的標籤名稱
+    var button1 = document.getElementById('button1');
+    button1.addEventListener('click', function () {
+        updateChartVisibility('睡魔智眠椅');
+    });
 
+    var button2 = document.getElementById('button2');
+    button2.addEventListener('click', function () {
+        updateChartVisibility('大師椅');
+    });
+
+    var button3 = document.getElementById('button3');
+    button3.addEventListener('click', function () {
+        updateChartVisibility('天王按摩椅');
+    });
+
+    var button4 = document.getElementById('button4');
+    button4.addEventListener('click', function () {
+        updateChartVisibility('v-motion');
+    });
+
+    // 函數：更新圖表數據集可見性
+    function updateChartVisibility(targetLabel) {
         // 顯示或隱藏數據集
         barChart2.data.datasets.forEach(function (dataset) {
             if (dataset.label === targetLabel) {
@@ -89,5 +106,5 @@ window.addEventListener('load', function () {
 
         // 更新圖表
         barChart2.update();
-    });
+    }
 });
