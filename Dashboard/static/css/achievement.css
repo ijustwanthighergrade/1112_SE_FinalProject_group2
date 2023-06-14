@@ -152,3 +152,16 @@ table{
     display: FLEX;
     margin-left: 1%;
 }
+
+#generateChartButton{
+  background-color:white ;
+  font-weight: bold;
+  color:rgb(17, 108, 118) ;
+
+  border: white solid 1px;
+  border-radius: 10px;
+  
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 8px
+}
