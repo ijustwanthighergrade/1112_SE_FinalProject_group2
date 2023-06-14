@@ -1,10 +1,28 @@
+@media screen and (max-width: 1920px) {
+  .seller_container {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+  }
+  
+}
+
 .div1{
   float: left;
-  width: 7%;
-  height: 100%;
-  display: flex;
+  width: 10%;
   flex-direction: column;
-  
+}
+
+.tdm{
+  font-size: 20px;
+  padding-top: 1.5px;
+  padding-bottom: 1.5px;
+
+}
+
+.tda{
+  font-size: 20px;
+  padding-top: 3.5px;
+  padding-bottom: 3.5px;
 }
 
 .month{
@@ -12,56 +30,55 @@
   margin-right: 5%;
   width: 90%;
   border-radius: 10px;
-
+  font-size: 15px;
 }
+
 table{
   background-color: rgb(198, 226, 229);
   text-align: center;
 }
 
-.chair{
-  background-color: rgb(198, 226, 229);
-  margin-top: 45%;
-  width: 90%;
-  height: 100%; 
-  border-radius: 10px;
-}
-
 .divb{
  display: flex;
- width: 70%;
- height: 30%;
- margin-top: 24%;
-
+ width: 100%;
 }
-.bchart1{
+
+.chair{
+  width: 11%;
   background-color: rgb(198, 226, 229);
   border-radius: 10px;
+}
+
+
+.bchart1{
+  float: left;
+  background-color: rgb(198, 226, 229);
+  border-radius: 10px;
+
 }
 
 .bchart2{
+  float: left;
   background-color: rgb(198, 226, 229);
-  margin-left: 1%;
+  margin-left: 0.5%;
   border-radius: 10px;
 }
 
 .div2{
-  display: flex;
   float: left; 
-  width: 30%;
-
-
 }
 
 .pchart1{
   background-color: rgb(198, 226, 229);
   border-radius: 10px;
+  display: inline-block;
 }
 .pchart2{
   background-color: rgb(198, 226, 229);
-  margin-left: 3%;
   border-radius: 10px;
+  display: inline-block;
 }
+
 .titles{
   font-weight: bolder;
   font-size:20px ;
@@ -69,43 +86,45 @@ table{
 }
 
 .div3{
-  display: flex;
-  float: left;
-  height: 58.5%;
-  width: 40%;
-  margin-left: 14%;
+  float:left;
+  white-space: nowrap;
+  margin-left: 1% ;
+  width: 30%;
+  height: 70%;
 }
-
 
 .announcement{
+  float:left;
   background-color: rgb(198, 226, 229);
-  height: 100%;
-  width: 60%;
   border-radius: 10px;
+  width: 70%;
 }
+
 .tr1{
   font-size: 15px;
   font-weight: bold;
 }
 
 .divc{
-  display: flex;
+  display: inline-block;
   flex-direction: column;
-  float: right;
-  width: 30%;
+  width: 80%;
   padding-left: 1%;
 }
+
   
 .carda{
   background-color: rgb(198, 226, 229);    
-  height: 40%;
+  height: 80%;
+  width: 50%;
   border-radius: 10px;
 }
 
 .cardb{
   background-color: rgb(198, 226, 229);
-  height: 40%;
-  margin-top: 30%;
+  height: 80%;
+  width:  50%;
+  margin-top: 10%;
   border-radius: 10px;
 }
 
@@ -114,3 +133,7 @@ table{
 
 }
 
+.div5{
+    display: FLEX;
+    margin-left: 1%;
+}
