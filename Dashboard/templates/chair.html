@@ -3,10 +3,7 @@
     {% load static %}
 <head>
     <title>chair</title>
-    <script src="{% static 'js/chair_page/chair1.js' %}"></script>
-    <script src="{% static 'js/chair_page/chair2.js' %}"></script>
-    <script src="{% static 'js/chair_page/chair3.js' %}"></script>
-    <script src="{% static 'js/chair_page/chair4.js' %}"></script>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,17 +30,18 @@
         <div class="div1">
             <div class="text1">按摩椅編號</div>
             <table class="ta1">
-                <tr><td><button class="text2">C001</button></td></tr>
-                <tr><td><button class="text2">C002</button></td></tr>
+                <tr><td><button id="C001" class="text2">C001</button></td></tr>
+                <tr><td><button id="C002" class="text2">C002</button></td></tr>
                 <tr><td><button class="text2">C003</button></td></tr>
                 <tr><td><button class="text2">C004</button></td></tr>
+                <tr><td><button class="text2">C005</button></td></tr>
             </table>
         </div>
         <div class="div1">
             <div class="text1">月份</div>
             <table class="ta1">
-                <tr><td><button class="text2">一月</button></td><td><button class="text2">七月</button></td></tr>
-                <tr><td><button class="text2">二月</button></td><td><button class="text2">八月</button></td></tr>
+                <tr><td><button class="text2" id="Jan">一月</button></td><td><button class="text2">七月</button></td></tr>
+                <tr><td><button class="text2" id="Feb">二月</button></td><td><button class="text2">八月</button></td></tr>
                 <tr><td><button class="text2">三月</button></td><td><button class="text2">九月</button></td></tr>
                 <tr><td><button class="text2">四月</button></td><td><button class="text2">十月</button></td></tr>
                 <tr><td><button class="text2">五月</button></td><td><button class="text2">十一月</button></td></tr>
@@ -54,7 +52,7 @@
         <div class="div3">
             <table class="ta3">
             <tr><td class="text4">本月顧客數</td></tr>
-            <tr><td>2000</td></tr>
+            <tr><td id="mon_num">2000</td></tr>
             </table>
             <table class="ta4">
                 <tr><td class="text4">按摩椅狀況</td></tr>
@@ -62,21 +60,131 @@
                 </table>
         </div>
         <div class="div2">
+            <div class="text4"><div id="give">C001</div>收到的回饋內容</div>
             <table class="ta2">
-            <tr class="text4"><td>客戶</td><td>日期</td><td>回饋內容</td></tr> 
-            <tr class="text3"><td>c001</td><td>6/2</td><td>爽</td></tr>
-            <tr class="text3"><td>c001</td><td>6/5</td><td>座椅上有奇怪的味道</td></tr>
-
+            <tr class="text3"><td>客戶</td><td>日期</td><td>回饋內容</td></tr> 
+            <tr class="text3"><td id="client1_1">c20210302121314000</td><td id="date1">1/2</td><td>爽</td></tr>
+            <tr class="text3"><td id="client1_2">c20230502111314778</td><td id="date2">1/5</td><td>座椅上有奇怪的味道</td></tr>
+            <tr class="text3"><td id="client1_2">c20210302121314000</td><td id="date2">1/12</td><td>座椅上有奇怪的味道</td></tr>
+            <tr class="text3"><td id="client1_2">c20210302121314000</td><td id="date2">1/12</td><td>座椅上有奇怪的味道</td></tr>
+            <tr class="text3"><td id="client1_2">c20210302121314000</td><td id="date2">1/12</td><td>座椅上有奇怪的味道</td></tr>
+            <tr class="text3"><td id="client1_2">c20210302121314000</td><td id="date2">1/12</td><td>座椅上有奇怪的味道</td></tr>
+            <tr class="text3"><td id="client1_2">c20210302121314000</td><td id="date2">1/12</td><td>座椅上有奇怪的味道</td></tr>
+            
             </table>
         </div>
         <div class="myChart">
-            <div class="text4">使用次數</div><canvas id="myChart"></canvas>
-            <div class="text4">月使用次數</div><canvas id="my3"></canvas></div>
+            <div class="text4"><div id="mon">每月使用次數</div></div><canvas id="my3"></canvas>
+            <div class="text4"><div id="wee">每週使用次數</div></div><canvas id="myChart"></canvas>
+        </div>
         <div class="my4">
             <div class="div4"><canvas id="my4"></canvas></div>
             <div class="div5"><canvas id="my2"></canvas></div>
         </div>
-        
+        <div id="chair">C001</div>
+        <div id="Month">Jan</div>
     </div>
 </body>
+    <script src="{% static 'js/chair_page/chair1.js' %}"></script>
+    <script src="{% static 'js/chair_page/chair2.js' %}"></script>
+    <script src="{% static 'js/chair_page/chair3.js' %}"></script>
+    <script src="{% static 'js/chair_page/chair4.js' %}"></script>
+<script>
+    var mychair
+    var my3
+    document.getElementById('C001').onclick = function() {  
+        document.getElementById('chair').innerHTML="C001";
+        document.getElementById('C001').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+        document.getElementById('C002').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+        // 更新数据
+        myChart.data.datasets[0].label = "C001";
+
+        document.getElementById('client1_1').innerHTML = 'c20210302121314000';
+        document.getElementById('client1_2').innerHTML = 'c20210302121314000';
+
+        document.getElementById('give').innerHTML = 'C001';
+
+        if(document.getElementById('Month').innerHTML=="Jan"){
+            document.getElementById('wee').innerHTML = 'C001一月每週使用次數';
+            document.getElementById('mon').innerHTML = 'C001一月使用次數';
+            myChart.data.datasets[0].data = [10, 15, 7, 12];
+            my3.data.datasets[0].data = [10];
+        }else if(document.getElementById('Month').innerHTML=="Feb"){
+            document.getElementById('wee').innerHTML = 'C001二月每週使用次數';
+            document.getElementById('mon').innerHTML = 'C001二月使用次數';
+            myChart.data.datasets[0].data = [8, 15, 7, 12];
+        }
+        // 更新图表
+        myChart.update();
+        my3.update();
+}
+
+document.getElementById('C002').onclick = function() {
+    document.getElementById('chair').innerHTML="C002";
+    document.getElementById('C002').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+    document.getElementById('C001').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+
+    myChart.data.datasets[0].label = "C002";
+
+    document.getElementById('give').innerHTML = 'C002';
+
+    document.getElementById('client1_1').innerHTML = 'c20230502111314778';
+    document.getElementById('client1_2').innerHTML = 'c20230502111314778';
+
+    if(document.getElementById('Month').innerHTML=="Jan"){
+        document.getElementById('wee').innerHTML = 'C002一月每週使用次數';
+        document.getElementById('mon').innerHTML = 'C002一月使用次數';
+        myChart.data.datasets[0].data = [25, 16, 10, 18];
+
+    }else if(document.getElementById('Month').innerHTML=="Feb"){
+        document.getElementById('wee').innerHTML = 'C002二月每週使用次數';
+        document.getElementById('mon').innerHTML = 'C002二月使用次數';
+        myChart.data.datasets[0].data = [32, 15, 7, 12];
+    }
+
+    // 更新图表
+    myChart.update();
+}
+
+document.getElementById('Jan').onclick = function() {
+    document.getElementById('Month').innerHTML="Jan";
+    document.getElementById('mon_num').innerHTML="2000";
+    document.getElementById('Jan').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+    document.getElementById('Feb').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+    myChart.data.datasets[1].data =  [110, 100, 120, 95];
+
+    if(document.getElementById('chair').innerHTML=="C001"){
+        document.getElementById('wee').innerHTML = 'C001一月每週使用次數';
+        document.getElementById('mon').innerHTML = 'C001一月使用次數';
+        myChart.data.datasets[0].data = [10, 15, 7, 12];
+    }else if(document.getElementById('chair').innerHTML=="C002"){
+        document.getElementById('wee').innerHTML = 'C002一月每週使用次數';
+        document.getElementById('mon').innerHTML = 'C002一月使用次數';
+        myChart.data.datasets[0].data = [16, 15, 7, 12];
+    }
+     // 更新图表
+     myChart.update();
+}
+
+document.getElementById('Feb').onclick = function() {
+    document.getElementById('Month').innerHTML="Feb";
+    document.getElementById('mon_num').innerHTML="1500";
+    document.getElementById('Feb').style.backgroundColor='rgba(243, 177, 178, 0.5)';
+    document.getElementById('Jan').style.backgroundColor='rgba(25, 99, 132, 0.2)';
+    myChart.data.datasets[1].data = [30, 25, 7, 12];
+
+    if(document.getElementById('chair').innerHTML=="C001"){
+        document.getElementById('wee').innerHTML = 'C001二月每週使用次數';
+        document.getElementById('mon').innerHTML = 'C001二月使用次數';
+        myChart.data.datasets[0].data = [8, 15, 7, 12];
+    }else if(document.getElementById('chair').innerHTML=="C002"){
+        document.getElementById('wee').innerHTML = 'C002二月每週使用次數';
+        document.getElementById('mon').innerHTML = 'C002二月使用次數';
+        myChart.data.datasets[0].data = [32, 15, 7, 12];
+    }
+     // 更新图表
+     myChart.update();
+}
+</script>
+
 </html>

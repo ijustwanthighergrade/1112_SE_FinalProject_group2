@@ -22,9 +22,10 @@
 }
 
 .text3{
-  font-size: 20px;
+  font-size: 16px;
   padding: 1%;
   border-bottom: 3px white solid;
+  line-height: 250%;
 }
 
 .ta1,.ta2{
@@ -65,9 +66,13 @@
   height: 50%;
   width: 29%;
   margin: 0.5% ;
-  padding: 2%;
+  padding: 1%;
+  overflow: auto;
 }
 
+::-webkit-scrollbar-thumb {
+  background: rgb(25, 99, 132, 0.5); /* 滚动条滑块颜色 */
+}
 .div3 {
   display: flex;
   justify-content: center;
@@ -124,4 +129,3 @@
   font-size: 24px;
   font-weight: bold;
 }
-

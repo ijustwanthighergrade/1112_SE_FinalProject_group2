@@ -1,6 +1,6 @@
 function createChart3() {
     var ctx = document.getElementById("my3");
-    var my3 = new Chart(ctx, {
+    my3 = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["五月"],
