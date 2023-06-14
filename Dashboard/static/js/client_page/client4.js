@@ -1,6 +1,6 @@
 function createChart4() {
     var ctx = document.getElementById("my4");
-    var my4 = new Chart(ctx, {
+    my4 = new Chart(ctx, {
         type: 'pie',
         data: data = {
             labels: [
@@ -9,7 +9,7 @@ function createChart4() {
             ],
             datasets: [{
               label: 'My First Dataset',
-              data: [305, 50],
+              data: [90, 10],
               backgroundColor: [
                 'rgba(243, 177, 178, 0.5)',
                 'rgba(79, 85, 143, 0.5)'

@@ -36,31 +36,39 @@ text-align: center;
 }
 
 .quantity{
-  text-align: center;
-  font-size: 20px;
-  border: 1px double black;
+  font-size: 18px;
+  width: 80%;
+  margin: 10%; 
 }
 
 .quantity1{
   text-align: center;
   font-size: 20px;
-  width: 200px;
+  width: 80%;
   position: absolute;
-  right: 0%;
   top: 10%;
+  height: 70%;
+  left: 10%;
+  font-weight: bold;
+}
+
+.quantity2{
+  text-align: center;
+  font-size: 16px;
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  height: 60%;
+  left: 48%;
 }
 
 .my4{
   width: 130px;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
 }
 
-.my5{
-  width: 300px;
-}
-
-.div1,.div2,.div3,.div4,.my3{
+.div1,.div2,.div3,.div4,.div5,.my3{
   background-color: rgb(198, 226, 229);
   border-radius: 10px;
   border-collapse: separate;
@@ -76,7 +84,7 @@ text-align: center;
   display: flex;
 }
 
-.div2{
+.div2,.div5{
   width: 23%;
 }
 
@@ -93,6 +101,14 @@ text-align: center;
   width: 26%;
 }
 
+.div5{
+  overflow: auto;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(25, 99, 132, 0.5); /* 滚动条滑块颜色 */
+}
+
 .text1{
   font-size: 24px;
   font-weight: bold;
@@ -106,6 +122,11 @@ text-align: center;
   font-weight: bold;
 }
 
+.text5{
+  border-bottom: 2px solid white;
+
+}
+
 .ta3{
   height: 40%;
   font-size: 20px;
@@ -115,7 +136,7 @@ text-align: center;
 
 .ta1{
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 5%;
 }
 
@@ -137,4 +158,10 @@ text-align: center;
 .my6{
   width: 70%;
   margin:auto;
+}
+
+#t2{
+  position: absolute;
+  bottom: 10%;
+  left: 35%;
 }
