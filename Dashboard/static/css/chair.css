@@ -22,10 +22,16 @@
 }
 
 .text3{
-  font-size: 16px;
+  font-size: 14px;
   padding: 1%;
   border-bottom: 3px white solid;
   line-height: 250%;
+}
+
+.ta1{
+  position: absolute;
+  top: 15%;
+
 }
 
 .ta1,.ta2{
@@ -60,6 +66,7 @@
   height: 50%;
   align-items: center;
   display: flex;
+  overflow: auto;
 }
 
 .div2{
@@ -128,4 +135,8 @@
 .text4{
   font-size: 24px;
   font-weight: bold;
+}
+
+.color{
+  color: rgb(25, 99, 132);
 }

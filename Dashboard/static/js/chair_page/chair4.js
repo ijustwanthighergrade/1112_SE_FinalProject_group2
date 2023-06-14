@@ -1,12 +1,12 @@
 function createChart4() {
     var ctx = document.getElementById("my4");
-    var my4 = new Chart(ctx, {
+    my4 = new Chart(ctx, {
         type: 'pie',
         data: data = {
             labels: ['意見回饋數','全部按摩椅意見回饋數'],
             datasets: [{
               label: 'My First Dataset',
-              data: [305, 50],
+              data: [15, 108],
               backgroundColor: [
                 'rgba(79, 85, 143, 0.5)',
                 'rgba(243, 177, 178, 0.5)'

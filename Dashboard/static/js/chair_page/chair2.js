@@ -3,10 +3,10 @@ function createChart2() {
     var my2 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["c001", "c002", "c003", "c004"],
+            labels: ["c001", "c002", "c003", "c004", "c005"],
             datasets: [{
                 label: '回報的顧客&次數',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [15, 25, 13, 9, 28],
                 backgroundColor: [
                     'rgba(79, 85, 143, 0.5)'
                 ],

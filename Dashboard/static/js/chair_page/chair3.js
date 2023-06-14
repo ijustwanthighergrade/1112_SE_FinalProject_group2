@@ -3,7 +3,7 @@ function createChart3() {
     my3 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["五月"],
+            labels: ["一月"],
             datasets: [{
                 label: '本月使用次數',
                 data: [20],
@@ -16,7 +16,7 @@ function createChart3() {
                 borderWidth: 2
             },{
                 label: '全店本月使用次數',
-                data: [250],
+                data: [300],
                 backgroundColor: [
                     'rgba(243, 177, 178, 0.5)'
                 ],
