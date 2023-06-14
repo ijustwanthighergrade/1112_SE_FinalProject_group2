@@ -13,6 +13,7 @@
     <script src="{% static 'js/achievment_page/barchart2.js' %}"></script>
     <script src="{% static 'js/achievment_page/piechart.js' %}"></script>
     <script src="{% static 'js/achievment_page/piechart2.js' %}"></script>
+    <script src="{% static 'js/achievment_page/card.js' %}"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
     {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.0/chart.min.js" integrity="sha512-R60W3LgKdvvfwbGbqKusRu/434Snuvr9/Flhtoq9cj1LQ9P4HFKParULqOCAisHk/J4zyaEWWjiWIMuP13vXEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
@@ -112,16 +113,16 @@
     </tr>
 
     <tr class="tr1">
-    <td class="tda" >2023/12/12<br>
+    <td  id="ann1" class="tda" >2023/12/12<br>
     訊息：我肚子好餓<br></td>
     </tr>
 
     <tr class="tr1">
-    <td class="tda" >2023/12/13<br>
+    <td id="ann2" class="tda" >2023/12/13<br>
     訊息：晚餐要吃什麼<br></td>
     </tr>
     <tr class="tr1">
-        <td class="tda" >2023/12/17<br>
+        <td id="ann3" class="tda" >2023/12/17<br>
         訊息：晚餐要吃什麼<br></td>
     </tr>
 
@@ -132,7 +133,7 @@
     <td class="titles">當月成本花費</td>
     </tr>
     <tr>
-    <td class="tda">200000元</td>
+    <td id="d1" class="tda">200000元</td>
     </tr>
 </table>
 <table class="cardb" >
@@ -140,7 +141,7 @@
     <td class="titles">當月成交顧客數</td>
     </tr>
     <tr>
-        <td class="tda">57人</td>
+        <td id="p1" class="tda">57人</td>
     </tr>
 </table>
 </div>
@@ -154,18 +155,18 @@
             <td class="titles">按摩椅</td>
         </tr>
         <tr>
-        <td class="tdm">睡魔智眠椅</td>
+        <td class="tdm"><button id="showDataButton">智眠椅</button></td>
         </tr>
 
         <tr>
-        <td class="tdm">大師椅</td>
+        <td class="tdm"><button id="showDataButton">大師椅</button></td>
         </tr>
 
         <tr>
-        <td class="tdm">天王按摩椅</td>
+        <td class="tdm"><button id="showDataButton">天王椅</button></td>
         </tr>
         <tr>
-        <td class="tdm">V-Motion </td>
+        <td class="tdm"><button id="showDataButton">V-Motion</button></td>
         </tr>
 
     </table>
