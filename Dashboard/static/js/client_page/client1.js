@@ -7,7 +7,7 @@ function createChart() {
             datasets: [{
                 label: '全店顧客個階段數量',
                 data: [65, 59, 80, 81],
-                backgroundColor:'rgba(79, 85, 143, 0.5)',
+                backgroundColor:'rgba(243, 177, 178)',
                 tension: 0.1
             }]
         }

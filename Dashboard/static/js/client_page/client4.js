@@ -11,8 +11,8 @@ function createChart4() {
               label: 'My First Dataset',
               data: [90, 10],
               backgroundColor: [
-                'rgba(243, 177, 178, 0.5)',
-                'rgba(79, 85, 143, 0.5)'
+                'rgba(243, 177, 178)',
+                'rgba(79, 85, 143)'
               ],
               hoverOffset: 4
             }]

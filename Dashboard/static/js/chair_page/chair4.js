@@ -8,8 +8,8 @@ function createChart4() {
               label: 'My First Dataset',
               data: [15, 108],
               backgroundColor: [
-                'rgba(79, 85, 143, 0.5)',
-                'rgba(243, 177, 178, 0.5)'
+                'rgba(79, 85, 143)',
+                'rgba(243, 177, 178)'
               ],
               borderColor: [
                 'rgba(255,255,255)'
