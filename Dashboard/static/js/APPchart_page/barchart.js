@@ -1,6 +1,6 @@
 function c1() {
 var ctx = document.getElementById('myChart1');
-var myChart = new Chart(ctx, {
+var myChart1 = new Chart(ctx, {
   type: 'bar',
   data: {
     labels: ['c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456'],
