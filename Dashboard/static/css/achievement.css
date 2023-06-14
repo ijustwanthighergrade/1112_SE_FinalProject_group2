@@ -32,6 +32,8 @@
   padding-bottom: 3.5px;
 }
 
+
+
 .month{
   background-color: rgb(198, 226, 229);
   margin-right: 5%;
@@ -164,4 +166,18 @@ table{
   padding-left: 15px;
   padding-right: 15px;
   margin: 8px
+}
+
+#showDataButton{
+  background-color:white ;
+  font-weight: bold;
+  color:rgb(17, 108, 118) ;
+
+  border: white solid 1px;
+  border-radius: 10px;
+  
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 8px
+  
 }

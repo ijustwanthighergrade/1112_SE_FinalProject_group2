@@ -1,6 +1,8 @@
+var barChart2;
+
 function createChart() {
 var ctx = document.getElementById("barChart2");
-var barChart2 = new Chart(ctx, {
+barChart2 = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ["老人","中年人","年輕人","肩頸加強","腿部按摩"], // 換成自己的labels
@@ -67,3 +69,25 @@ var barChart2 = new Chart(ctx, {
     }
 });}
 window.addEventListener('load', createChart);
+
+
+window.addEventListener('load', function () {
+    // 綁定按鈕事件
+    var button = document.getElementById('showDataButton');
+    button.addEventListener('click', function () {
+        // 獲取目標標籤的索引或標籤名稱
+        var targetLabel = '睡魔智眠椅'; // 更換為您要顯示的標籤名稱
+
+        // 顯示或隱藏數據集
+        barChart2.data.datasets.forEach(function (dataset) {
+            if (dataset.label === targetLabel) {
+                dataset.hidden = false; // 顯示目標數據集
+            } else {
+                dataset.hidden = true; // 隱藏其他數據集
+            }
+        });
+
+        // 更新圖表
+        barChart2.update();
+    });
+});
