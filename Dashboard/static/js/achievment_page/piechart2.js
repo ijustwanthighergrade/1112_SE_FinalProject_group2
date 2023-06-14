@@ -50,17 +50,20 @@ function createChart(data) {
     });
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     // 初始數據
-    var initialData = [1, 20, 30, 78, 50];
+    var initialData = [10, 20, 30, 78, 50];
     createChart(initialData);
 
     // 綁定按鈕事件
-    var button = document.getElementById('generateChartButton');
-    button.addEventListener('click', function() {
-        // 新的數據
-        var newData = [70, 70, 25, 35, 78];
-        pieChart2.destroy();
-        createChart(newData);
+    var buttons = document.querySelectorAll('.generateChartButton');
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // 獲取按鈕上的自定義屬性 data-newdata 的值
+            var charData = JSON.parse(button.getAttribute('data-chartid'));
+            
+            pieChart2.destroy();
+            createChart(charData);
+        });
     });
 });

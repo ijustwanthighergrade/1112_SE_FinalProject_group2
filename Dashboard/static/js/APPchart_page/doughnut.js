@@ -1,4 +1,4 @@
-function createChart() {
+function c4() {
 var ctx4 = document.getElementById('myChart4');
 var myPieChart = new Chart(ctx4, {
     type: "doughnut",
@@ -22,4 +22,4 @@ options:{
   circumference: 180,
 }
 });}
-window.addEventListener('load', createChart);
+window.addEventListener('load', c4);

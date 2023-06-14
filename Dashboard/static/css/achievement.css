@@ -155,7 +155,7 @@ table{
     margin-left: 1%;
 }
 
-#generateChartButton{
+.generateChartButton{
   background-color:white ;
   font-weight: bold;
   color:rgb(17, 108, 118) ;
@@ -168,7 +168,7 @@ table{
   margin: 8px
 }
 
-#showDataButton{
+.showDataButton{
   background-color:white ;
   font-weight: bold;
   color:rgb(17, 108, 118) ;

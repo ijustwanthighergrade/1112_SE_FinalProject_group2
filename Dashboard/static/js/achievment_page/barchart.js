@@ -31,7 +31,7 @@ function createChart() {
                 {
                     label: 'd型按摩椅',
                     data: [25, 17, 75, 56, 120, 30, 75, 68, 87, 94, 23, 65],
-                    backgroundColor: 'rgb(198, 226, 229)',
+                    backgroundColor: 'rgb(218, 197, 237)',
                     borderColor: 'white',
                     borderWidth: 1
                 },
@@ -55,11 +55,28 @@ window.addEventListener('load', createChart);
 
 window.addEventListener('load', function () {
     // 綁定按鈕事件
-    var button = document.getElementById('showDataButton');
-    button.addEventListener('click', function () {
-        // 獲取目標標籤的索引或標籤名稱
-        var targetLabel = 'a型按摩椅'; // 更換為您要顯示的標籤名稱
+    var button1 = document.getElementById('button1');
+    button1.addEventListener('click', function () {
+        updateChartVisibility('a型按摩椅');
+    });
 
+    var button2 = document.getElementById('button2');
+    button2.addEventListener('click', function () {
+        updateChartVisibility('b型按摩椅');
+    });
+
+    var button3 = document.getElementById('button3');
+    button3.addEventListener('click', function () {
+        updateChartVisibility('c型按摩椅');
+    });
+
+    var button4 = document.getElementById('button4');
+    button4.addEventListener('click', function () {
+        updateChartVisibility('d型按摩椅');
+    });
+
+    // 函數：更新圖表數據集可見性
+    function updateChartVisibility(targetLabel) {
         // 顯示或隱藏數據集
         barChart1.data.datasets.forEach(function (dataset) {
             if (dataset.label === targetLabel) {
@@ -71,6 +88,6 @@ window.addEventListener('load', function () {
 
         // 更新圖表
         barChart1.update();
-    });
+    }
 });
 
