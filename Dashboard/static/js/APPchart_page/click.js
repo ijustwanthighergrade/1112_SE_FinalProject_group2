@@ -3,12 +3,13 @@ function c01(){
     var myChart1 = Chart.getChart(canvas2[0]);
     myChart1.data.datasets[0].data = [1,2,3];
     myChart1.update();
-    document.getElementById('cus1').innerHTML = '';
+    document.getElementById('cus1').innerHTML = 'c20210302121314000';
     document.getElementById('cusname1').innerHTML = '';
     document.getElementById('cus2').innerHTML = '';
     document.getElementById('cusname2').innerHTML = '';
     document.getElementById('day1').innerHTML = '';
-    document.getElementById('cus3').innerHTML = '';
+
+    document.getElementById('cus3').innerHTML = 'c20210302121314000';
     document.getElementById('cusname3').innerHTML = '';
     document.getElementById('cus4').innerHTML = '';
     document.getElementById('cusname4').innerHTML = '';
