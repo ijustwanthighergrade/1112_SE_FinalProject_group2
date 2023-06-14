@@ -12,6 +12,8 @@ from django.core.serializers import serialize
 from django.utils import timezone
 from django.db.models import Q
 from datetime import datetime
+from django.db.models import Count
+from collections import defaultdict
 
 class DateTimeJSONEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -27,46 +29,55 @@ def seller_page(request: HttpRequest):
     spid=""
     cusid="" #前端傳回客戶id
     if request.method == 'GET':
-        all_Sp_id=Sp.objects.values('Sp_id')        #所有的業務員
+        all_Sp_id=Sp.objects.values('Sp_id')  
+        findspid=Sp.objects.values_list('Sp_id', flat=True)        #所有的業務員
         all_Cus_id=manage.objects.values('Cus_id')  #所有的顧客專案
         
         #業績用業務篩產品販售資料表抓詳細資料表的每筆訂單加總訂單總額 piechart1 data
         allsp_turnover=[]       #存所有業務業績
-        for Sid in all_Sp_id:   #對所有業務 抓取每一筆產品販售資料表
+        for Sid in findspid:   #對所有業務 抓取每一筆產品販售資料表
             totalprice=0
             ordersp=order.objects.filter(Sp_id=Sid)#對單一業務 抓取每一筆產品販售資料表
-            totalprice_list=0
-            allorder=[]
-            for sporder in ordersp:#用業務篩產品販售資料表
-                sporder_detailed=order_detailed.objects.filter(order_id=sporder.order_id)#order_id篩產品販售詳細資料表
+            print(Sid)
+            totalpricea=0
+            for sporder in ordersp: #對每一筆產品販售資料表查詢產品販售詳細資料表
+                sporder_detailed=order_detailed.objects.filter(order_id=sporder.order_id) # order_id篩產品販售詳細資料表
                 totalprice_list = sporder_detailed.values_list('totalprice', flat=True)
-                totalprice+=totalprice_list
-            allsp_turnover.append(totalprice)
+                totalpricea+=sum(totalprice_list)
+            allsp_turnover.append(totalpricea)
         #業績用業務篩產品販售資料表抓詳細資料表的每筆訂單加總訂單總額
         
-        #失敗原因表的labels
-        false_labels=list(FALSE.objects.values('FALSE_TYPE'))#失敗原因表的labels
-        flase=FALSE.objects.values('FALSE_id','FALSE_TYPE')
-        cus_false=manage.objects.values('manage_category')            #客戶專案管理資料表中所有失敗原因
-            
-        counter = {}
+        #失敗原因表
+        # 首先获取所有的 FALSE 类型数据
+        false_types = FALSE.objects.values_list('FALSE_id', flat=True)
+        # 创建一个空字典用于存储每个失败类型的出现次数
+        failure_counts = {}
 
-        # for data in cus_false:
-        #     false_types = False.objects.filter(FALSE_id=data)
-        #     for false_type in false_types:
-        #         if false_type in counter:
-        #             counter[false_type] += 1
-        #         else:
-        #             counter[false_type] = 1
-                    
-         #失敗原因表的labels
-         
-         
+        # 遍历每个 FALSE 类型
+        for false_type in false_types:
+
+            # 查找与当前 FALSE 类型相关的 manage 数据，并计算每个类型的出现次数
+            count = manage.objects.filter(manage_category=false_type).count()
+            false_id = FALSE.objects.filter(FALSE_id=false_type).values_list('FALSE_TYPE', flat=True)
+            
+            # 将失败类型及其出现次数添加到字典中
+            failure_counts[str(false_id[0])] = count
+
+
+        false_keys_list = list(failure_counts.keys())
+        false_values_list = list(failure_counts.values())
+        #失敗原因表
+        
+        #類型
+        
+
+        
         # 業務員資料蒐集完整度表 魔改表現方式
         totalamount_Cus_id=manage.objects.all().count()
-        if totalamount_Cus_id ==0:
+        if totalamount_Cus_id == 0:
             totalamount_Cus_id=1
         isnull=totalamount_Cus_id*10
+        # print("isnull:",isnull,"totalamount_Cus_id:",totalamount_Cus_id)
         for Cus_id in all_Cus_id:
             if Cus.objects.filter(Cus_id=cusid,Cus_FamilyNum__isnull=True):
                 isnull-=1
@@ -91,14 +102,13 @@ def seller_page(request: HttpRequest):
         selectedrate=isnull/totalamount_Cus_id*10
         # 業務員資料蒐集完整度表 魔改表現方式
         
-        
         return render(request,"seller.html",{
             'all_Sp_id':all_Sp_id,
             'all_Cus_id':all_Cus_id,
             'selectedrate':selectedrate,
             'allsp_turnover':allsp_turnover,
-            'false_labels':false_labels,
-            # 'counter':counter
+            'false_keys_list':false_keys_list,
+            'false_values_list':false_values_list
         })
     elif request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
                
@@ -111,31 +121,36 @@ def seller_page(request: HttpRequest):
             
             totalamount_Cus_id=sp_Cus_id.count()
             # 業務員資料蒐集完整度表 魔改表現方式
-            
-            isnull=totalamount_Cus_id*10
-            for Cus_id in all_Cus_id:
-                if Cus.objects.filter(Cus_id=cusid,Cus_FamilyNum__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Cus_eld__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Chair_status__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Chair_floor__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Chair_ceiling__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Chair_position__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Chair_color__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Cus_PastItem__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Chair_power__isnull=True):
-                    isnull-=1
-                if Cus.objects.filter(Cus_id=cusid,Cus_job__isnull=True):
-                    isnull-=1
-            selectedrate=isnull/totalamount_Cus_id*10
+            isnull=10*totalamount_Cus_id
+            # isnull=totalamount_Cus_id*10
+            # print("isnull:",isnull,"totalamount_Cus_id:",totalamount_Cus_id)
+            if totalamount_Cus_id!=0:
+                for Cus_id in all_Cus_id:
+                    if Cus.objects.filter(Cus_id=cusid,Cus_FamilyNum__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Cus_eld__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Chair_status__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Chair_floor__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Chair_ceiling__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Chair_position__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Chair_color__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Cus_PastItem__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Chair_power__isnull=True):
+                        isnull-=1
+                    if Cus.objects.filter(Cus_id=cusid,Cus_job__isnull=True):
+                        isnull-=1
+                selectedrate=isnull/totalamount_Cus_id*10
+            else:
+                selectedrate=0
             # 業務員資料蒐集完整度表 魔改表現方式
+            # print("isnull:",isnull,"totalamount_Cus_id:",totalamount_Cus_id)
             
             #抓排班日期
             arrangedate =arrange.objects.filter(Ab_id=spid)
@@ -157,6 +172,7 @@ def seller_page(request: HttpRequest):
             cusid_data = Cus.objects.filter(Cus_id=cusid)
              # 客戶業務資料表 抓出選中之客戶資訊填寫欄位
             cusid_data=list(cusid_data.values())
+            # print(cusid,cusid_data)
             
             request.session['cusid'] = cusid
             
@@ -183,6 +199,7 @@ def seller_page(request: HttpRequest):
                 isnull-=1
                 
             selectedrate= isnull*10
+            # print("isnull:",isnull,"selectedrate:",isnull)
             return JsonResponse({'cusid':cusid,'cusid_data':cusid_data,'isnull':isnull,'selectedrate':selectedrate},safe=False)
             
         if request.POST.get('date'): # 排班日歷)

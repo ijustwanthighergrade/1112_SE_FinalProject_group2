@@ -15,19 +15,18 @@ $(document).ready(function() {
       type: 'POST',
       url: '/seller_page/',  // 替换为你的Django视图函数的URL
       data: {
-        spid: spid,
-        cusid: cusid
+        spid: spid
       },
       success: function(response) {
         // 在成功返回后的回调函数中执行操作
         console.log(response); // 这里可以处理返回的结果
-        datesFromBackend=response.arrangedate
-        console.log(datesFromBackend); // 这里可以处理返回的结果
+        // datesFromBackend=response.arrangedate
+        // console.log(datesFromBackend); // 这里可以处理返回的结果
 
-
+        document.getElementById('selectedrate').textContent = response.selectedrate+"%";
 
         var datacus = response.all_Cus_id.map(function(item) {
-          return item.Cus_id_id;
+          return item.Cus_id;
         });
 
         var tableBody = document.getElementById("cus_select");
@@ -90,7 +89,6 @@ $(document).ready(function() {
     type: 'POST',
     url: '/seller_page/',  // 替换为你的Django视图函数的URL
     data: {
-      spid: spid,
       cusid: cusid
     },
     success: function(response) {
@@ -98,8 +96,8 @@ $(document).ready(function() {
         console.log(response); // 这里可以处理返回的结果
         console.log(response.selectedrate)
         
-        var cusid_data = response.all_Cus_id.map(function(item) {
-          Cus_id_id= item.Cus_id_id;
+        var cusid_data = response.cusid_data.map(function(item) {
+          Cus_id= item.Cus_id;
           Cus_FamilyNum= item.Cus_FamilyNum;
           Cus_eld= item.Cus_eld;
           Chair_status= item.Chair_status;
@@ -109,11 +107,13 @@ $(document).ready(function() {
           Cus_PastItem= item.Cus_PastItem;
           Chair_power= item.Chair_power;
           Cus_job=item.Cus_job
-          product_past= item.product_past_id;
+          product_past= item.product_past;
+          Chair_position=item.Chair_position
         });
+        document.getElementById('selectedrate').textContent = response.selectedrate+"%";
         
         console.log(product_past); // 这里可以处理返回的结果
-        document.getElementById('Cus_id_id').textContent = Cus_id_id;
+        document.getElementById('Cus_id_id').textContent = Cus_id;
         document.getElementById('Cus_FamilyNum').textContent = Cus_FamilyNum;
         document.getElementById('Cus_eld').textContent = Cus_eld;
         document.getElementById('Chair_status').textContent = Chair_status;
@@ -124,6 +124,7 @@ $(document).ready(function() {
         document.getElementById('Chair_power').textContent = Chair_power;
         document.getElementById('Cus_job').textContent = Cus_job;
         document.getElementById('product_past').textContent = product_past;
+        document.getElementById('Chair_position').textContent = Chair_position;
     },
     error: function(xhr, status, error) {
         // 在请求失败时的回调函数中执行操作
@@ -262,7 +263,7 @@ $('#calendar-body').on('click', '.calendar-day', function() { //點擊獲取日�
 //日曆
 
 });
-var Cus_id_id=""
+var Cus_id=""
 var Cus_FamilyNum=""
 var Cus_eld=""
 var Chair_status=""
@@ -273,3 +274,4 @@ var Cus_PastItem=""
 var Chair_power=""
 var product_past=""
 var Cus_job=""
+var Chair_position=""

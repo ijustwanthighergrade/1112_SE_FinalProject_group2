@@ -21,7 +21,15 @@
   border: 2px solid rgb(255, 255, 255);
 }
 .chartarea{
-  width:16%;
+  width:15.5%;
+  height: 100%;
+  float: left;
+  background-color: #ffffff;
+  overflow-y: scroll;
+  margin-right: 1%;
+}
+.achartarea{
+  width:14%;
   height: 100%;
   float: left;
   background-color: #ffffff;
@@ -123,7 +131,6 @@
   width: 35%;
   height: 100%;
   float: left;
-
   overflow: scroll;
 }
 
@@ -148,18 +155,28 @@
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   float: left;
-  /* border: rgb(198, 226, 229) 3px; */
-  background-color: rgb(198, 226, 229);
+  /* border: rgb(169, 219, 230) 3px; */
+  background-color: rgb(169, 219, 230);
   margin-top: 5%;
 }
 .title_cardarea_text{
   text-align: center; /* 水平居中文本内容 */
-  color: rgb(0, 109, 121);
+  color: rgb(0, 76, 82);
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10%;
+  height: 100%;
+  width: 100%;
+  /* background-color: #9000ff; */
+
+}
+.title_cardarea_bigtext{
+  text-align: center; /* 水平居中文本内容 */
+  color: rgb(0, 76, 82);
   font-size: 30px;
   font-weight: bold;
-  height: 80%;
+  height: 100%;
   width: 100%;
-  float: left;
   /* background-color: #9000ff; */
 
 }
@@ -169,8 +186,7 @@
   margin-bottom: 4%;
   height: 23%;
   width: 95%;
-  float: left;
-  color: rgb(0, 109, 121);
+  color: rgb(0, 76, 82);
   font-weight: bold;
   
   /* background-color: #00ffbf; */
@@ -218,7 +234,7 @@
 }
 
 .today {
-  background-color: rgb(198, 226, 229);
+  background-color: rgb(169, 219, 230);
   color: #fff;
 }
 
@@ -250,19 +266,19 @@
 }
 .selected_title{
 
-  background-color: rgb(198, 226, 229);
-  color: rgb(0, 109, 121);
+  background-color: rgb(169, 219, 230);
+  color: rgb(0, 76, 82);
   font-weight: bold;
   font-size: 15px;
 }
 .cusiddataframe tr:nth-child(odd) {
-  background-color: rgb(198, 226, 229);
-  color: rgb(0, 109, 121);
+  background-color: rgb(169, 219, 230);
+  color: rgb(0, 76, 82);
   font-weight: bold;
   font-size: 15px;
 }
 .cusiddataframe tr:nth-child(even) {
-  color: rgb(0, 109, 121);
+  color: rgb(0, 76, 82);
   font-weight: bold;
   font-size: 15px;
 }
@@ -273,8 +289,8 @@
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   float: right;
-  /* border: rgb(198, 226, 229) 3px; */
-  background-color: rgb(198, 226, 229);
+  /* border: rgb(169, 219, 230) 3px; */
+  background-color: rgb(169, 219, 230);
 }
 .cusiddataframe_cardarea_button{
   width: 100%;
@@ -286,16 +302,16 @@
 }
 .cusiddataframe_cardarea_button_text{
   
-  font-size: 50px;
+  font-size: 40px;
   
   text-align: center; /* 水平居中文本内容 */
-  color: rgb(0, 109, 121);
+  color: rgb(0, 76, 82);
   font-weight: bold;
 }
 .cusiddataframe_text{
   font-size: 15px;
   
   text-align: center; /* 水平居中文本内容 */
-  color: rgb(0, 109, 121);
+  color: rgb(0, 76, 82);
   font-weight: bold;
 }
