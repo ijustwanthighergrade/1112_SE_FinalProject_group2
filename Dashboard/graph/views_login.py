@@ -63,7 +63,11 @@ if not APP_Cus.objects.exists():
         APP_Cus.objects.create(Cus_id="c20230601091315340",Cus_date="2023-06-01 09:13:15",Cus_user="ijkl@gmail.com",Cus_pwd="iijjkkkll",Voucher_count=0,Cus_status=1,Referrer_id="c20210302121314000", Cus_Name="user3" )
         APP_Cus.objects.create(Cus_id="c20230431222222045",Cus_date="2023-04-31 22:22:22",Cus_user="mnop@gmail.com",Cus_pwd="mmnnooppp",Voucher_count=40,Cus_status=1,Referrer_id="c20230601091315340", Cus_Name="user4" )
         APP_Cus.objects.create(Cus_id="c20230605142259011",Cus_date="2023-06-05 14:22:59",Cus_user="qrst@gmail.com",Cus_pwd="uvwxyz",Voucher_count=6,Cus_status=1,Referrer_id="c20230431222222045", Cus_Name="user5" )
-        APP_Cus.objects.create(Cus_id="c20230612082345789",Cus_date="2023-06-12 08:23:45",Cus_user="uvwx@gmail.com",Cus_pwd="@@##!",Voucher_count=16,Cus_status=1,Referrer_id="c20230431222222045", Cus_Name="user6" )
+        APP_Cus.objects.create(Cus_id="c20230612082345789",Cus_date="2023-06-12 08:23:45",Cus_user="uvwx@gmail.com",Cus_pwd="@@##!",Voucher_count=16,Cus_status=1,Referrer_id="c20230605142259011", Cus_Name="user6" )
+        APP_Cus.objects.create(Cus_id="c20230531225612123",Cus_date="2023-05-31 22:56:12",Cus_user="bjks@gmail.com",Cus_pwd="raldjf",Voucher_count=12,Cus_status=1,Referrer_id="c20230601091315340", Cus_Name="user7" )
+        APP_Cus.objects.create(Cus_id="c20230611032124044",Cus_date="2023-06-11 03:21:24",Cus_user="zzz@gmail.com",Cus_pwd="ralas",Voucher_count=1,Cus_status=0,Referrer_id="c20230431222222045", Cus_Name="user8" )
+        APP_Cus.objects.create(Cus_id="c20230523080909967",Cus_date="2023-05-23 08:09:09",Cus_user="tttt@gmail.com",Cus_pwd="uiyewq",Voucher_count=0,Cus_status=1,Referrer_id="c20230612082345789", Cus_Name="user9" )
+        APP_Cus.objects.create(Cus_id="c20230602135723987",Cus_date="2023-06-02 13:57:23",Cus_user="vvvv@gmail.com",Cus_pwd="moomoo",Voucher_count=3,Cus_status=1,Referrer_id="c20230523080909967", Cus_Name="user10" )
 else:
  pass
 
@@ -73,6 +77,11 @@ if not Cus.objects.exists():
         Cus.objects.create(Cus_id="c20230601091315340",Cus_FamilyNum=0,Cus_eld=1,Chair_status=1,Chair_floor=10000,Chair_ceiling=200000,Chair_position="脊椎", Chair_color="黑色", Chair_power="4", product_past="P002", Cus_job="程式設計師" )
         Cus.objects.create(Cus_id="c20230431222222045",Cus_FamilyNum=2,Cus_eld=0,Chair_status=0,Chair_floor=200000,Chair_ceiling=300000,Chair_position="肩頸, 脊椎, 小腿", Chair_color="咖啡色", Chair_power="3", product_past="P003", Cus_job="會計師" )
         Cus.objects.create(Cus_id="c20230605142259011",Cus_FamilyNum=9,Cus_eld=0,Chair_status=0,Chair_floor=100000,Chair_ceiling=200000,Chair_position="小腿", Chair_color="香檳色", Cus_PastItem="天后按摩椅", Chair_power="2", product_past="P001", Cus_job="管家" )
+        Cus.objects.create(Cus_id="c20230612082345789",Cus_FamilyNum=3,Cus_eld=1,Chair_status=0,Chair_floor=50000,Chair_ceiling=100000,Chair_position="肩頸", Chair_color="黑色", Cus_PastItem="平民按摩椅", Chair_power="9", product_past="P003", Cus_job="工程師" )
+        Cus.objects.create(Cus_id="c20230531225612123",Cus_FamilyNum=7,Cus_eld=1,Chair_status=0,Chair_floor=100000,Chair_ceiling=2000000,Chair_position="全身", Chair_color="白色", Cus_PastItem="普普按摩椅", Chair_power="3", product_past="P001", Cus_job="裝潢師父" )
+        Cus.objects.create(Cus_id="c20230611032124044",Cus_FamilyNum=2,Cus_eld=0,Chair_status=1,Chair_floor=80000,Chair_ceiling=90000,Chair_position="脊椎 小腿", Chair_color="香檳色, 咖啡色", Cus_PastItem="天后按摩椅", Chair_power="1", product_past="P002", Cus_job="物理學家" )
+        Cus.objects.create(Cus_id="c20230523080909967",Cus_FamilyNum=12,Cus_eld=1,Chair_status=0,Chair_floor=200000,Chair_ceiling=900000,Chair_position="肩頸", Chair_color="咖啡色", Cus_PastItem="平民按摩椅", Chair_power="5", product_past="P004", Cus_job="教授" )
+        Cus.objects.create(Cus_id="c20230602135723987",Cus_FamilyNum=5,Cus_eld=1,Chair_status=0,Chair_floor=40000,Chair_ceiling=1000000,Chair_position="小腿", Chair_color="黑色", Cus_PastItem="普普按摩椅", Chair_power="9", product_past="P001", Cus_job="清潔人員" )
 else:
  pass
 
@@ -253,5 +262,9 @@ if not manage.objects.exists():
         manage.objects.create(Cus_id="c20230431222222045",manage_stage=0,manage_date="2023-06-03",manage_deal=0,manage_category="fa003",manage_detail="對方刻意毀壞按摩椅，列為黑名單",manage_frequency=3,Sp_id="Sp004",store_id="S001")
         manage.objects.create(Cus_id="c20230605142259011",manage_stage=1,manage_date="2023-06-10",manage_deal=1,manage_category="",manage_detail="",manage_frequency=1,Sp_id="Sp003",store_id="S001")
         manage.objects.create(Cus_id="c20230612082345789",manage_stage=1,manage_date="2023-06-11",manage_deal=0,manage_category="",manage_detail="",manage_frequency=4,Sp_id="Sp003",store_id="S002")
+        manage.objects.create(Cus_id="c20230531225612123",manage_stage=1,manage_date="2023-06-14",manage_deal=0,manage_category="",manage_detail="",manage_frequency=8,Sp_id="Sp001",store_id="S001")
+        manage.objects.create(Cus_id="c20230611032124044",manage_stage=0,manage_date="2023-06-13",manage_deal=0,manage_category="fa002",manage_detail="業務員溝通過於壓迫，引發反彈",manage_frequency=12,Sp_id="Sp004",store_id="S001")
+        manage.objects.create(Cus_id="c20230523080909967",manage_stage=0,manage_date="2023-06-14",manage_deal=0,manage_category="fa005",manage_detail="太久沒有追蹤而失去動向",manage_frequency=1,Sp_id="Sp001",store_id="S001")
+        manage.objects.create(Cus_id="c20230602135723987",manage_stage=0,manage_date="2023-06-13",manage_deal=0,manage_category="fa002",manage_detail="對方不滿意被頻繁打擾",manage_frequency=25,Sp_id="Sp003",store_id="S001")
 else:
     pass
