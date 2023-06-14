@@ -21,7 +21,7 @@
 .seller_select,tr{
   width: 100%;
   background-color: rgb(215, 237, 240);
-  height: 44px;
+  height: 38.55px;
   border: 2px solid rgb(255, 255, 255);
 }
 .chartarea{
@@ -33,12 +33,12 @@
   background-color:rgb(215, 237, 240);
 }
 .achartarea{
-  width:14%;
+  width:15%;
   height: 100%;
   float: left;
   background-color: #ffffff;
   overflow-y: scroll;
-  margin-right: 2%;
+  margin-right: 1%;
 }
 .small_chartarea{
   width:18%;
@@ -199,7 +199,7 @@
   align-items: center; /* 垂直居中 */
   float: left;
   /* border: rgb(169, 219, 230) 3px; */
-  background-color:rgb(215, 237, 240);
+  background-color: rgb(215, 237, 240);
   margin-bottom: 8.5%;
 }
 .title_cardarea_text{
@@ -248,9 +248,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+#current-month{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 .calendar-header button {
   background: none;
   border: none;
