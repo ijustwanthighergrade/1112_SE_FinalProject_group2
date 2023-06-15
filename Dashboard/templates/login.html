@@ -11,6 +11,10 @@
         {% if error_message %}
             alert("{{ error_message }}");
         {% endif %}
+                
+        {% if success_message %}
+            alert("{{ success_message }}");
+        {% endif %}
     </script>
 </head>
 <body>
@@ -22,12 +26,14 @@
         <form action="/login/" method="POST">
             {% csrf_token %}
         帳號<br><input id="username" name="username" type="text" required><br><br>
-        密碼<br><input id="password" name="password" type="password" required><br><p class="forregister"><a href="register.html">註冊帳號</a><br>
-        </p><div class="loginbuttonarea"><button class="loginbutton" type="submit" value="Login" >登入</button>
+        密碼<br><input id="password" name="password" type="password" required><br>
+            <p class="forregister">
+                <a href="{% url 'register_page' %}">註冊帳號</a><br>
+            </p>
+        <div class="loginbuttonarea"><button class="loginbutton" type="submit" value="Login" >登入</button>
         </div>
         </form>
     </div>
-        <!--以防萬一預留：<a class="linktoregister" href="register.html">註冊店家</a>-->
     </div>
     </div>
 </body>
