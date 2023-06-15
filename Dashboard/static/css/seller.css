@@ -366,3 +366,7 @@
   color: rgb(0, 76, 82);
   font-weight: bold;
 }
+.spinfo{
+  background-color: inherit;
+  border: inherit;
+}
