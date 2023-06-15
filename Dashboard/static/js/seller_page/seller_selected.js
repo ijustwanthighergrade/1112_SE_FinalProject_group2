@@ -7,8 +7,66 @@ $(document).ready(function() {
   $('.btn').click(function() {
     spid = $(this).data('spid');  // 获取按钮的编号值
     console.log(spid); // 这里可以处理返回的结果
-    document.getElementById('selected_spid').textContent = spid;//右下角卡片顯示
+    // document.getElementById('selected_spid').textContent = spid;//右下角卡片顯示
+    // Create a button element with the provided class and data attributes
+    var buttona = document.createElement('button');
+    buttona.setAttribute('class', 'spinfo');
+    buttona.setAttribute('data-spinfo', spid);
+    buttona.textContent = spid;
+    element=document.getElementById('selected_spid')
+    // Append the button to the 'selected_spid' element
+    // var element= document.getElementsByClassName('spinfo')
+    // element[0].textContent=spid;
+    // element[0].dataset.spinfo = spid;
 
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+    element.appendChild(buttona);
+
+    $(element).on('click', '.spinfo', function() {
+      var thisspid = $(this).data('spinfo');  // Retrieve the value of the 'data-spinfo' attribute
+      console.log(thisspid);
+    
+      $.ajax({
+        type: 'POST',
+        url: '/seller_page/',  // Replace with the URL of your Django view function
+        data: {
+          thisspid: thisspid
+        },
+        success: function(response) {
+          // Callback function executed after a successful response
+          console.log(response); // Process the returned result here
+          openModal(response);
+        },
+        error: function(xhr, status, error) {
+          // Callback function executed when the request fails
+          console.log(error); // Handle the error message here
+        }
+      });
+    });
+    
+    function openModal(data) {
+      var content = data.spinfo[0][0]; // 获取第一个元素
+      var content1 = "";
+    
+      for (var i = 0; i < data.spinfo.length; i++) {
+        var item = data.spinfo[i]; // 获取当前循环中的元素
+        content1 += "業務員ID: " + item[0] + "<br>" +
+          "本月獎金: " + item[1] + "<br>" +
+          "績效公式: " + item[2] + "<br>" +
+          "業務員薪水: " + item[3] + "<br>" +
+          "店家id: " + item[4] + "<br>" +
+          "住家地址: " + item[5] + "<br>" +
+          "電話號碼: " + item[6] + "<br>" +
+          "業務員姓名: " + item[7] + "<br>" +
+          "業務員職位: " + item[8] + "<br><br>";
+      }
+    
+      $('.modal-title').text(content);
+      $('#modal-content').html(content1);
+      $('#myModal').modal('show');
+    }
 
     //修改折線圖顯示的值
     var canvas = $('#mylineChart2');
@@ -242,8 +300,6 @@ $(document).ready(function() {
     }
     });
 });
-
-
 });
 var Cus_id=""
 var Cus_FamilyNum=""

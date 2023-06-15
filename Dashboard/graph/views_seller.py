@@ -245,6 +245,17 @@ def seller_page(request: HttpRequest):
         # 进行相应的操作
         
         # 返回结果
+        if request.POST.get('thisspid'): # 業務員資料
+            thisspid =  request.POST.get('thisspid') # 前端傳回業務員id
+            print("thisspid:"+thisspid)
+            spinfo=Sp.objects.filter(Sp_id=thisspid).values_list()  
+            spinfo=list(spinfo)
+            
+            
+            return JsonResponse({'spinfo':spinfo},safe=False) # 後端傳去該業務員負責之所有客戶id
+            
+            
+            
     return JsonResponse({'all_Cus_id':request.session.get('all_Cus_id') },safe=False)
     
 
