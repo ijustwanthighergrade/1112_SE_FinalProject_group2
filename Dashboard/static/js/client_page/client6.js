@@ -6,15 +6,17 @@ function createChart5() {
             labels: [
               '第一階段',
               '第二階段',
-              '第三階段'
+              '第三階段',
+              '第四階段'
             ],
             datasets: [{
               label: 'My First Dataset',
-              data: [100, 85, 60],
+              data: [100, 85, 60, 25],
               backgroundColor: [
                 'rgba(79, 85, 143)',
                 'rgba(243, 177, 178)',
-                'rgba(69, 219, 78)'
+                'rgba(69, 219, 78)',
+                'rgba(204, 100, 182)'
             ]
             }]
           },
