@@ -3,9 +3,9 @@ var ctx = document.getElementById('myChart1');
 var myChart1 = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456', 'c20231230456'],
-    datasets: [{
-      backgroundColor: [
+    labels: ['一月', '二月', '三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'],
+    datasets: [{  
+    backgroundColor: [
         'rgba(243, 177, 178)'
       ],
       borderColor: [
@@ -13,7 +13,7 @@ var myChart1 = new Chart(ctx, {
       ],
       borderWidth: 2,
       label: '客戶引介數量',
-      data: [60, 49, 72,60, 49, 72,60, 49, 72]
+      data: [1, 3, 5,6, 2, 1,10, 3, 7, 1, 2, 4]
     }]
   }
 });}

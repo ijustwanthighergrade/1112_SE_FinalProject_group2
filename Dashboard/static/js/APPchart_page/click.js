@@ -1,7 +1,7 @@
 function c01(){
     var canvas2 = $('#myChart1');
     var myChart1 = Chart.getChart(canvas2[0]);
-    myChart1.data.datasets[0].data = [20, 60, 80,10, 26, 80,16, 72, 23];
+    myChart1.data.datasets[0].data = [2, 0, 8,1, 6, 5,1, 2, 3, 7, 6, 9];
     myChart1.update();
     document.getElementById('cus1').innerHTML = 'c20210302121314000';
     document.getElementById('cusname1').innerHTML = 'user1';
@@ -18,7 +18,7 @@ function c01(){
 function c02(){
     var canvas2 = $('#myChart1');
     var myChart1 = Chart.getChart(canvas2[0]);
-    myChart1.data.datasets[0].data = [5, 90, 70,20, 85, 99,60, 13, 29];
+    myChart1.data.datasets[0].data = [5, 9, 0,2, 5, 0,6, 3, 2,5,1,0];
     myChart1.update();
     document.getElementById('cus1').innerHTML = 'c20230502111314778';
     document.getElementById('cusname1').innerHTML = 'user2';
@@ -35,7 +35,7 @@ function c02(){
 function c03(){
     var canvas2 = $('#myChart1');
     var myChart1 = Chart.getChart(canvas2[0]);
-    myChart1.data.datasets[0].data = [72, 25, 36,28, 38, 68,59, 42, 52];
+    myChart1.data.datasets[0].data = [1, 2, 3,2, 3, 3,6, 4, 2,1,0,2];
     myChart1.update();
     document.getElementById('cus1').innerHTML = 'c20230601091315340';
     document.getElementById('cusname1').innerHTML = 'user3';
@@ -52,7 +52,7 @@ function c03(){
 function c04(){
     var canvas2 = $('#myChart1');
     var myChart1 = Chart.getChart(canvas2[0]);
-    myChart1.data.datasets[0].data = [29, 56, 38,68, 58, 16,43, 68, 53];
+    myChart1.data.datasets[0].data = [2, 6, 8,8, 5, 1,0, 4, 5,3,2,7];
     myChart1.update();
     document.getElementById('cus1').innerHTML = 'c20230431222222045';
     document.getElementById('cusname1').innerHTML = 'user4';
